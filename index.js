@@ -615,7 +615,6 @@
           text-overflow: ellipsis;
         }
         :host([label]) {
-          min-width: calc(24px + var(--spacing-l) * 2);
           max-width: 160px;
           padding: var(--spacing-xs) var(--spacing-m);
         }
