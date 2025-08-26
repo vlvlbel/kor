@@ -1,7 +1,7 @@
 import { LitElement } from 'lit';
 import '../icon';
 /**
- * @prop {String} label -	Defines the text label.
+ * @prop {String} label - Defines the text label.
  * @prop {String} icon - If set, replaces the text label with a custom icon.
  * @prop {'primary'|'secondary'|'tertiary'} color - Defines the color. The possible values are `primary`, `secondary` and `tertiary`
  * @prop {Boolean} disabled - If set to true, disables mouse clicks and the style gets updated.
