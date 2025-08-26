@@ -1,5 +1,10 @@
 {
   "name": "@kor-ui/kor",
+  "main": "index.js",
+  "files": [
+    "components/*/*.js",
+    "components/*/*.d.ts"
+  ],
   "version": "1.11.2",
   "description": "Web components library containing lightweight, ready-to-use and framework-agnostic User Interface elements.",
   "scripts": {
