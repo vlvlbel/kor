@@ -23,7 +23,7 @@ export declare class korTooltip extends LitElement {
     icon: string | undefined;
     flexDirection: 'column' | 'row';
     position: 'left' | 'right' | 'top' | 'bottom';
-    target: string | undefined;
+    target: string | HTMLElement | undefined;
     visible: boolean | undefined;
     emptyHeader: boolean;
     emptyFunctions: boolean;
