@@ -32,7 +32,7 @@ export class korTooltip extends LitElement {
     | 'right'
     | 'top'
     | 'bottom' = 'bottom';
-  @property({ type: String, reflect: true }) target: string | undefined;
+  @property({ type: String, reflect: true }) target: string | HTMLElement | undefined;
   @property({ type: Boolean, reflect: true }) visible: boolean | undefined;
 
   // readonly properties
