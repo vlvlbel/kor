@@ -36,6 +36,8 @@ export class korInput extends LitElement {
     | 'text'
     | 'number'
     | 'select'
+    | 'password'
+    | 'datetime-local'
     | 'date' = 'text';
   @property({ type: String, reflect: true }) status: string | undefined;
   @property({ type: Boolean, reflect: true }) condensed: boolean | undefined;
@@ -49,7 +51,8 @@ export class korInput extends LitElement {
   @property({ type: String, reflect: true }) pattern: string | undefined;
   @property({ type: String, reflect: true }) min: string | undefined;
   @property({ type: String, reflect: true }) max: string | undefined;
-  @property({ type: Number, reflect: true }) step = 1;
+  // BVV: By default increment controls are disabled
+  @property({ type: Number, reflect: true }) step = 0;
 
   static get styles() {
     return [
@@ -213,14 +216,6 @@ export class korInput extends LitElement {
         slot:not([name])::slotted(*) {
           margin-bottom: 0;
         }
-        /* date */
-        .date-icon {
-          margin-left: -24px;
-          pointer-events: none;
-        }
-        :host([type='date']) ::-webkit-calendar-picker-indicator {
-          background: unset;
-        }
         /* hover inputs */
         @media (hover: hover) {
           :host(:hover:not([active])) {
@@ -250,7 +245,12 @@ export class korInput extends LitElement {
           max="${ifDefined(this.max)}"
           pattern="${ifDefined(this.pattern)}"
           name="${ifDefined(this.name)}"
-          @input="${this.handleChange}"
+          @input="${(e: Event)=>{
+                    const self = e.target as HTMLInputElement;
+                    if (self.value != this.value) {
+                      this.handleChange(e);
+                    }
+                  }}"
           @focus="${() =>
             this.type !== 'select' && !this.active ? (this.active = true) : ''}"
           @blur="${this.handleBlur}"
@@ -285,10 +285,6 @@ export class korInput extends LitElement {
               : ''}
           `
         : ''}
-      <!-- date -->
-      ${this.type === 'date'
-        ? html` <kor-icon button class="date-icon" icon="event"></kor-icon> `
-        : ''}
       <!-- clear -->
       ${!this.disabled &&
       !this.readonly &&
@@ -314,7 +310,7 @@ export class korInput extends LitElement {
           `
         : ''}
       <!-- number increment -->
-      ${this.type === 'number' && !this.readonly
+      ${this.type === 'number' && !this.readonly && parseFloat(String(this.step))
         ? html`
             <kor-icon
               button
@@ -349,8 +345,26 @@ export class korInput extends LitElement {
     });
   }
 
+  firstUpdated() {
+    const input_element: HTMLElement|null|undefined =
+      this.shadowRoot?.querySelector('input');
+    // BVV: Disable decrements/increments if this.step is not specified
+    if (input_element) {
+      input_element.addEventListener('keydown', (e: KeyboardEvent) => {
+        if (!this.step && (e.key === 'ArrowUp' || e.key === 'ArrowDown')) {
+            e.preventDefault();
+        }
+      });
+      input_element.addEventListener('wheel', (e: Event) => {
+        if (!this.step) e.preventDefault();
+      }, { passive: false });
+    }
+  }
+
   handleChange(e: any) {
-    this.value = e.target.value;
+    if (e && typeof e.target?.value === "string") {
+      this.value = e.target.value;
+    }
     this.dispatchEvent(
       new CustomEvent('change', {
         bubbles: true,
@@ -372,7 +386,7 @@ export class korInput extends LitElement {
 
   handleBlur(e: any) {
     if (this.type === 'number') {
-      this.validateMinMax(e.target.value);
+      this.validateMinMax(parseFloat(e.target.value));
     }
     if (this.type !== 'select') {
       this.active = false;
@@ -380,16 +394,14 @@ export class korInput extends LitElement {
   }
 
   handleIncrement(dir: string) {
+    const step: number = parseFloat(String(this.step));
+    if (isNaN(step) || !step) return;
     if (dir === 'left') {
       this.validateMinMax(
-        parseInt(this.value ? this.value : this.min ? this.min : '0') -
-          this.step
-      );
+        parseFloat(this.value ? this.value : this.min ? this.min : '0') - step);
     } else if (dir === 'right') {
       this.validateMinMax(
-        parseInt(this.value ? this.value : this.min ? this.min : '0') +
-          this.step
-      );
+        parseFloat(this.value ? this.value : this.min ? this.min : '0') + step);
     }
   }
 
@@ -439,14 +451,15 @@ export class korInput extends LitElement {
   }
 
   validateMinMax(val: number) {
-    if (val) {
-      if (this.min && val < parseInt(this.min)) {
+    if (!isNaN(val) && val !== parseFloat(this.value!)) {
+      if (this.min && val < parseFloat(this.min)) {
         this.value = this.min;
-      } else if (this.max && val > parseInt(this.max)) {
+      } else if (this.max && val > parseFloat(this.max)) {
         this.value = this.max;
       } else {
         this.value = val.toString();
       }
+      this.handleChange(undefined);
     }
   }
 
