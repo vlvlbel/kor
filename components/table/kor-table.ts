@@ -31,7 +31,12 @@ export class korTable extends LitElement {
         }
         slot:not([name]) {
           flex: 1;
-          overflow: auto;
+        }
+        slot[name="header"] {
+          position: sticky;
+          top: 0;
+          z-index: 4;
+          background-color: rgb(var(--base-3));
         }
       `,
     ];
