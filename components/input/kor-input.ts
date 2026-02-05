@@ -211,7 +211,7 @@ export class korInput extends LitElement {
         }
         slot:not([name]) {
           display: block;
-          margin: 0 calc(var(--spacing-s) * -1);
+          margin: 0 var(--spacing-s);
         }
         slot:not([name])::slotted(*) {
           margin-bottom: 0;
