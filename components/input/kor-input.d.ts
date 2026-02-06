@@ -27,7 +27,7 @@ export declare class korInput extends LitElement {
     icon: string | undefined;
     value: string | undefined;
     name: string | undefined;
-    type: 'text' | 'number' | 'select' | 'date';
+    type: 'text' | 'number' | 'select' | 'password' | 'datetime-local' | 'date';
     status: string | undefined;
     condensed: boolean | undefined;
     active: boolean | undefined;
@@ -42,6 +42,7 @@ export declare class korInput extends LitElement {
     static get styles(): import("lit").CSSResultGroup[];
     render(): import("lit-html").TemplateResult<1>;
     constructor();
+    firstUpdated(): void;
     handleChange(e: any): void;
     handleClear(): void;
     handleBlur(e: any): void;

@@ -1,10 +1,10 @@
 import { LitElement, css, html } from 'lit';
-import { property } from 'lit/decorators';
+import { property } from 'lit/decorators.js';
 import { sharedStyles } from '../../shared-styles';
 import '../icon';
 
 /**
- * @prop {String} label -	Defines the text label.
+ * @prop {String} label - Defines the text label.
  * @prop {String} icon - If set, replaces the text label with a custom icon.
  * @prop {'primary'|'secondary'|'tertiary'} color - Defines the color. The possible values are `primary`, `secondary` and `tertiary`
  * @prop {Boolean} disabled - If set to true, disables mouse clicks and the style gets updated.
@@ -40,7 +40,6 @@ export class korButton extends LitElement {
           text-overflow: ellipsis;
         }
         :host([label]) {
-          min-width: calc(24px + var(--spacing-l) * 2);
           max-width: 160px;
           padding: var(--spacing-xs) var(--spacing-m);
         }
@@ -90,6 +89,17 @@ export class korButton extends LitElement {
             background-color: rgba(var(--neutral-1), 0.05);
           }
         }
+        .center {
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          overflow: hidden;
+        }
+        .label {
+          white-space: nowrap;
+          overflow: hidden;
+          text-overflow: ellipsis;
+        }
       `,
     ];
   }
@@ -99,7 +109,9 @@ export class korButton extends LitElement {
       <slot name="icon">
         ${this.icon ? html` <kor-icon icon="${this.icon}"></kor-icon> ` : ''}
       </slot>
-      <slot> ${this.label ? html` ${this.label} ` : ''}</slot>
+      <slot>${this.label ?
+              html`<div class="center"><label class="label">${this.label}</label></div>`
+              : ''}</slot>
     `;
   }
 
