@@ -236,7 +236,7 @@ export class korInput extends LitElement {
         <input
           .type="${this.type}"
           .value="${this.value ? this.value : ''}"
-          .step="${this.step.toString()}"
+          .step="${this.step ? this.step.toString() : 'any'}"
           ?autofocus="${this.autofocus}"
           ?readonly="${this.readonly ||
           this.disabled ||

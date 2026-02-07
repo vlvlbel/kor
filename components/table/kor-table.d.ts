@@ -6,6 +6,9 @@ import { LitElement } from 'lit';
  *
  * @slot - The container where the table body is rendered (kor-table-rows).
  * @slot header - The container for the header (kor-table-row). It does not scroll with the content, but remains sticky on top.
+ * kor-table itself does not overflow (nor its content), but the table has to be placed into kor-card to be scrolled.
+ * That reduces additional scrollbars and provides an ability to stick header on top and to stick any cells or column in any way,
+ * see kor-table-cell sticky and related attributes
  */
 export declare class korTable extends LitElement {
     readonly: boolean | undefined;
