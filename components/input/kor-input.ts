@@ -206,7 +206,7 @@ export class korInput extends LitElement {
           position: fixed;
           max-height: 240px;
           z-index: 3;
-          padding: 0px var(--spacing-l);
+          padding: var(--spacing-l) 0;
           background-color: rgb(var(--base-4));
         }
         slot:not([name]) {
