@@ -26,6 +26,7 @@ declare global {
  * @prop {Boolean} readonly - If set to true, disables the input without reducing the opacity.
  * @prop {Boolean} noClear - If set to true, the clear icon and functionality will not be available.
  * @prop {Boolean} autofocus - If set to true, the component gets focused as soon as the page loads.
+ * @prop {Boolean} filterable - (If type="select" only) If set to true, the text typed into the input filters the select popup items by their labels.
  *
  * @slot - Displayed inside the content area.
  * @slot functions - Displayed on the right side.
@@ -44,6 +45,7 @@ export declare class korInput extends LitElement {
     readonly: boolean | undefined;
     noClear: boolean | undefined;
     autofocus: boolean;
+    filterable: boolean | undefined;
     pattern: string | undefined;
     min: string | undefined;
     max: string | undefined;
@@ -51,6 +53,7 @@ export declare class korInput extends LitElement {
     main_input: HTMLInputElement;
     private is12Hour_;
     private isMenuHandlerSet_;
+    private filter_;
     static get styles(): import("lit").CSSResult[];
     render(): TemplateResult<1>;
     constructor();
@@ -68,6 +71,9 @@ export declare class korInput extends LitElement {
     private handleBlur_;
     private handleIncrement_;
     handleItems(e: any): void;
+    private isFilterableSelect_;
+    private filterItems_;
+    private handleFilterKeys_;
     attributeChangedCallback(name: string, oldval: string, newval: string): void;
     handleMenu(): void;
     closeSelectMenu(e: Event): void;

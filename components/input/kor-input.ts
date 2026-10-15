@@ -32,6 +32,7 @@ declare global {
  * @prop {Boolean} readonly - If set to true, disables the input without reducing the opacity.
  * @prop {Boolean} noClear - If set to true, the clear icon and functionality will not be available.
  * @prop {Boolean} autofocus - If set to true, the component gets focused as soon as the page loads.
+ * @prop {Boolean} filterable - (If type="select" only) If set to true, the text typed into the input filters the select popup items by their labels.
  *
  * @slot - Displayed inside the content area.
  * @slot functions - Displayed on the right side.
@@ -58,6 +59,8 @@ export class korInput extends LitElement {
   @property({ type: Boolean, reflect: true, attribute: 'no-clear' })
   noClear: boolean | undefined;
   @property({ type: Boolean, reflect: true }) autofocus: boolean = false;
+  // BVV: (select only) filter the popup items by the typed text
+  @property({ type: Boolean, reflect: true }) filterable: boolean | undefined;
   // input number properties
   @property({ type: String, reflect: true }) pattern: string | undefined;
   @property({ type: String, reflect: true }) min: string | undefined;
@@ -68,6 +71,8 @@ export class korInput extends LitElement {
 
   private is12Hour_: boolean = false;
   private isMenuHandlerSet_ = false;
+  // BVV: The text typed into a filterable select, empty shows all the items
+  private filter_: string = '';
 
   static get styles() {
     return [
@@ -233,8 +238,10 @@ export class korInput extends LitElement {
           cursor: pointer !important;
         }
         :host([type='text']) .center,
-        :host([type='number']) .center {
-          cursor: text;
+        :host([type='number']) .center,
+        :host([type='select'][filterable]) .center,
+        :host([type='select'][filterable]) input {
+          cursor: text !important;
         }
         :host([active]) .select-icon {
           transform: rotate(180deg);
@@ -277,7 +284,7 @@ export class korInput extends LitElement {
           ?autofocus="${this.autofocus}"
           ?readonly="${this.readonly ||
           this.disabled ||
-          this.type === 'select'}"
+          (this.type === 'select' && !this.filterable)}"
           min="${ifDefined(this.min)}"
           max="${ifDefined(this.max)}"
           pattern="${ifDefined(this.pattern)}"
@@ -287,7 +294,13 @@ export class korInput extends LitElement {
                     if (self.value != this.value) {
                       this.handleChange_(e);
                     }
+                    if (this.isFilterableSelect_()) {
+                      this.filter_ = self.value;
+                      this.active = true;
+                      this.filterItems_();
+                    }
                   }}"
+          @keydown="${(e: KeyboardEvent)=>{this.handleFilterKeys_(e)}}"
           @focus="${(e: Event)=>{this.handleFocus_(e)}}"
           @blur="${(e: Event)=>{this.handleBlur_(e)}}"
         />
@@ -377,13 +390,21 @@ export class korInput extends LitElement {
     this.addEventListener('click', (e: Event) => {
       if (this.active) {
         if (this.type === 'select') {
+          // BVV: Keep the popup open while clicking into the filter text
+          if (this.isFilterableSelect_()
+              && e.composedPath().includes(this.main_input)) {
+            return;
+          }
           this.closeSelectMenu(e);
         } else {
           this.active = false;
         }
       } else if (!this.active) {
+        // BVV: Show all the items when the popup is opened by a click
+        this.filter_ = '';
         this.active = true;
-        if (this.type !== 'select' && !this.disabled && !this.readonly) {
+        if ((this.type !== 'select' || this.filterable)
+            && !this.disabled && !this.readonly) {
           this.main_input?.focus();
         }
       }
@@ -608,10 +629,58 @@ export class korInput extends LitElement {
             e.target.active = true;
             this.value = el.label;
             this.active = false;
+            if (this.isFilterableSelect_()) {
+              this.filter_ = '';
+              this.filterItems_();
+              this.handleChange_(undefined);
+            }
           }
         });
       }
     });
+    this.filterItems_();
+  }
+
+  // BVV:
+  private isFilterableSelect_(): boolean {
+    return this.type === 'select' && !!this.filterable
+      && !this.disabled && !this.readonly;
+  }
+
+  // BVV: Hides the menu items whose labels don't contain the filter text
+  private filterItems_() {
+    const text: string = this.filter_.trim().toLowerCase();
+    Array.from(this.children).forEach((el: Element) => {
+      if (el.tagName !== 'KOR-MENU-ITEM') return;
+      const label: string = String((el as any).label ?? '').toLowerCase();
+      (el as HTMLElement).style.display =
+        !text || label.includes(text) ? '' : 'none';
+    });
+  }
+
+  // BVV: Enter picks the first matching item, Escape closes the popup
+  private handleFilterKeys_(e: KeyboardEvent) {
+    if (!this.isFilterableSelect_() || !this.active) return;
+    if (e.key === 'Enter') {
+      e.preventDefault();
+      const first: any = Array.from(this.children).find(
+        (el: Element) => el.tagName === 'KOR-MENU-ITEM'
+          && (el as HTMLElement).style.display !== 'none');
+      if (!first) return;
+      if (first.active) {
+        // Already selected: 'active-changed' won't fire, so apply it here
+        this.value = first.label;
+        this.active = false;
+        this.filter_ = '';
+        this.filterItems_();
+        this.handleChange_(undefined);
+      } else {
+        first.active = true;
+      }
+    } else if (e.key === 'Escape') {
+      e.preventDefault();
+      this.active = false;
+    }
   }
 
   attributeChangedCallback(name: string, oldval: string, newval: string) {
