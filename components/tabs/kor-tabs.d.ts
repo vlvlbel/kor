@@ -6,7 +6,7 @@ import { LitElement } from 'lit';
  */
 export declare class korTabs extends LitElement {
     orientation: 'horizontal' | 'vertical';
-    static get styles(): import("lit").CSSResult[];
+    static get styles(): import("lit").CSSResultGroup[];
     render(): import("lit-html").TemplateResult<1>;
     handleOrientation(): void;
     attributeChangedCallback(name: string, oldval: string, newval: string): void;

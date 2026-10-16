@@ -8,7 +8,7 @@ import { LitElement } from 'lit';
  */
 export declare class korNotifications extends LitElement {
     position: 'top-left' | 'top-right' | 'bottom-left' | 'bottom-right';
-    static get styles(): import("lit").CSSResult[];
+    static get styles(): import("lit").CSSResultGroup[];
     render(): import("lit-html").TemplateResult<1>;
     attributeChangedCallback(name: string, oldval: string, newval: string): void;
 }

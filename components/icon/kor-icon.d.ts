@@ -5,6 +5,7 @@ import { LitElement } from 'lit';
  * @prop {String} color -	If set, replaces the text label with a custom icon.
  * @prop {Boolean} button - If set to true, updates hover, click effects and cursors.
  * @prop {Boolean} disabled -	If set to true, disables mouse clicks and the style gets updated.
+ * @prop {Boolean} framed - If set to true, the icon is shown within a rounded square frame.
  */
 export declare class korIcon extends LitElement {
     icon: string | undefined;
@@ -12,7 +13,8 @@ export declare class korIcon extends LitElement {
     size: 's' | 'm' | 'l' | 'xl';
     button: boolean | undefined;
     disabled: boolean | undefined;
-    static get styles(): import("lit").CSSResult[];
+    framed: boolean | undefined;
+    static get styles(): import("lit").CSSResultGroup[];
     render(): import("lit-html").TemplateResult<1>;
     attributeChangedCallback(name: string, oldval: string, newval: string): void;
     private setBackgroundImage;

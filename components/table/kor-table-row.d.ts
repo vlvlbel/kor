@@ -8,7 +8,7 @@ export declare class korTableRow extends LitElement {
     active: boolean | undefined;
     slots: NodeListOf<HTMLSlotElement>;
     getAllSlottedContent(): Array<Element>;
-    static get styles(): import("lit").CSSResult[];
+    static get styles(): import("lit").CSSResultGroup[];
     render(): import("lit-html").TemplateResult<1>;
     attributeChangedCallback(name: string, oldval: string, newval: string): void;
     connectedCallback(): void;

@@ -2,12 +2,15 @@ import { LitElement, css, html } from 'lit';
 import { property } from 'lit/decorators.js';
 import { sharedStyles } from '../../shared-styles';
 import '../icon';
+import '../divider';
 
 /**
  * @prop {String} label - Defines the text label.
  * @prop {String} icon - If set, replaces the text label with a custom icon.
  * @prop {'primary'|'secondary'|'tertiary'} color - Defines the color. The possible values are `primary`, `secondary` and `tertiary`
  * @prop {Boolean} disabled - If set to true, disables mouse clicks and the style gets updated.
+ * @prop {Boolean} divided - If set to true together with both icon and label, a vertical divider is shown between them.
+ * @prop {Boolean} glow - If set to true, the button glows with its color, which may be customized with the `--btn-glow` css property.
  */
 
 export class korButton extends LitElement {
@@ -18,6 +21,8 @@ export class korButton extends LitElement {
     | 'secondary'
     | 'tertiary' = 'primary';
   @property({ type: Boolean, reflect: true }) disabled: boolean | undefined;
+  @property({ type: Boolean, reflect: true }) divided: boolean | undefined;
+  @property({ type: Boolean, reflect: true }) glow: boolean | undefined;
 
   static get styles() {
     return [
@@ -65,6 +70,16 @@ export class korButton extends LitElement {
           border-style: solid;
           border-color: rgba(var(--neutral-1), 0.25);
         }
+        /* glow */
+        :host([glow]) {
+          box-shadow: var(--btn-glow, 0 0 12px rgba(var(--accent-1), 0.5));
+        }
+        /* divider between the icon and the label */
+        :host([divided]) kor-divider {
+          align-self: stretch;
+          height: auto;
+          opacity: 0.6;
+        }
         /* disabled */
         :host([disabled]) {
           pointer-events: none;
@@ -107,6 +122,9 @@ export class korButton extends LitElement {
       <slot name="icon">
         ${this.icon ? html` <kor-icon icon="${this.icon}"></kor-icon> ` : ''}
       </slot>
+      ${this.divided && this.icon && this.label
+        ? html`<kor-divider orientation="vertical" spacing="s"></kor-divider>`
+        : ''}
       <slot>${this.label ?
               html`<div class="center"><label class="label">${this.label}</label></div>`
               : ''}</slot>

@@ -9,7 +9,7 @@ export declare class korToggle extends LitElement {
     label: string | undefined;
     active: boolean | undefined;
     disabled: boolean | undefined;
-    static get styles(): import("lit").CSSResult[];
+    static get styles(): import("lit").CSSResultGroup[];
     render(): import("lit-html").TemplateResult<1>;
     attributeChangedCallback(name: string, oldval: string, newval: string): void;
     connectedCallback(): void;

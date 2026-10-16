@@ -26,7 +26,7 @@ export declare class korCard extends LitElement {
     emptyHeader: boolean;
     emptyFunctions: boolean;
     emptyFooter: boolean;
-    static get styles(): import("lit").CSSResult[];
+    static get styles(): import("lit").CSSResultGroup[];
     render(): import("lit-html").TemplateResult<1>;
     attributeChangedCallback(name: string, oldval: string, newval: string): void;
 }

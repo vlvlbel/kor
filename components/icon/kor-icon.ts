@@ -8,6 +8,7 @@ import { sharedStyles } from '../../shared-styles';
  * @prop {String} color -	If set, replaces the text label with a custom icon.
  * @prop {Boolean} button - If set to true, updates hover, click effects and cursors.
  * @prop {Boolean} disabled -	If set to true, disables mouse clicks and the style gets updated.
+ * @prop {Boolean} framed - If set to true, the icon is shown within a rounded square frame.
  */
 
 export class korIcon extends LitElement {
@@ -16,6 +17,7 @@ export class korIcon extends LitElement {
   @property({ type: String, reflect: true }) size: 's' | 'm' | 'l' | 'xl' = 'm';
   @property({ type: Boolean, reflect: true }) button: boolean | undefined;
   @property({ type: Boolean, reflect: true }) disabled: boolean | undefined;
+  @property({ type: Boolean, reflect: true }) framed: boolean | undefined;
 
   static get styles() {
     return [
@@ -69,10 +71,23 @@ export class korIcon extends LitElement {
           width: 16px;
           font-size: 16px;
         }
+        /* frame */
+        :host([framed]) {
+          box-sizing: content-box;
+          padding: var(--spacing-xs);
+          border: 1px solid rgba(var(--neutral-1), 0.1);
+          border-radius: var(--border-radius);
+          background-color: rgba(var(--neutral-1), 0.05);
+          opacity: 0.9;
+        }
         /* hover inputs */
         @media (hover: hover) {
           :host([button]:hover:not(:active)) {
             opacity: 0.9;
+          }
+          :host([framed][button]:hover:not(:active)) {
+            border-color: rgba(var(--neutral-1), 0.2);
+            background-color: rgba(var(--neutral-1), 0.1);
           }
         }
       `,
