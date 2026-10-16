@@ -9,6 +9,7 @@ import '../text';
  * @prop {String} icon - If set, defines the icon shown besides the label.
  * @prop {Boolean} button - If set to true, hover and click effects will be added.
  * @prop {Boolean} removable - If set to true, a close icon is displayed. Clicking on it dispatches a remove event.
+ * @prop {Boolean} ellipsis - If set to true, the label is kept in one line and is cut with an ellipsis, when the tag is shrunk.
  *
  * @fires remove - Dispatched when clicking on the close icon (removable only).
  */
@@ -18,6 +19,7 @@ export class korTag extends LitElement {
   @property({ type: String, reflect: true }) icon: string | undefined;
   @property({ type: Boolean, reflect: true }) button: boolean | undefined;
   @property({ type: Boolean, reflect: true }) removable: boolean | undefined;
+  @property({ type: Boolean, reflect: true }) ellipsis: boolean | undefined;
 
   static get styles() {
     return [
@@ -35,6 +37,16 @@ export class korTag extends LitElement {
         }
         .label {
           margin: 0 var(--spacing-xs);
+        }
+        /* ellipsis */
+        :host([ellipsis]) {
+          min-width: 0;
+        }
+        :host([ellipsis]) .label {
+          min-width: 0;
+          white-space: nowrap;
+          overflow: hidden;
+          text-overflow: ellipsis;
         }
         /* button */
         :host([button]) {

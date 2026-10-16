@@ -2729,6 +2729,16 @@
         .label {
           margin: 0 var(--spacing-xs);
         }
+        /* ellipsis */
+        :host([ellipsis]) {
+          min-width: 0;
+        }
+        :host([ellipsis]) .label {
+          min-width: 0;
+          white-space: nowrap;
+          overflow: hidden;
+          text-overflow: ellipsis;
+        }
         /* button */
         :host([button]) {
           cursor: pointer;
@@ -2753,7 +2763,7 @@
               @click="${()=>this.handleRemove()}"
             ></kor-icon>
           `:""}
-    `}attributeChangedCallback(r,c,p){super.attributeChangedCallback(r,c,p),this.dispatchEvent(new Event(`${r}-changed`))}handleRemove(){this.dispatchEvent(new Event("remove"))}}kor_tag_decorate([(0,h.MZ)({type:String,reflect:!0})],korTag.prototype,"label",void 0),kor_tag_decorate([(0,h.MZ)({type:String,reflect:!0})],korTag.prototype,"icon",void 0),kor_tag_decorate([(0,h.MZ)({type:Boolean,reflect:!0})],korTag.prototype,"button",void 0),kor_tag_decorate([(0,h.MZ)({type:Boolean,reflect:!0})],korTag.prototype,"removable",void 0),window.customElements.get("kor-tag")||window.customElements.define("kor-tag",korTag);__webpack_require__(9574);var kor_textarea_decorate=function(r,c,p,h){var g,f=arguments.length,b=f<3?c:null===h?h=Object.getOwnPropertyDescriptor(c,p):h;if("object"==typeof Reflect&&"function"==typeof Reflect.decorate)b=Reflect.decorate(r,c,p,h);else for(var y=r.length-1;y>=0;y--)(g=r[y])&&(b=(f<3?g(b):f>3?g(c,p,b):g(c,p))||b);return f>3&&b&&Object.defineProperty(c,p,b),b};class korTextarea extends p.WF{static get styles(){return[g.g,p.AH`
+    `}attributeChangedCallback(r,c,p){super.attributeChangedCallback(r,c,p),this.dispatchEvent(new Event(`${r}-changed`))}handleRemove(){this.dispatchEvent(new Event("remove"))}}kor_tag_decorate([(0,h.MZ)({type:String,reflect:!0})],korTag.prototype,"label",void 0),kor_tag_decorate([(0,h.MZ)({type:String,reflect:!0})],korTag.prototype,"icon",void 0),kor_tag_decorate([(0,h.MZ)({type:Boolean,reflect:!0})],korTag.prototype,"button",void 0),kor_tag_decorate([(0,h.MZ)({type:Boolean,reflect:!0})],korTag.prototype,"removable",void 0),kor_tag_decorate([(0,h.MZ)({type:Boolean,reflect:!0})],korTag.prototype,"ellipsis",void 0),window.customElements.get("kor-tag")||window.customElements.define("kor-tag",korTag);__webpack_require__(9574);var kor_textarea_decorate=function(r,c,p,h){var g,f=arguments.length,b=f<3?c:null===h?h=Object.getOwnPropertyDescriptor(c,p):h;if("object"==typeof Reflect&&"function"==typeof Reflect.decorate)b=Reflect.decorate(r,c,p,h);else for(var y=r.length-1;y>=0;y--)(g=r[y])&&(b=(f<3?g(b):f>3?g(c,p,b):g(c,p))||b);return f>3&&b&&Object.defineProperty(c,p,b),b};class korTextarea extends p.WF{static get styles(){return[g.g,p.AH`
         :host {
           display: flex;
           align-items: center;

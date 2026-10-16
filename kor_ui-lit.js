@@ -2729,6 +2729,16 @@ import{LitElement as e,css as r,html as s}from"lit";const i=(e,r)=>"method"===r.
         .label {
           margin: 0 var(--spacing-xs);
         }
+        /* ellipsis */
+        :host([ellipsis]) {
+          min-width: 0;
+        }
+        :host([ellipsis]) .label {
+          min-width: 0;
+          white-space: nowrap;
+          overflow: hidden;
+          text-overflow: ellipsis;
+        }
         /* button */
         :host([button]) {
           cursor: pointer;
@@ -2753,7 +2763,7 @@ import{LitElement as e,css as r,html as s}from"lit";const i=(e,r)=>"method"===r.
               @click="${()=>this.handleRemove()}"
             ></kor-icon>
           `:""}
-    `}attributeChangedCallback(e,r,s){super.attributeChangedCallback(e,r,s),this.dispatchEvent(new Event(`${e}-changed`))}handleRemove(){this.dispatchEvent(new Event("remove"))}}kor_tag_decorate([n({type:String,reflect:!0})],korTag.prototype,"label",void 0),kor_tag_decorate([n({type:String,reflect:!0})],korTag.prototype,"icon",void 0),kor_tag_decorate([n({type:Boolean,reflect:!0})],korTag.prototype,"button",void 0),kor_tag_decorate([n({type:Boolean,reflect:!0})],korTag.prototype,"removable",void 0),window.customElements.get("kor-tag")||window.customElements.define("kor-tag",korTag);var kor_textarea_decorate=function(e,r,s,a){var l,c=arguments.length,p=c<3?r:null===a?a=Object.getOwnPropertyDescriptor(r,s):a;if("object"==typeof Reflect&&"function"==typeof Reflect.decorate)p=Reflect.decorate(e,r,s,a);else for(var h=e.length-1;h>=0;h--)(l=e[h])&&(p=(c<3?l(p):c>3?l(r,s,p):l(r,s))||p);return c>3&&p&&Object.defineProperty(r,s,p),p};class korTextarea extends e{static get styles(){return[l,r`
+    `}attributeChangedCallback(e,r,s){super.attributeChangedCallback(e,r,s),this.dispatchEvent(new Event(`${e}-changed`))}handleRemove(){this.dispatchEvent(new Event("remove"))}}kor_tag_decorate([n({type:String,reflect:!0})],korTag.prototype,"label",void 0),kor_tag_decorate([n({type:String,reflect:!0})],korTag.prototype,"icon",void 0),kor_tag_decorate([n({type:Boolean,reflect:!0})],korTag.prototype,"button",void 0),kor_tag_decorate([n({type:Boolean,reflect:!0})],korTag.prototype,"removable",void 0),kor_tag_decorate([n({type:Boolean,reflect:!0})],korTag.prototype,"ellipsis",void 0),window.customElements.get("kor-tag")||window.customElements.define("kor-tag",korTag);var kor_textarea_decorate=function(e,r,s,a){var l,c=arguments.length,p=c<3?r:null===a?a=Object.getOwnPropertyDescriptor(r,s):a;if("object"==typeof Reflect&&"function"==typeof Reflect.decorate)p=Reflect.decorate(e,r,s,a);else for(var h=e.length-1;h>=0;h--)(l=e[h])&&(p=(c<3?l(p):c>3?l(r,s,p):l(r,s))||p);return c>3&&p&&Object.defineProperty(r,s,p),p};class korTextarea extends e{static get styles(){return[l,r`
         :host {
           display: flex;
           align-items: center;
