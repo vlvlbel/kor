@@ -6,6 +6,7 @@ import { LitElement } from 'lit';
  * @prop {Boolean} button - If set to true, updates hover, click effects and cursors.
  * @prop {Boolean} disabled -	If set to true, disables mouse clicks and the style gets updated.
  * @prop {Boolean} framed - If set to true, the icon is shown within a rounded square frame.
+ * @prop {Boolean} tinted - If set to true, the icon set as url('') is used as a mask filled with the current text color, so it gets the same color as the text around it.
  */
 export declare class korIcon extends LitElement {
     icon: string | undefined;
@@ -14,8 +15,13 @@ export declare class korIcon extends LitElement {
     button: boolean | undefined;
     disabled: boolean | undefined;
     framed: boolean | undefined;
-    static get styles(): import("lit").CSSResultGroup[];
+    tinted: boolean | undefined;
+    static get styles(): import("lit").CSSResult[];
     render(): import("lit-html").TemplateResult<1>;
     attributeChangedCallback(name: string, oldval: string, newval: string): void;
-    private setBackgroundImage;
+    /**
+     * Shows the icon set as url('') either as the background image
+     * or as the mask filled with the current text color, if it is tinted
+     */
+    private setImage;
 }

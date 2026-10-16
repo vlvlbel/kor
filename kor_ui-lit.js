@@ -1,4 +1,4 @@
-import{LitElement as t,css as e,html as n}from"lit";const i=(t,e)=>"method"===e.kind&&e.descriptor&&!("value"in e.descriptor)?{...e,finisher(n){n.createProperty(e.key,t)}}:{kind:"field",key:Symbol(),placement:"own",descriptor:{},originalKey:e.key,initializer(){"function"==typeof e.initializer&&(this[e.key]=e.initializer.call(this))},finisher(n){n.createProperty(e.key,t)}};function property_e(t){return(e,n)=>void 0!==n?((t,e,n)=>{e.constructor.createProperty(n,t)})(t,e,n):i(t,e)}function r(t){return property_e({...t,state:!0,attribute:!1})}const base_o=({finisher:t,descriptor:e})=>(n,s)=>{var l;if(void 0===s){const s=null!==(l=n.originalKey)&&void 0!==l?l:n.key,p=null!=e?{kind:"method",placement:"prototype",key:s,descriptor:e(n.key)}:{...n,key:s};return null!=t&&(p.finisher=function(e){t(e,s)}),p}{const l=n.constructor;void 0!==e&&Object.defineProperty(n,s,e(s)),null==t||t(l,s)}};const s=Element.prototype;s.msMatchesSelector||s.webkitMatchesSelector;const l=e`
+import{LitElement as e,css as r,html as s}from"lit";const i=(e,r)=>"method"===r.kind&&r.descriptor&&!("value"in r.descriptor)?{...r,finisher(s){s.createProperty(r.key,e)}}:{kind:"field",key:Symbol(),placement:"own",descriptor:{},originalKey:r.key,initializer(){"function"==typeof r.initializer&&(this[r.key]=r.initializer.call(this))},finisher(s){s.createProperty(r.key,e)}};function n(e){return(r,s)=>void 0!==s?((e,r,s)=>{r.constructor.createProperty(s,e)})(e,r,s):i(e,r)}function t(e){return n({...e,state:!0})}const o=({finisher:e,descriptor:r})=>(s,a)=>{var l;if(void 0===a){const a=null!==(l=s.originalKey)&&void 0!==l?l:s.key,c=null!=r?{kind:"method",placement:"prototype",key:a,descriptor:r(s.key)}:{...s,key:a};return null!=e&&(c.finisher=function(r){e(r,a)}),c}{const l=s.constructor;void 0!==r&&Object.defineProperty(s,a,r(a)),null==e||e(l,a)}};var a;null===(a=window.HTMLSlotElement)||void 0===a||a.prototype.assignedElements;const l=r`
   /* scrollbar */
   *::-webkit-scrollbar {
     width: 8px;
@@ -18,7 +18,7 @@ import{LitElement as t,css as e,html as n}from"lit";const i=(t,e)=>"method"===e.
   *::-webkit-scrollbar-thumb:hover {
     background-color: rgba(var(--neutral-1), 0.2);
   }
-`;var __decorate=function(t,e,n,s){var l,p=arguments.length,h=p<3?e:null===s?s=Object.getOwnPropertyDescriptor(e,n):s;if("object"==typeof Reflect&&"function"==typeof Reflect.decorate)h=Reflect.decorate(t,e,n,s);else for(var g=t.length-1;g>=0;g--)(l=t[g])&&(h=(p<3?l(h):p>3?l(e,n,h):l(e,n))||h);return p>3&&h&&Object.defineProperty(e,n,h),h};class korIcon extends t{constructor(){super(...arguments),this.size="m"}static get styles(){return[l,e`
+`;var __decorate=function(e,r,s,a){var l,c=arguments.length,p=c<3?r:null===a?a=Object.getOwnPropertyDescriptor(r,s):a;if("object"==typeof Reflect&&"function"==typeof Reflect.decorate)p=Reflect.decorate(e,r,s,a);else for(var h=e.length-1;h>=0;h--)(l=e[h])&&(p=(c<3?l(p):c>3?l(r,s,p):l(r,s))||p);return c>3&&p&&Object.defineProperty(r,s,p),p};class korIcon extends e{constructor(){super(...arguments),this.size="m"}static get styles(){return[l,r`
         :host {
           font-family: 'md-icons';
           line-height: 1;
@@ -67,6 +67,16 @@ import{LitElement as t,css as e,html as n}from"lit";const i=(t,e)=>"method"===e.
           width: 16px;
           font-size: 16px;
         }
+        /* tinted url('') icon */
+        :host([tinted]) {
+          background-color: currentColor;
+          -webkit-mask-repeat: no-repeat;
+          mask-repeat: no-repeat;
+          -webkit-mask-position: center;
+          mask-position: center;
+          -webkit-mask-size: contain;
+          mask-size: contain;
+        }
         /* frame */
         :host([framed]) {
           box-sizing: content-box;
@@ -86,7 +96,7 @@ import{LitElement as t,css as e,html as n}from"lit";const i=(t,e)=>"method"===e.
             background-color: rgba(var(--neutral-1), 0.1);
           }
         }
-      `]}render(){var t;return n` ${(null===(t=this.icon)||void 0===t?void 0:t.indexOf("url"))?n` ${this.icon} `:""}`}attributeChangedCallback(t,e,n){super.attributeChangedCallback(t,e,n),this.dispatchEvent(new Event(t+"-changed")),"color"==t&&this.color?this.style.color=this.color:"icon"==t&&n.indexOf("url")>-1&&this.setBackgroundImage(n)}setBackgroundImage(t){this.style.backgroundImage=t}}__decorate([property_e({type:String,reflect:!0})],korIcon.prototype,"icon",void 0),__decorate([property_e({type:String,reflect:!0})],korIcon.prototype,"color",void 0),__decorate([property_e({type:String,reflect:!0})],korIcon.prototype,"size",void 0),__decorate([property_e({type:Boolean,reflect:!0})],korIcon.prototype,"button",void 0),__decorate([property_e({type:Boolean,reflect:!0})],korIcon.prototype,"disabled",void 0),__decorate([property_e({type:Boolean,reflect:!0})],korIcon.prototype,"framed",void 0),window.customElements.get("kor-icon")||window.customElements.define("kor-icon",korIcon);var kor_card_decorate=function(t,e,n,s){var l,p=arguments.length,h=p<3?e:null===s?s=Object.getOwnPropertyDescriptor(e,n):s;if("object"==typeof Reflect&&"function"==typeof Reflect.decorate)h=Reflect.decorate(t,e,n,s);else for(var g=t.length-1;g>=0;g--)(l=t[g])&&(h=(p<3?l(h):p>3?l(e,n,h):l(e,n))||h);return p>3&&h&&Object.defineProperty(e,n,h),h};class korCard extends t{constructor(){super(...arguments),this.flexDirection="column",this.emptyHeader=!0,this.emptyFunctions=!0,this.emptyFooter=!0}static get styles(){return[l,e`
+      `]}render(){var e;return s` ${(null===(e=this.icon)||void 0===e?void 0:e.indexOf("url"))?s` ${this.icon} `:""}`}attributeChangedCallback(e,r,s){super.attributeChangedCallback(e,r,s),this.dispatchEvent(new Event(`${e}-changed`)),"color"==e&&this.color?this.style.color=this.color:"icon"!=e&&"tinted"!=e||this.setImage()}setImage(){const e=this.icon&&this.icon.indexOf("url")>-1?this.icon:"";this.style.backgroundImage=e&&!this.tinted?e:"",this.style.webkitMaskImage=e&&this.tinted?e:"",this.style.maskImage=e&&this.tinted?e:""}}__decorate([n({type:String,reflect:!0})],korIcon.prototype,"icon",void 0),__decorate([n({type:String,reflect:!0})],korIcon.prototype,"color",void 0),__decorate([n({type:String,reflect:!0})],korIcon.prototype,"size",void 0),__decorate([n({type:Boolean,reflect:!0})],korIcon.prototype,"button",void 0),__decorate([n({type:Boolean,reflect:!0})],korIcon.prototype,"disabled",void 0),__decorate([n({type:Boolean,reflect:!0})],korIcon.prototype,"framed",void 0),__decorate([n({type:Boolean,reflect:!0})],korIcon.prototype,"tinted",void 0),window.customElements.get("kor-icon")||window.customElements.define("kor-icon",korIcon);var kor_card_decorate=function(e,r,s,a){var l,c=arguments.length,p=c<3?r:null===a?a=Object.getOwnPropertyDescriptor(r,s):a;if("object"==typeof Reflect&&"function"==typeof Reflect.decorate)p=Reflect.decorate(e,r,s,a);else for(var h=e.length-1;h>=0;h--)(l=e[h])&&(p=(c<3?l(p):c>3?l(r,s,p):l(r,s))||p);return c>3&&p&&Object.defineProperty(r,s,p),p};class korCard extends e{constructor(){super(...arguments),this.flexDirection="column",this.emptyHeader=!0,this.emptyFunctions=!0,this.emptyFooter=!0}static get styles(){return[l,r`
         :host {
           display: flex;
           flex-direction: column;
@@ -178,37 +188,37 @@ import{LitElement as t,css as e,html as n}from"lit";const i=(t,e)=>"method"===e.
           margin: calc(var(--spacing-l) * -1) calc(var(--spacing-l) * -1)
             var(--spacing-l) calc(var(--spacing-l) * -1);
         }
-      `]}render(){return n`
-      ${this.image?n` <img class="image" src="${this.image}" /> `:""}
+      `]}render(){return s`
+      ${this.image?s` <img class="image" src="${this.image}" /> `:""}
       <div
         class="top ${this.emptyHeader&&this.emptyFunctions&&!this.label&&!this.icon?"empty":""}"
       >
         <div class="header">
-          ${this.label||this.icon?n`
+          ${this.label||this.icon?s`
                 <div class="label">
-                  ${this.icon?n` <kor-icon icon="${this.icon}"></kor-icon> `:""}
+                  ${this.icon?s` <kor-icon icon="${this.icon}"></kor-icon> `:""}
                   <p>${this.label}</p>
                 </div>
-                ${this.emptyHeader||!this.label&&!this.icon?"":n` <div style="margin-top: var(--spacing-l)"></div> `}
+                ${this.emptyHeader||!this.label&&!this.icon?"":s` <div style="margin-top: var(--spacing-l)"></div> `}
               `:""}
           <slot
             name="header"
-            @slotchange="${t=>this.emptyHeader=0===t.target.assignedNodes().length}"
+            @slotchange="${e=>this.emptyHeader=0===e.target.assignedNodes().length}"
             class="${this.emptyHeader?"empty":""}"
           ></slot>
         </div>
         <slot
           name="functions"
-          @slotchange="${t=>this.emptyFunctions=0===t.target.assignedNodes().length}"
+          @slotchange="${e=>this.emptyFunctions=0===e.target.assignedNodes().length}"
         ></slot>
       </div>
       <slot></slot>
       <slot
         name="footer"
-        @slotchange="${t=>this.emptyFooter=0===t.target.assignedNodes().length}"
+        @slotchange="${e=>this.emptyFooter=0===e.target.assignedNodes().length}"
         class="${this.emptyFooter?"empty":""}"
       ></slot>
-    `}attributeChangedCallback(t,e,n){super.attributeChangedCallback(t,e,n),this.dispatchEvent(new Event(t+"-changed"))}}kor_card_decorate([property_e({type:String,reflect:!0})],korCard.prototype,"label",void 0),kor_card_decorate([property_e({type:String,reflect:!0})],korCard.prototype,"icon",void 0),kor_card_decorate([property_e({type:String,reflect:!0})],korCard.prototype,"image",void 0),kor_card_decorate([property_e({type:String,reflect:!0,attribute:"flex-direction"})],korCard.prototype,"flexDirection",void 0),kor_card_decorate([property_e({type:Boolean,reflect:!0})],korCard.prototype,"flat",void 0),kor_card_decorate([r()],korCard.prototype,"emptyHeader",void 0),kor_card_decorate([r()],korCard.prototype,"emptyFunctions",void 0),kor_card_decorate([r()],korCard.prototype,"emptyFooter",void 0),window.customElements.get("kor-card")||window.customElements.define("kor-card",korCard);var kor_accordion_decorate=function(t,e,n,s){var l,p=arguments.length,h=p<3?e:null===s?s=Object.getOwnPropertyDescriptor(e,n):s;if("object"==typeof Reflect&&"function"==typeof Reflect.decorate)h=Reflect.decorate(t,e,n,s);else for(var g=t.length-1;g>=0;g--)(l=t[g])&&(h=(p<3?l(h):p>3?l(e,n,h):l(e,n))||h);return p>3&&h&&Object.defineProperty(e,n,h),h};class korAccordion extends t{constructor(){super(...arguments),this.label="Label",this.emptyHeader=!0,this.emptyFunctions=!0,this.emptyBody=!0,this.emptyFooter=!0}static get styles(){return[l,e`
+    `}attributeChangedCallback(e,r,s){super.attributeChangedCallback(e,r,s),this.dispatchEvent(new Event(`${e}-changed`))}}kor_card_decorate([n({type:String,reflect:!0})],korCard.prototype,"label",void 0),kor_card_decorate([n({type:String,reflect:!0})],korCard.prototype,"icon",void 0),kor_card_decorate([n({type:String,reflect:!0})],korCard.prototype,"image",void 0),kor_card_decorate([n({type:String,reflect:!0,attribute:"flex-direction"})],korCard.prototype,"flexDirection",void 0),kor_card_decorate([n({type:Boolean,reflect:!0})],korCard.prototype,"flat",void 0),kor_card_decorate([t()],korCard.prototype,"emptyHeader",void 0),kor_card_decorate([t()],korCard.prototype,"emptyFunctions",void 0),kor_card_decorate([t()],korCard.prototype,"emptyFooter",void 0),window.customElements.get("kor-card")||window.customElements.define("kor-card",korCard);var kor_accordion_decorate=function(e,r,s,a){var l,c=arguments.length,p=c<3?r:null===a?a=Object.getOwnPropertyDescriptor(r,s):a;if("object"==typeof Reflect&&"function"==typeof Reflect.decorate)p=Reflect.decorate(e,r,s,a);else for(var h=e.length-1;h>=0;h--)(l=e[h])&&(p=(c<3?l(p):c>3?l(r,s,p):l(r,s))||p);return c>3&&p&&Object.defineProperty(r,s,p),p};class korAccordion extends e{constructor(){super(...arguments),this.label="Label",this.emptyHeader=!0,this.emptyFunctions=!0,this.emptyBody=!0,this.emptyFooter=!0}static get styles(){return[l,r`
         :host {
           /* css properties */
           --body-gap: var(--spacing-m);
@@ -272,17 +282,17 @@ import{LitElement as t,css as e,html as n}from"lit";const i=(t,e)=>"method"===e.
         :host([disabled]) kor-card {
           pointer-events: none;
         }
-      `]}render(){return n`
+      `]}render(){return s`
       <kor-card
         @click="${()=>this.expanded?"":this.expanded=!0}"
       >
         <slot
           name="header"
           slot="header"
-          @click="${t=>this.handleCollapse(t)}"
+          @click="${e=>this.handleCollapse(e)}"
         >
           <div class="header">
-            ${this.icon?n` <kor-icon class="icon" icon="${this.icon}"></kor-icon> `:""}
+            ${this.icon?s` <kor-icon class="icon" icon="${this.icon}"></kor-icon> `:""}
             <p>${this.label}</p>
             <kor-icon
               button
@@ -293,15 +303,15 @@ import{LitElement as t,css as e,html as n}from"lit";const i=(t,e)=>"method"===e.
         </slot>
         <slot name="functions" slot="functions"></slot>
         <slot></slot>
-        ${this.expanded?n`
+        ${this.expanded?s`
               <slot
                 name="footer"
                 slot="${this.emptyFooter?"hidden":"footer"}"
-                @slotchange="${t=>this.emptyFooter=0===t.target.assignedNodes().length}"
+                @slotchange="${e=>this.emptyFooter=0===e.target.assignedNodes().length}"
               ></slot>
             `:""}
       </kor-card>
-    `}attributeChangedCallback(t,e,n){super.attributeChangedCallback(t,e,n),this.dispatchEvent(new Event(t+"-changed"))}connectedCallback(){super.connectedCallback(),setTimeout(()=>{var t,e,n;const s=null===(n=null===(e=null===(t=this.shadowRoot)||void 0===t?void 0:t.querySelector("kor-card"))||void 0===e?void 0:e.shadowRoot)||void 0===n?void 0:n.querySelector(".top");s&&(s.style.padding="0")},0)}handleCollapse(t){this.expanded&&(this.expanded=!1,t.stopPropagation())}}kor_accordion_decorate([property_e({type:String,reflect:!0})],korAccordion.prototype,"label",void 0),kor_accordion_decorate([property_e({type:String,reflect:!0})],korAccordion.prototype,"icon",void 0),kor_accordion_decorate([property_e({type:Boolean,reflect:!0})],korAccordion.prototype,"expanded",void 0),kor_accordion_decorate([property_e({type:Boolean,reflect:!0})],korAccordion.prototype,"disabled",void 0),kor_accordion_decorate([r()],korAccordion.prototype,"emptyHeader",void 0),kor_accordion_decorate([r()],korAccordion.prototype,"emptyFunctions",void 0),kor_accordion_decorate([r()],korAccordion.prototype,"emptyBody",void 0),kor_accordion_decorate([r()],korAccordion.prototype,"emptyFooter",void 0),window.customElements.get("kor-accordion")||window.customElements.define("kor-accordion",korAccordion);var kor_app_bar_decorate=function(t,e,n,s){var l,p=arguments.length,h=p<3?e:null===s?s=Object.getOwnPropertyDescriptor(e,n):s;if("object"==typeof Reflect&&"function"==typeof Reflect.decorate)h=Reflect.decorate(t,e,n,s);else for(var g=t.length-1;g>=0;g--)(l=t[g])&&(h=(p<3?l(h):p>3?l(e,n,h):l(e,n))||h);return p>3&&h&&Object.defineProperty(e,n,h),h};class korAppBar extends t{static get styles(){return[l,e`
+    `}attributeChangedCallback(e,r,s){super.attributeChangedCallback(e,r,s),this.dispatchEvent(new Event(`${e}-changed`))}connectedCallback(){super.connectedCallback(),setTimeout(()=>{var e,r,s;const a=null===(s=null===(r=null===(e=this.shadowRoot)||void 0===e?void 0:e.querySelector("kor-card"))||void 0===r?void 0:r.shadowRoot)||void 0===s?void 0:s.querySelector(".top");a&&(a.style.padding="0")},0)}handleCollapse(e){this.expanded&&(this.expanded=!1,e.stopPropagation())}}kor_accordion_decorate([n({type:String,reflect:!0})],korAccordion.prototype,"label",void 0),kor_accordion_decorate([n({type:String,reflect:!0})],korAccordion.prototype,"icon",void 0),kor_accordion_decorate([n({type:Boolean,reflect:!0})],korAccordion.prototype,"expanded",void 0),kor_accordion_decorate([n({type:Boolean,reflect:!0})],korAccordion.prototype,"disabled",void 0),kor_accordion_decorate([t()],korAccordion.prototype,"emptyHeader",void 0),kor_accordion_decorate([t()],korAccordion.prototype,"emptyFunctions",void 0),kor_accordion_decorate([t()],korAccordion.prototype,"emptyBody",void 0),kor_accordion_decorate([t()],korAccordion.prototype,"emptyFooter",void 0),window.customElements.get("kor-accordion")||window.customElements.define("kor-accordion",korAccordion);var kor_app_bar_decorate=function(e,r,s,a){var l,c=arguments.length,p=c<3?r:null===a?a=Object.getOwnPropertyDescriptor(r,s):a;if("object"==typeof Reflect&&"function"==typeof Reflect.decorate)p=Reflect.decorate(e,r,s,a);else for(var h=e.length-1;h>=0;h--)(l=e[h])&&(p=(c<3?l(p):c>3?l(r,s,p):l(r,s))||p);return c>3&&p&&Object.defineProperty(r,s,p),p};class korAppBar extends e{static get styles(){return[l,r`
         :host {
           z-index: 3;
           height: calc(24px + var(--spacing-l) * 2);
@@ -357,24 +367,24 @@ import{LitElement as t,css as e,html as n}from"lit";const i=(t,e)=>"method"===e.
         slot[name='right'] {
           margin-left: auto;
         }
-      `]}render(){return n`
-      ${this.mobile?n`
+      `]}render(){return s`
+      ${this.mobile?s`
             <slot name="left"></slot>
-            ${this.label?n` <div class="label">${this.label}</div> `:""}
+            ${this.label?s` <div class="label">${this.label}</div> `:""}
             <slot name="right"></slot>
-          `:n`
-            ${this.logo?n`
+          `:s`
+            ${this.logo?s`
                   <img
                     class="logo"
                     src="${this.logo}"
                     @click="${()=>this.handleLogoClick()}"
                   />
                 `:""}
-            ${this.label?n` <div class="label">${this.label}</div> `:""}
+            ${this.label?s` <div class="label">${this.label}</div> `:""}
             <slot></slot>
             <slot name="functions"></slot>
           `}
-    `}attributeChangedCallback(t,e,n){super.attributeChangedCallback(t,e,n),this.dispatchEvent(new Event(t+"-changed"))}handleLogoClick(){this.dispatchEvent(new Event("logo-clicked"))}}kor_app_bar_decorate([property_e({type:String,reflect:!0})],korAppBar.prototype,"label",void 0),kor_app_bar_decorate([property_e({type:String,reflect:!0})],korAppBar.prototype,"logo",void 0),kor_app_bar_decorate([property_e({type:Boolean,reflect:!0})],korAppBar.prototype,"mobile",void 0),window.customElements.get("kor-app-bar")||window.customElements.define("kor-app-bar",korAppBar);var kor_text_decorate=function(t,e,n,s){var l,p=arguments.length,h=p<3?e:null===s?s=Object.getOwnPropertyDescriptor(e,n):s;if("object"==typeof Reflect&&"function"==typeof Reflect.decorate)h=Reflect.decorate(t,e,n,s);else for(var g=t.length-1;g>=0;g--)(l=t[g])&&(h=(p<3?l(h):p>3?l(e,n,h):l(e,n))||h);return p>3&&h&&Object.defineProperty(e,n,h),h};class korText extends t{constructor(){super(...arguments),this.size="body-1"}static get styles(){return[l,e`
+    `}attributeChangedCallback(e,r,s){super.attributeChangedCallback(e,r,s),this.dispatchEvent(new Event(`${e}-changed`))}handleLogoClick(){this.dispatchEvent(new Event("logo-clicked"))}}kor_app_bar_decorate([n({type:String,reflect:!0})],korAppBar.prototype,"label",void 0),kor_app_bar_decorate([n({type:String,reflect:!0})],korAppBar.prototype,"logo",void 0),kor_app_bar_decorate([n({type:Boolean,reflect:!0})],korAppBar.prototype,"mobile",void 0),window.customElements.get("kor-app-bar")||window.customElements.define("kor-app-bar",korAppBar);var kor_text_decorate=function(e,r,s,a){var l,c=arguments.length,p=c<3?r:null===a?a=Object.getOwnPropertyDescriptor(r,s):a;if("object"==typeof Reflect&&"function"==typeof Reflect.decorate)p=Reflect.decorate(e,r,s,a);else for(var h=e.length-1;h>=0;h--)(l=e[h])&&(p=(c<3?l(p):c>3?l(r,s,p):l(r,s))||p);return c>3&&p&&Object.defineProperty(r,s,p),p};class korText extends e{constructor(){super(...arguments),this.size="body-1"}static get styles(){return[l,r`
         :host {
           color: var(--text-1);
           transition: var(--transition-1);
@@ -391,7 +401,7 @@ import{LitElement as t,css as e,html as n}from"lit";const i=(t,e)=>"method"===e.
         :host([size='header-2']) {
           font: var(--header-2);
         }
-      `]}render(){return n`<slot></slot>`}attributeChangedCallback(t,e,n){super.attributeChangedCallback(t,e,n),this.dispatchEvent(new Event(t+"-changed")),"color"==t&&this.color&&(this.style.color=this.color)}}kor_text_decorate([property_e({type:String,reflect:!0})],korText.prototype,"size",void 0),kor_text_decorate([property_e({type:String,reflect:!0})],korText.prototype,"color",void 0),window.customElements.get("kor-text")||window.customElements.define("kor-text",korText);var kor_avatar_decorate=function(t,e,n,s){var l,p=arguments.length,h=p<3?e:null===s?s=Object.getOwnPropertyDescriptor(e,n):s;if("object"==typeof Reflect&&"function"==typeof Reflect.decorate)h=Reflect.decorate(t,e,n,s);else for(var g=t.length-1;g>=0;g--)(l=t[g])&&(h=(p<3?l(h):p>3?l(e,n,h):l(e,n))||h);return p>3&&h&&Object.defineProperty(e,n,h),h};class korAvatar extends t{static get styles(){return[l,e`
+      `]}render(){return s`<slot></slot>`}attributeChangedCallback(e,r,s){super.attributeChangedCallback(e,r,s),this.dispatchEvent(new Event(`${e}-changed`)),"color"==e&&this.color&&(this.style.color=this.color)}}kor_text_decorate([n({type:String,reflect:!0})],korText.prototype,"size",void 0),kor_text_decorate([n({type:String,reflect:!0})],korText.prototype,"color",void 0),window.customElements.get("kor-text")||window.customElements.define("kor-text",korText);var kor_avatar_decorate=function(e,r,s,a){var l,c=arguments.length,p=c<3?r:null===a?a=Object.getOwnPropertyDescriptor(r,s):a;if("object"==typeof Reflect&&"function"==typeof Reflect.decorate)p=Reflect.decorate(e,r,s,a);else for(var h=e.length-1;h>=0;h--)(l=e[h])&&(p=(c<3?l(p):c>3?l(r,s,p):l(r,s))||p);return c>3&&p&&Object.defineProperty(r,s,p),p};class korAvatar extends e{static get styles(){return[l,r`
         :host,
         .image {
           display: flex;
@@ -437,20 +447,20 @@ import{LitElement as t,css as e,html as n}from"lit";const i=(t,e)=>"method"===e.
           height: 24px;
           width: 24px;
         }
-      `]}render(){return n`
+      `]}render(){return s`
       <!-- image -->
       <div class="image">
-        ${this.image?n` <img src="${this.image}" /> `:n`
-              ${this.label?n` ${this.getInitials(this.label)} `:n` <kor-icon icon="person"></kor-icon> `}
+        ${this.image?s` <img src="${this.image}" /> `:s`
+              ${this.label?s` ${this.getInitials(this.label)} `:s` <kor-icon icon="person"></kor-icon> `}
             `}
       </div>
       <!-- text -->
-      ${this.label||this.info?n`
+      ${this.label||this.info?s`
             <div class="text">
-              ${this.label?n`<kor-text size="body-2" class="label"
+              ${this.label?s`<kor-text size="body-2" class="label"
                     >${this.label}</kor-text
                   >`:""}
-              ${this.info?n`<kor-text
+              ${this.info?s`<kor-text
                     size="body-2"
                     class="info"
                     color="var(--text-2)"
@@ -458,7 +468,7 @@ import{LitElement as t,css as e,html as n}from"lit";const i=(t,e)=>"method"===e.
                   >`:""}
             </div>
           `:""}
-    `}attributeChangedCallback(t,e,n){super.attributeChangedCallback(t,e,n),this.dispatchEvent(new Event(t+"-changed"))}getInitials(t){const e=t.match(/\b\w/g)||[];return(e.shift()||"")+(e.pop()||"").toUpperCase()}}kor_avatar_decorate([property_e({type:String,reflect:!0})],korAvatar.prototype,"label",void 0),kor_avatar_decorate([property_e({type:String,reflect:!0})],korAvatar.prototype,"info",void 0),kor_avatar_decorate([property_e({type:String,reflect:!0})],korAvatar.prototype,"image",void 0),kor_avatar_decorate([property_e({type:Boolean,reflect:!0})],korAvatar.prototype,"condensed",void 0),window.customElements.get("kor-avatar")||window.customElements.define("kor-avatar",korAvatar);var kor_badge_decorate=function(t,e,n,s){var l,p=arguments.length,h=p<3?e:null===s?s=Object.getOwnPropertyDescriptor(e,n):s;if("object"==typeof Reflect&&"function"==typeof Reflect.decorate)h=Reflect.decorate(t,e,n,s);else for(var g=t.length-1;g>=0;g--)(l=t[g])&&(h=(p<3?l(h):p>3?l(e,n,h):l(e,n))||h);return p>3&&h&&Object.defineProperty(e,n,h),h};class korBadge extends t{static get styles(){return[l,e`
+    `}attributeChangedCallback(e,r,s){super.attributeChangedCallback(e,r,s),this.dispatchEvent(new Event(`${e}-changed`))}getInitials(e){const r=e.match(/\b\w/g)||[];return(r.shift()||"")+(r.pop()||"").toUpperCase()}}kor_avatar_decorate([n({type:String,reflect:!0})],korAvatar.prototype,"label",void 0),kor_avatar_decorate([n({type:String,reflect:!0})],korAvatar.prototype,"info",void 0),kor_avatar_decorate([n({type:String,reflect:!0})],korAvatar.prototype,"image",void 0),kor_avatar_decorate([n({type:Boolean,reflect:!0})],korAvatar.prototype,"condensed",void 0),window.customElements.get("kor-avatar")||window.customElements.define("kor-avatar",korAvatar);var kor_badge_decorate=function(e,r,s,a){var l,c=arguments.length,p=c<3?r:null===a?a=Object.getOwnPropertyDescriptor(r,s):a;if("object"==typeof Reflect&&"function"==typeof Reflect.decorate)p=Reflect.decorate(e,r,s,a);else for(var h=e.length-1;h>=0;h--)(l=e[h])&&(p=(c<3?l(p):c>3?l(r,s,p):l(r,s))||p);return c>3&&p&&Object.defineProperty(r,s,p),p};class korBadge extends e{static get styles(){return[l,r`
         :host {
           display: flex;
           justify-content: center;
@@ -491,30 +501,30 @@ import{LitElement as t,css as e,html as n}from"lit";const i=(t,e)=>"method"===e.
         .status-icon[icon='check_circle'] {
           color: rgb(var(--functional-green));
         }
-      `]}render(){return n`
-      ${this.status?n`
+      `]}render(){return s`
+      ${this.status?s`
             <!-- status -->
-            ${this.status?n`
+            ${this.status?s`
                   <kor-icon
                     class="status-icon"
                     size="s"
                     icon="${this.getStatusIcon()}"
                   ></kor-icon>
                 `:""}
-          `:n`
-            ${this.label?n`
+          `:s`
+            ${this.label?s`
                   <kor-text size="body-2">
-                    ${this.label>999?n` 999+ `:n` ${this.label} `}
+                    ${this.label>999?s` 999+ `:s` ${this.label} `}
                   </kor-text>
                 `:""}
           `}
-    `}attributeChangedCallback(t,e,n){super.attributeChangedCallback(t,e,n),this.dispatchEvent(new Event(t+"-changed"))}getStatusIcon(){let t;switch(this.status){case"error":t="cancel";break;case"warning":t="error";break;case"success":t="check_circle"}return t}}kor_badge_decorate([property_e({type:Number,reflect:!0})],korBadge.prototype,"label",void 0),kor_badge_decorate([property_e({type:String,reflect:!0})],korBadge.prototype,"status",void 0),window.customElements.get("kor-badge")||window.customElements.define("kor-badge",korBadge);class korBreadcrumbs extends t{static get styles(){return[l,e`
+    `}attributeChangedCallback(e,r,s){super.attributeChangedCallback(e,r,s),this.dispatchEvent(new Event(`${e}-changed`))}getStatusIcon(){let e;switch(this.status){case"error":e="cancel";break;case"warning":e="error";break;case"success":e="check_circle"}return e}}kor_badge_decorate([n({type:Number,reflect:!0})],korBadge.prototype,"label",void 0),kor_badge_decorate([n({type:String,reflect:!0})],korBadge.prototype,"status",void 0),window.customElements.get("kor-badge")||window.customElements.define("kor-badge",korBadge);class korBreadcrumbs extends e{static get styles(){return[l,r`
         :host {
           display: flex;
           width: 100%;
           height: max-content;
         }
-      `]}render(){return n` <slot></slot> `}}window.customElements.get("kor-breadcrumbs")||window.customElements.define("kor-breadcrumbs",korBreadcrumbs);var kor_breadcrumb_item_decorate=function(t,e,n,s){var l,p=arguments.length,h=p<3?e:null===s?s=Object.getOwnPropertyDescriptor(e,n):s;if("object"==typeof Reflect&&"function"==typeof Reflect.decorate)h=Reflect.decorate(t,e,n,s);else for(var g=t.length-1;g>=0;g--)(l=t[g])&&(h=(p<3?l(h):p>3?l(e,n,h):l(e,n))||h);return p>3&&h&&Object.defineProperty(e,n,h),h};class korBreadcrumbItem extends t{constructor(){super(...arguments),this.label="Label"}static get styles(){return[l,e`
+      `]}render(){return s` <slot></slot> `}}window.customElements.get("kor-breadcrumbs")||window.customElements.define("kor-breadcrumbs",korBreadcrumbs);var kor_breadcrumb_item_decorate=function(e,r,s,a){var l,c=arguments.length,p=c<3?r:null===a?a=Object.getOwnPropertyDescriptor(r,s):a;if("object"==typeof Reflect&&"function"==typeof Reflect.decorate)p=Reflect.decorate(e,r,s,a);else for(var h=e.length-1;h>=0;h--)(l=e[h])&&(p=(c<3?l(p):c>3?l(r,s,p):l(r,s))||p);return c>3&&p&&Object.defineProperty(r,s,p),p};class korBreadcrumbItem extends e{constructor(){super(...arguments),this.label="Label"}static get styles(){return[l,r`
         :host {
           display: flex;
           align-items: center;
@@ -537,15 +547,15 @@ import{LitElement as t,css as e,html as n}from"lit";const i=(t,e)=>"method"===e.
             color: var(--text-1);
           }
         }
-      `]}render(){return n`
-      ${this.firstItem()?"":n`
+      `]}render(){return s`
+      ${this.firstItem()?"":s`
             <kor-icon
               icon="keyboard_arrow_right"
               color="var(--text-2)"
             ></kor-icon>
           `}
       <kor-text>${this.label}</kor-text>
-    `}attributeChangedCallback(t,e,n){super.attributeChangedCallback(t,e,n),this.dispatchEvent(new Event(t+"-changed"))}firstItem(){var t;let e,n;return n=Array.prototype.slice.call(null===(t=this.parentElement)||void 0===t?void 0:t.children),e=0==n.indexOf(this),e}}kor_breadcrumb_item_decorate([property_e({type:String,reflect:!0})],korBreadcrumbItem.prototype,"label",void 0),kor_breadcrumb_item_decorate([property_e({type:Boolean,reflect:!0})],korBreadcrumbItem.prototype,"active",void 0),window.customElements.get("kor-breadcrumb-item")||window.customElements.define("kor-breadcrumb-item",korBreadcrumbItem);var kor_divider_decorate=function(t,e,n,s){var l,p=arguments.length,h=p<3?e:null===s?s=Object.getOwnPropertyDescriptor(e,n):s;if("object"==typeof Reflect&&"function"==typeof Reflect.decorate)h=Reflect.decorate(t,e,n,s);else for(var g=t.length-1;g>=0;g--)(l=t[g])&&(h=(p<3?l(h):p>3?l(e,n,h):l(e,n))||h);return p>3&&h&&Object.defineProperty(e,n,h),h};class korDivider extends t{constructor(){super(...arguments),this.spacing="m",this.orientation="horizontal"}static get styles(){return[l,e`
+    `}attributeChangedCallback(e,r,s){super.attributeChangedCallback(e,r,s),this.dispatchEvent(new Event(`${e}-changed`))}firstItem(){var e;let r,s;return s=Array.prototype.slice.call(null===(e=this.parentElement)||void 0===e?void 0:e.children),r=0==s.indexOf(this),r}}kor_breadcrumb_item_decorate([n({type:String,reflect:!0})],korBreadcrumbItem.prototype,"label",void 0),kor_breadcrumb_item_decorate([n({type:Boolean,reflect:!0})],korBreadcrumbItem.prototype,"active",void 0),window.customElements.get("kor-breadcrumb-item")||window.customElements.define("kor-breadcrumb-item",korBreadcrumbItem);var kor_divider_decorate=function(e,r,s,a){var l,c=arguments.length,p=c<3?r:null===a?a=Object.getOwnPropertyDescriptor(r,s):a;if("object"==typeof Reflect&&"function"==typeof Reflect.decorate)p=Reflect.decorate(e,r,s,a);else for(var h=e.length-1;h>=0;h--)(l=e[h])&&(p=(c<3?l(p):c>3?l(r,s,p):l(r,s))||p);return c>3&&p&&Object.defineProperty(r,s,p),p};class korDivider extends e{constructor(){super(...arguments),this.spacing="m",this.orientation="horizontal"}static get styles(){return[l,r`
         :host([orientation='horizontal']) {
           width: 100%;
         }
@@ -582,7 +592,7 @@ import{LitElement as t,css as e,html as n}from"lit";const i=(t,e)=>"method"===e.
         :host([spacing='l'][orientation='vertical']) {
           padding: 0 calc(var(--spacing-s) * 2);
         }
-      `]}render(){return n`<div class="line"></div>`}attributeChangedCallback(t,e,n){super.attributeChangedCallback(t,e,n),this.dispatchEvent(new Event(t+"-changed"))}}kor_divider_decorate([property_e({type:String,reflect:!0})],korDivider.prototype,"spacing",void 0),kor_divider_decorate([property_e({type:String,reflect:!0})],korDivider.prototype,"orientation",void 0),window.customElements.get("kor-divider")||window.customElements.define("kor-divider",korDivider);var kor_button_decorate=function(t,e,n,s){var l,p=arguments.length,h=p<3?e:null===s?s=Object.getOwnPropertyDescriptor(e,n):s;if("object"==typeof Reflect&&"function"==typeof Reflect.decorate)h=Reflect.decorate(t,e,n,s);else for(var g=t.length-1;g>=0;g--)(l=t[g])&&(h=(p<3?l(h):p>3?l(e,n,h):l(e,n))||h);return p>3&&h&&Object.defineProperty(e,n,h),h};class korButton extends t{constructor(){super(...arguments),this.color="primary"}static get styles(){return[l,e`
+      `]}render(){return s`<div class="line"></div>`}attributeChangedCallback(e,r,s){super.attributeChangedCallback(e,r,s),this.dispatchEvent(new Event(`${e}-changed`))}}kor_divider_decorate([n({type:String,reflect:!0})],korDivider.prototype,"spacing",void 0),kor_divider_decorate([n({type:String,reflect:!0})],korDivider.prototype,"orientation",void 0),window.customElements.get("kor-divider")||window.customElements.define("kor-divider",korDivider);var kor_button_decorate=function(e,r,s,a){var l,c=arguments.length,p=c<3?r:null===a?a=Object.getOwnPropertyDescriptor(r,s):a;if("object"==typeof Reflect&&"function"==typeof Reflect.decorate)p=Reflect.decorate(e,r,s,a);else for(var h=e.length-1;h>=0;h--)(l=e[h])&&(p=(c<3?l(p):c>3?l(r,s,p):l(r,s))||p);return c>3&&p&&Object.defineProperty(r,s,p),p};class korButton extends e{constructor(){super(...arguments),this.color="primary"}static get styles(){return[l,r`
         :host {
           font: var(--header-2);
           color: var(--text-1);
@@ -668,13 +678,13 @@ import{LitElement as t,css as e,html as n}from"lit";const i=(t,e)=>"method"===e.
           overflow: hidden;
           text-overflow: ellipsis;
         }
-      `]}render(){return n`
+      `]}render(){return s`
       <slot name="icon">
-        ${this.icon?n` <kor-icon icon="${this.icon}"></kor-icon> `:""}
+        ${this.icon?s` <kor-icon icon="${this.icon}" ?tinted="${this.tinted}"></kor-icon> `:""}
       </slot>
-      ${this.divided&&this.icon&&this.label?n`<kor-divider orientation="vertical" spacing="s"></kor-divider>`:""}
-      <slot>${this.label?n`<div class="center"><label class="label">${this.label}</label></div>`:""}</slot>
-    `}attributeChangedCallback(t,e,n){super.attributeChangedCallback(t,e,n),this.dispatchEvent(new Event(t+"-changed"))}}kor_button_decorate([property_e({type:String,reflect:!0})],korButton.prototype,"label",void 0),kor_button_decorate([property_e({type:String,reflect:!0})],korButton.prototype,"icon",void 0),kor_button_decorate([property_e({type:String,reflect:!0})],korButton.prototype,"color",void 0),kor_button_decorate([property_e({type:Boolean,reflect:!0})],korButton.prototype,"disabled",void 0),kor_button_decorate([property_e({type:Boolean,reflect:!0})],korButton.prototype,"divided",void 0),kor_button_decorate([property_e({type:Boolean,reflect:!0})],korButton.prototype,"glow",void 0),window.customElements.get("kor-button")||window.customElements.define("kor-button",korButton);var kor_checkbox_decorate=function(t,e,n,s){var l,p=arguments.length,h=p<3?e:null===s?s=Object.getOwnPropertyDescriptor(e,n):s;if("object"==typeof Reflect&&"function"==typeof Reflect.decorate)h=Reflect.decorate(t,e,n,s);else for(var g=t.length-1;g>=0;g--)(l=t[g])&&(h=(p<3?l(h):p>3?l(e,n,h):l(e,n))||h);return p>3&&h&&Object.defineProperty(e,n,h),h};class korCheckbox extends t{static get styles(){return[l,e`
+      ${this.divided&&this.icon&&this.label?s`<kor-divider orientation="vertical" spacing="s"></kor-divider>`:""}
+      <slot>${this.label?s`<div class="center"><label class="label">${this.label}</label></div>`:""}</slot>
+    `}attributeChangedCallback(e,r,s){super.attributeChangedCallback(e,r,s),this.dispatchEvent(new Event(`${e}-changed`))}}kor_button_decorate([n({type:String,reflect:!0})],korButton.prototype,"label",void 0),kor_button_decorate([n({type:String,reflect:!0})],korButton.prototype,"icon",void 0),kor_button_decorate([n({type:String,reflect:!0})],korButton.prototype,"color",void 0),kor_button_decorate([n({type:Boolean,reflect:!0})],korButton.prototype,"disabled",void 0),kor_button_decorate([n({type:Boolean,reflect:!0})],korButton.prototype,"divided",void 0),kor_button_decorate([n({type:Boolean,reflect:!0})],korButton.prototype,"glow",void 0),kor_button_decorate([n({type:Boolean,reflect:!0})],korButton.prototype,"tinted",void 0),window.customElements.get("kor-button")||window.customElements.define("kor-button",korButton);var kor_checkbox_decorate=function(e,r,s,a){var l,c=arguments.length,p=c<3?r:null===a?a=Object.getOwnPropertyDescriptor(r,s):a;if("object"==typeof Reflect&&"function"==typeof Reflect.decorate)p=Reflect.decorate(e,r,s,a);else for(var h=e.length-1;h>=0;h--)(l=e[h])&&(p=(c<3?l(p):c>3?l(r,s,p):l(r,s))||p);return c>3&&p&&Object.defineProperty(r,s,p),p};class korCheckbox extends e{static get styles(){return[l,r`
         :host {
           display: flex;
           cursor: pointer;
@@ -719,7 +729,7 @@ import{LitElement as t,css as e,html as n}from"lit";const i=(t,e)=>"method"===e.
             border-color: rgba(var(--neutral-1), 0.3);
           }
         }
-      `]}render(){return n`
+      `]}render(){return s`
       <input
         type="checkbox"
         ?checked="${this.active}"
@@ -729,10 +739,10 @@ import{LitElement as t,css as e,html as n}from"lit";const i=(t,e)=>"method"===e.
         @change="${this.handleChange}"
       />
       <div class="box">
-        ${this.active?n` <kor-icon icon="check" size="s" color="white"></kor-icon> `:""}
+        ${this.active?s` <kor-icon icon="check" size="s" color="white"></kor-icon> `:""}
       </div>
-      ${this.label?n` <kor-text>${this.label}</kor-text> `:""}
-    `}attributeChangedCallback(t,e,n){super.attributeChangedCallback(t,e,n),this.dispatchEvent(new Event(t+"-changed"))}connectedCallback(){super.connectedCallback(),this.addEventListener("click",()=>{this.active=!this.active})}handleChange(){this.dispatchEvent(new CustomEvent("change",{bubbles:!0,composed:!0}))}}kor_checkbox_decorate([property_e({type:String,reflect:!0})],korCheckbox.prototype,"label",void 0),kor_checkbox_decorate([property_e({type:Boolean,reflect:!0})],korCheckbox.prototype,"active",void 0),kor_checkbox_decorate([property_e({type:Boolean,reflect:!0})],korCheckbox.prototype,"disabled",void 0),window.customElements.get("kor-checkbox")||window.customElements.define("kor-checkbox",korCheckbox);var kor_drawer_decorate=function(t,e,n,s){var l,p=arguments.length,h=p<3?e:null===s?s=Object.getOwnPropertyDescriptor(e,n):s;if("object"==typeof Reflect&&"function"==typeof Reflect.decorate)h=Reflect.decorate(t,e,n,s);else for(var g=t.length-1;g>=0;g--)(l=t[g])&&(h=(p<3?l(h):p>3?l(e,n,h):l(e,n))||h);return p>3&&h&&Object.defineProperty(e,n,h),h};class korDrawer extends t{constructor(){super(...arguments),this.position="left",this.height="320px",this.width="320px",this.flexDirection="column",this.emptyHeader=!0,this.emptyFunctions=!0,this.emptyFooter=!0}static get styles(){return[l,e`
+      ${this.label?s` <kor-text>${this.label}</kor-text> `:""}
+    `}attributeChangedCallback(e,r,s){super.attributeChangedCallback(e,r,s),this.dispatchEvent(new Event(`${e}-changed`))}connectedCallback(){super.connectedCallback(),this.addEventListener("click",()=>{this.active=!this.active})}handleChange(){this.dispatchEvent(new CustomEvent("change",{bubbles:!0,composed:!0}))}}kor_checkbox_decorate([n({type:String,reflect:!0})],korCheckbox.prototype,"label",void 0),kor_checkbox_decorate([n({type:Boolean,reflect:!0})],korCheckbox.prototype,"active",void 0),kor_checkbox_decorate([n({type:Boolean,reflect:!0})],korCheckbox.prototype,"disabled",void 0),window.customElements.get("kor-checkbox")||window.customElements.define("kor-checkbox",korCheckbox);var kor_drawer_decorate=function(e,r,s,a){var l,c=arguments.length,p=c<3?r:null===a?a=Object.getOwnPropertyDescriptor(r,s):a;if("object"==typeof Reflect&&"function"==typeof Reflect.decorate)p=Reflect.decorate(e,r,s,a);else for(var h=e.length-1;h>=0;h--)(l=e[h])&&(p=(c<3?l(p):c>3?l(r,s,p):l(r,s))||p);return c>3&&p&&Object.defineProperty(r,s,p),p};class korDrawer extends e{constructor(){super(...arguments),this.position="left",this.height="320px",this.width="320px",this.flexDirection="column",this.emptyHeader=!0,this.emptyFunctions=!0,this.emptyFooter=!0}static get styles(){return[l,r`
         :host {
           transition: var(--transition-1), 0s top, 0s left;
           position: fixed;
@@ -790,9 +800,9 @@ import{LitElement as t,css as e,html as n}from"lit";const i=(t,e)=>"method"===e.
         :host([position='bottom']:not([visible])) kor-card {
           margin-bottom: -40px;
         }
-      `]}render(){return n`
+      `]}render(){return s`
       <kor-card
-        @click="${t=>t.stopPropagation()}"
+        @click="${e=>e.stopPropagation()}"
         style="height: ${this.getCardSize().height}; width: ${this.getCardSize().width}; max-height: ${this.getCardSize().height}; max-width: ${this.getCardSize().width}"
         .label="${this.label}"
         .icon="${this.icon}"
@@ -801,10 +811,10 @@ import{LitElement as t,css as e,html as n}from"lit";const i=(t,e)=>"method"===e.
         <slot
           name="header"
           slot="${this.emptyHeader?"hidden":"header"}"
-          @slotchange="${t=>this.emptyHeader=0===t.target.assignedNodes().length}"
+          @slotchange="${e=>this.emptyHeader=0===e.target.assignedNodes().length}"
         ></slot>
         <slot name="functions" slot="functions">
-          ${this.sticky?"":n`
+          ${this.sticky?"":s`
                 <kor-icon
                   button
                   icon="close"
@@ -816,10 +826,10 @@ import{LitElement as t,css as e,html as n}from"lit";const i=(t,e)=>"method"===e.
         <slot
           name="footer"
           slot="${this.emptyFooter?"hidden":"footer"}"
-          @slotchange="${t=>this.emptyFooter=0===t.target.assignedNodes().length}"
+          @slotchange="${e=>this.emptyFooter=0===e.target.assignedNodes().length}"
         ></slot>
       </kor-card>
-    `}attributeChangedCallback(t,e,n){super.attributeChangedCallback(t,e,n),this.dispatchEvent(new Event(t+"-changed")),"visible"===t&&this.visible&&this.addEventListener("click",()=>this.sticky?"":this.visible=!1)}getCardSize(){let t={height:void 0,width:void 0};switch(this.position){case"left":case"right":t.height="100%",t.width=this.width;break;case"top":case"bottom":t.height=this.height,t.width="100%"}return t}}kor_drawer_decorate([property_e({type:String,reflect:!0})],korDrawer.prototype,"label",void 0),kor_drawer_decorate([property_e({type:String,reflect:!0})],korDrawer.prototype,"icon",void 0),kor_drawer_decorate([property_e({type:String,reflect:!0})],korDrawer.prototype,"position",void 0),kor_drawer_decorate([property_e({type:String,reflect:!0})],korDrawer.prototype,"height",void 0),kor_drawer_decorate([property_e({type:String,reflect:!0})],korDrawer.prototype,"width",void 0),kor_drawer_decorate([property_e({type:String,reflect:!0,attribute:"flex-direction"})],korDrawer.prototype,"flexDirection",void 0),kor_drawer_decorate([property_e({type:Boolean,reflect:!0})],korDrawer.prototype,"visible",void 0),kor_drawer_decorate([property_e({type:Boolean,reflect:!0})],korDrawer.prototype,"sticky",void 0),kor_drawer_decorate([r()],korDrawer.prototype,"emptyHeader",void 0),kor_drawer_decorate([r()],korDrawer.prototype,"emptyFunctions",void 0),kor_drawer_decorate([r()],korDrawer.prototype,"emptyFooter",void 0),window.customElements.get("kor-drawer")||window.customElements.define("kor-drawer",korDrawer);var kor_empty_state_decorate=function(t,e,n,s){var l,p=arguments.length,h=p<3?e:null===s?s=Object.getOwnPropertyDescriptor(e,n):s;if("object"==typeof Reflect&&"function"==typeof Reflect.decorate)h=Reflect.decorate(t,e,n,s);else for(var g=t.length-1;g>=0;g--)(l=t[g])&&(h=(p<3?l(h):p>3?l(e,n,h):l(e,n))||h);return p>3&&h&&Object.defineProperty(e,n,h),h};class korEmptyState extends t{static get styles(){return[l,e`
+    `}attributeChangedCallback(e,r,s){super.attributeChangedCallback(e,r,s),this.dispatchEvent(new Event(`${e}-changed`)),"visible"===e&&this.visible&&this.addEventListener("click",()=>this.sticky?"":this.visible=!1)}getCardSize(){let e={height:void 0,width:void 0};switch(this.position){case"left":case"right":e.height="100%",e.width=this.width;break;case"top":case"bottom":e.height=this.height,e.width="100%"}return e}}kor_drawer_decorate([n({type:String,reflect:!0})],korDrawer.prototype,"label",void 0),kor_drawer_decorate([n({type:String,reflect:!0})],korDrawer.prototype,"icon",void 0),kor_drawer_decorate([n({type:String,reflect:!0})],korDrawer.prototype,"position",void 0),kor_drawer_decorate([n({type:String,reflect:!0})],korDrawer.prototype,"height",void 0),kor_drawer_decorate([n({type:String,reflect:!0})],korDrawer.prototype,"width",void 0),kor_drawer_decorate([n({type:String,reflect:!0,attribute:"flex-direction"})],korDrawer.prototype,"flexDirection",void 0),kor_drawer_decorate([n({type:Boolean,reflect:!0})],korDrawer.prototype,"visible",void 0),kor_drawer_decorate([n({type:Boolean,reflect:!0})],korDrawer.prototype,"sticky",void 0),kor_drawer_decorate([t()],korDrawer.prototype,"emptyHeader",void 0),kor_drawer_decorate([t()],korDrawer.prototype,"emptyFunctions",void 0),kor_drawer_decorate([t()],korDrawer.prototype,"emptyFooter",void 0),window.customElements.get("kor-drawer")||window.customElements.define("kor-drawer",korDrawer);var kor_empty_state_decorate=function(e,r,s,a){var l,c=arguments.length,p=c<3?r:null===a?a=Object.getOwnPropertyDescriptor(r,s):a;if("object"==typeof Reflect&&"function"==typeof Reflect.decorate)p=Reflect.decorate(e,r,s,a);else for(var h=e.length-1;h>=0;h--)(l=e[h])&&(p=(c<3?l(p):c>3?l(r,s,p):l(r,s))||p);return c>3&&p&&Object.defineProperty(r,s,p),p};class korEmptyState extends e{static get styles(){return[l,r`
         :host {
           height: 100%;
           width: 100%;
@@ -841,17 +851,17 @@ import{LitElement as t,css as e,html as n}from"lit";const i=(t,e)=>"method"===e.
         kor-text {
           text-align: center;
         }
-      `]}render(){return n`
-      ${this.icon?n`
+      `]}render(){return s`
+      ${this.icon?s`
             <kor-icon
               icon="${this.icon}"
               size="xl"
               color="var(--text-2)"
             ></kor-icon>
           `:""}
-      ${this.label?n` <kor-text color="var(--text-2)">${this.label}</kor-text> `:""}
+      ${this.label?s` <kor-text color="var(--text-2)">${this.label}</kor-text> `:""}
       <slot name="footer"></slot>
-    `}attributeChangedCallback(t,e,n){super.attributeChangedCallback(t,e,n),this.dispatchEvent(new Event(t+"-changed"))}}kor_empty_state_decorate([property_e({type:String,reflect:!0})],korEmptyState.prototype,"label",void 0),kor_empty_state_decorate([property_e({type:String,reflect:!0})],korEmptyState.prototype,"icon",void 0),window.customElements.get("kor-empty-state")||window.customElements.define("kor-empty-state",korEmptyState);var kor_grid_decorate=function(t,e,n,s){var l,p=arguments.length,h=p<3?e:null===s?s=Object.getOwnPropertyDescriptor(e,n):s;if("object"==typeof Reflect&&"function"==typeof Reflect.decorate)h=Reflect.decorate(t,e,n,s);else for(var g=t.length-1;g>=0;g--)(l=t[g])&&(h=(p<3?l(h):p>3?l(e,n,h):l(e,n))||h);return p>3&&h&&Object.defineProperty(e,n,h),h};class korGrid extends t{constructor(){super(...arguments),this.columns=12,this.spacing="m"}static get styles(){return[l,e`
+    `}attributeChangedCallback(e,r,s){super.attributeChangedCallback(e,r,s),this.dispatchEvent(new Event(`${e}-changed`))}}kor_empty_state_decorate([n({type:String,reflect:!0})],korEmptyState.prototype,"label",void 0),kor_empty_state_decorate([n({type:String,reflect:!0})],korEmptyState.prototype,"icon",void 0),window.customElements.get("kor-empty-state")||window.customElements.define("kor-empty-state",korEmptyState);var kor_grid_decorate=function(e,r,s,a){var l,c=arguments.length,p=c<3?r:null===a?a=Object.getOwnPropertyDescriptor(r,s):a;if("object"==typeof Reflect&&"function"==typeof Reflect.decorate)p=Reflect.decorate(e,r,s,a);else for(var h=e.length-1;h>=0;h--)(l=e[h])&&(p=(c<3?l(p):c>3?l(r,s,p):l(r,s))||p);return c>3&&p&&Object.defineProperty(r,s,p),p};class korGrid extends e{constructor(){super(...arguments),this.columns=12,this.spacing="m"}static get styles(){return[l,r`
         :host {
           display: grid;
           grid-template-columns: repeat(12, 1fr);
@@ -1109,7 +1119,7 @@ import{LitElement as t,css as e,html as n}from"lit";const i=(t,e)=>"method"===e.
             grid-row: span 12;
           }
         }
-      `]}render(){return n`<slot></slot>`}attributeChangedCallback(t,e,n){super.attributeChangedCallback(t,e,n),this.dispatchEvent(new Event(t+"-changed")),"columns"===t?this.style.gridTemplateColumns=`repeat(${this.columns}, 1fr)`:"rows"===t&&(this.style.gridTemplateRows=`repeat(${this.rows}, 1fr)`)}}kor_grid_decorate([property_e({type:Number,reflect:!0})],korGrid.prototype,"columns",void 0),kor_grid_decorate([property_e({type:Number,reflect:!0})],korGrid.prototype,"rows",void 0),kor_grid_decorate([property_e({type:String,reflect:!0})],korGrid.prototype,"spacing",void 0),window.customElements.get("kor-grid")||window.customElements.define("kor-grid",korGrid);var p,h,g,u,kor_image_decorate=function(t,e,n,s){var l,p=arguments.length,h=p<3?e:null===s?s=Object.getOwnPropertyDescriptor(e,n):s;if("object"==typeof Reflect&&"function"==typeof Reflect.decorate)h=Reflect.decorate(t,e,n,s);else for(var g=t.length-1;g>=0;g--)(l=t[g])&&(h=(p<3?l(h):p>3?l(e,n,h):l(e,n))||h);return p>3&&h&&Object.defineProperty(e,n,h),h};class korImage extends t{constructor(){super(...arguments),this.width="100%",this.fit="contain"}static get styles(){return[l,e`
+      `]}render(){return s`<slot></slot>`}attributeChangedCallback(e,r,s){super.attributeChangedCallback(e,r,s),this.dispatchEvent(new Event(`${e}-changed`)),"columns"===e?this.style.gridTemplateColumns=`repeat(${this.columns}, 1fr)`:"rows"===e&&(this.style.gridTemplateRows=`repeat(${this.rows}, 1fr)`)}}kor_grid_decorate([n({type:Number,reflect:!0})],korGrid.prototype,"columns",void 0),kor_grid_decorate([n({type:Number,reflect:!0})],korGrid.prototype,"rows",void 0),kor_grid_decorate([n({type:String,reflect:!0})],korGrid.prototype,"spacing",void 0),window.customElements.get("kor-grid")||window.customElements.define("kor-grid",korGrid);var c,kor_image_decorate=function(e,r,s,a){var l,c=arguments.length,p=c<3?r:null===a?a=Object.getOwnPropertyDescriptor(r,s):a;if("object"==typeof Reflect&&"function"==typeof Reflect.decorate)p=Reflect.decorate(e,r,s,a);else for(var h=e.length-1;h>=0;h--)(l=e[h])&&(p=(c<3?l(p):c>3?l(r,s,p):l(r,s))||p);return c>3&&p&&Object.defineProperty(r,s,p),p};class korImage extends e{constructor(){super(...arguments),this.width="100%",this.fit="contain"}static get styles(){return[l,r`
         :host {
           position: relative;
           max-width: max-content;
@@ -1175,7 +1185,7 @@ import{LitElement as t,css as e,html as n}from"lit";const i=(t,e)=>"method"===e.
         :host([legend][legend-position='inner-bottom']) slot[name='bottom'] {
           bottom: 24px;
         }
-      `]}render(){return n`
+      `]}render(){return s`
       <img
         src="${this.src}"
         alt="${this.alt}"
@@ -1183,10 +1193,10 @@ import{LitElement as t,css as e,html as n}from"lit";const i=(t,e)=>"method"===e.
         height="${this.height}"
         style="object-fit: ${this.fit}"
       />
-      ${this.legend?n` <kor-text>${this.legend}</kor-text> `:""}
+      ${this.legend?s` <kor-text>${this.legend}</kor-text> `:""}
       <slot name="top"></slot>
       <slot name="bottom"></slot>
-    `}attributeChangedCallback(t,e,n){super.attributeChangedCallback(t,e,n),this.dispatchEvent(new Event(t+"-changed"))}}kor_image_decorate([property_e({type:String,reflect:!0})],korImage.prototype,"src",void 0),kor_image_decorate([property_e({type:String,reflect:!0})],korImage.prototype,"alt",void 0),kor_image_decorate([property_e({type:String,reflect:!0})],korImage.prototype,"height",void 0),kor_image_decorate([property_e({type:String,reflect:!0})],korImage.prototype,"width",void 0),kor_image_decorate([property_e({type:String,reflect:!0})],korImage.prototype,"fit",void 0),kor_image_decorate([property_e({type:String,reflect:!0})],korImage.prototype,"legend",void 0),kor_image_decorate([property_e({type:String,reflect:!0,attribute:"legend-position"})],korImage.prototype,"legendPosition",void 0),window.customElements.get("kor-image")||window.customElements.define("kor-image",korImage);const v=globalThis.trustedTypes,y=v?v.createPolicy("lit-html",{createHTML:t=>t}):void 0,f=`lit$${(Math.random()+"").slice(9)}$`,m="?"+f,w=`<${m}>`,x=document,c=(t="")=>x.createComment(t),d=t=>null===t||"object"!=typeof t&&"function"!=typeof t,$=Array.isArray,a=t=>{var e;return $(t)||"function"==typeof(null===(e=t)||void 0===e?void 0:e[Symbol.iterator])},_=/<(?:(!--|\/[^a-zA-Z])|(\/?[a-zA-Z][^>\s]*)|(\/?$))/g,E=/-->/g,P=/>/g,j=/>|[ 	\n\r](?:([^\s"'>=/]+)([ 	\n\r]*=[ 	\n\r]*(?:[^ 	\n\r"'`<>=]|("|')|))|$)/g,D=/'/g,O=/"/g,T=/^(?:script|style|textarea)$/i,b=t=>(e,...n)=>({_$litType$:t,strings:e,values:n}),B=(b(1),b(2),Symbol.for("lit-noChange")),A=Symbol.for("lit-nothing"),F=new WeakMap,W=x.createTreeWalker(x,129,null,!1),M=(t,e)=>{const n=t.length-1,s=[];let l,p=2===e?"<svg>":"",h=_;for(let e=0;e<n;e++){const n=t[e];let g,u,v=-1,y=0;for(;y<n.length&&(h.lastIndex=y,u=h.exec(n),null!==u);)y=h.lastIndex,h===_?"!--"===u[1]?h=E:void 0!==u[1]?h=P:void 0!==u[2]?(T.test(u[2])&&(l=RegExp("</"+u[2],"g")),h=j):void 0!==u[3]&&(h=j):h===j?">"===u[0]?(h=null!=l?l:_,v=-1):void 0===u[1]?v=-2:(v=h.lastIndex-u[2].length,g=u[1],h=void 0===u[3]?j:'"'===u[3]?O:D):h===O||h===D?h=j:h===E||h===P?h=_:(h=j,l=void 0);const m=h===j&&t[e+1].startsWith("/>")?" ":"";p+=h===_?n+w:v>=0?(s.push(g),n.slice(0,v)+"$lit$"+n.slice(v)+f+m):n+f+(-2===v?(s.push(void 0),e):m)}const g=p+(t[n]||"<?>")+(2===e?"</svg>":"");return[void 0!==y?y.createHTML(g):g,s]};class N{constructor({strings:t,_$litType$:e},n){let s;this.parts=[];let l=0,p=0;const h=t.length-1,g=this.parts,[u,y]=M(t,e);if(this.el=N.createElement(u,n),W.currentNode=this.el.content,2===e){const t=this.el.content,e=t.firstChild;e.remove(),t.append(...e.childNodes)}for(;null!==(s=W.nextNode())&&g.length<h;){if(1===s.nodeType){if(s.hasAttributes()){const t=[];for(const e of s.getAttributeNames())if(e.endsWith("$lit$")||e.startsWith(f)){const n=y[p++];if(t.push(e),void 0!==n){const t=s.getAttribute(n.toLowerCase()+"$lit$").split(f),e=/([.?@])?(.*)/.exec(n);g.push({type:1,index:l,name:e[2],strings:t,ctor:"."===e[1]?I:"?"===e[1]?L:"@"===e[1]?R:H})}else g.push({type:6,index:l})}for(const e of t)s.removeAttribute(e)}if(T.test(s.tagName)){const t=s.textContent.split(f),e=t.length-1;if(e>0){s.textContent=v?v.emptyScript:"";for(let n=0;n<e;n++)s.append(t[n],c()),W.nextNode(),g.push({type:2,index:++l});s.append(t[e],c())}}}else if(8===s.nodeType)if(s.data===m)g.push({type:2,index:l});else{let t=-1;for(;-1!==(t=s.data.indexOf(f,t+1));)g.push({type:7,index:l}),t+=f.length-1}l++}}static createElement(t,e){const n=x.createElement("template");return n.innerHTML=t,n}}function S(t,e,n=t,s){var l,p,h,g;if(e===B)return e;let u=void 0!==s?null===(l=n.Σi)||void 0===l?void 0:l[s]:n.Σo;const v=d(e)?void 0:e._$litDirective$;return(null==u?void 0:u.constructor)!==v&&(null===(p=null==u?void 0:u.O)||void 0===p||p.call(u,!1),void 0===v?u=void 0:(u=new v(t),u.T(t,n,s)),void 0!==s?(null!==(h=(g=n).Σi)&&void 0!==h?h:g.Σi=[])[s]=u:n.Σo=u),void 0!==u&&(e=S(t,u.S(t,e.values),u,s)),e}class k{constructor(t,e){this.l=[],this.N=void 0,this.D=t,this.M=e}u(t){var e;const{el:{content:n},parts:s}=this.D,l=(null!==(e=null==t?void 0:t.creationScope)&&void 0!==e?e:x).importNode(n,!0);W.currentNode=l;let p=W.nextNode(),h=0,g=0,u=s[0];for(;void 0!==u;){if(h===u.index){let e;2===u.type?e=new C(p,p.nextSibling,this,t):1===u.type?e=new u.ctor(p,u.name,u.strings,this,t):6===u.type&&(e=new z(p,this,t)),this.l.push(e),u=s[++g]}h!==(null==u?void 0:u.index)&&(p=W.nextNode(),h++)}return l}v(t){let e=0;for(const n of this.l)void 0!==n&&(void 0!==n.strings?(n.I(t,n,e),e+=n.strings.length-2):n.I(t[e])),e++}}class C{constructor(t,e,n,s){this.type=2,this.N=void 0,this.A=t,this.B=e,this.M=n,this.options=s}setConnected(t){var e;null===(e=this.P)||void 0===e||e.call(this,t)}get parentNode(){return this.A.parentNode}get startNode(){return this.A}get endNode(){return this.B}I(t,e=this){t=S(this,t,e),d(t)?t===A||null==t||""===t?(this.H!==A&&this.R(),this.H=A):t!==this.H&&t!==B&&this.m(t):void 0!==t._$litType$?this._(t):void 0!==t.nodeType?this.$(t):a(t)?this.g(t):this.m(t)}k(t,e=this.B){return this.A.parentNode.insertBefore(t,e)}$(t){this.H!==t&&(this.R(),this.H=this.k(t))}m(t){const e=this.A.nextSibling;null!==e&&3===e.nodeType&&(null===this.B?null===e.nextSibling:e===this.B.previousSibling)?e.data=t:this.$(x.createTextNode(t)),this.H=t}_(t){var e;const{values:n,_$litType$:s}=t,l="number"==typeof s?this.C(t):(void 0===s.el&&(s.el=N.createElement(s.h,this.options)),s);if((null===(e=this.H)||void 0===e?void 0:e.D)===l)this.H.v(n);else{const t=new k(l,this),e=t.u(this.options);t.v(n),this.$(e),this.H=t}}C(t){let e=F.get(t.strings);return void 0===e&&F.set(t.strings,e=new N(t)),e}g(t){$(this.H)||(this.H=[],this.R());const e=this.H;let n,s=0;for(const l of t)s===e.length?e.push(n=new C(this.k(c()),this.k(c()),this,this.options)):n=e[s],n.I(l),s++;s<e.length&&(this.R(n&&n.B.nextSibling,s),e.length=s)}R(t=this.A.nextSibling,e){var n;for(null===(n=this.P)||void 0===n||n.call(this,!1,!0,e);t&&t!==this.B;){const e=t.nextSibling;t.remove(),t=e}}}class H{constructor(t,e,n,s,l){this.type=1,this.H=A,this.N=void 0,this.V=void 0,this.element=t,this.name=e,this.M=s,this.options=l,n.length>2||""!==n[0]||""!==n[1]?(this.H=Array(n.length-1).fill(A),this.strings=n):this.H=A}get tagName(){return this.element.tagName}I(t,e=this,n,s){const l=this.strings;let p=!1;if(void 0===l)t=S(this,t,e,0),p=!d(t)||t!==this.H&&t!==B,p&&(this.H=t);else{const s=t;let h,g;for(t=l[0],h=0;h<l.length-1;h++)g=S(this,s[n+h],e,h),g===B&&(g=this.H[h]),p||(p=!d(g)||g!==this.H[h]),g===A?t=A:t!==A&&(t+=(null!=g?g:"")+l[h+1]),this.H[h]=g}p&&!s&&this.W(t)}W(t){t===A?this.element.removeAttribute(this.name):this.element.setAttribute(this.name,null!=t?t:"")}}class I extends H{constructor(){super(...arguments),this.type=3}W(t){this.element[this.name]=t===A?void 0:t}}class L extends H{constructor(){super(...arguments),this.type=4}W(t){t&&t!==A?this.element.setAttribute(this.name,""):this.element.removeAttribute(this.name)}}class R extends H{constructor(){super(...arguments),this.type=5}I(t,e=this){var n;if((t=null!==(n=S(this,t,e,0))&&void 0!==n?n:A)===B)return;const s=this.H,l=t===A&&s!==A||t.capture!==s.capture||t.once!==s.once||t.passive!==s.passive,p=t!==A&&(s===A||l);l&&this.element.removeEventListener(this.name,this,s),p&&this.element.addEventListener(this.name,this,t),this.H=t}handleEvent(t){var e,n;"function"==typeof this.H?this.H.call(null!==(n=null===(e=this.options)||void 0===e?void 0:e.host)&&void 0!==n?n:this.element,t):this.H.handleEvent(t)}}class z{constructor(t,e,n){this.element=t,this.type=6,this.N=void 0,this.V=void 0,this.M=e,this.options=n}I(t){S(this,t)}}null===(h=(p=globalThis).litHtmlPlatformSupport)||void 0===h||h.call(p,N,C),(null!==(g=(u=globalThis).litHtmlVersions)&&void 0!==g?g:u.litHtmlVersions=[]).push("2.0.0-rc.3");const if_defined_l=t=>null!=t?t:A;var kor_input_decorate=function(t,e,n,s){var l,p=arguments.length,h=p<3?e:null===s?s=Object.getOwnPropertyDescriptor(e,n):s;if("object"==typeof Reflect&&"function"==typeof Reflect.decorate)h=Reflect.decorate(t,e,n,s);else for(var g=t.length-1;g>=0;g--)(l=t[g])&&(h=(p<3?l(h):p>3?l(e,n,h):l(e,n))||h);return p>3&&h&&Object.defineProperty(e,n,h),h};let q=class korInput extends t{static get styles(){return[l,e`
+    `}attributeChangedCallback(e,r,s){super.attributeChangedCallback(e,r,s),this.dispatchEvent(new Event(`${e}-changed`))}}kor_image_decorate([n({type:String,reflect:!0})],korImage.prototype,"src",void 0),kor_image_decorate([n({type:String,reflect:!0})],korImage.prototype,"alt",void 0),kor_image_decorate([n({type:String,reflect:!0})],korImage.prototype,"height",void 0),kor_image_decorate([n({type:String,reflect:!0})],korImage.prototype,"width",void 0),kor_image_decorate([n({type:String,reflect:!0})],korImage.prototype,"fit",void 0),kor_image_decorate([n({type:String,reflect:!0})],korImage.prototype,"legend",void 0),kor_image_decorate([n({type:String,reflect:!0,attribute:"legend-position"})],korImage.prototype,"legendPosition",void 0),window.customElements.get("kor-image")||window.customElements.define("kor-image",korImage);const p=window,h=p.trustedTypes,g=h?h.createPolicy("lit-html",{createHTML:e=>e}):void 0,b="$lit$",f=`lit$${(Math.random()+"").slice(9)}$`,m="?"+f,y=`<${m}>`,x=document,u=()=>x.createComment(""),d=e=>null===e||"object"!=typeof e&&"function"!=typeof e,$=Array.isArray,v=e=>$(e)||"function"==typeof(null==e?void 0:e[Symbol.iterator]),C="[ \t\n\f\r]",E=/<(?:(!--|\/[^a-zA-Z])|(\/?[a-zA-Z][^>\s]*)|(\/?$))/g,_=/-->/g,A=/>/g,I=RegExp(`>|${C}(?:([^\\s"'>=/]+)(${C}*=${C}*(?:[^ \t\n\f\r"'\`<>=]|("|')|))|$)`,"g"),j=/'/g,D=/"/g,O=/^(?:script|style|textarea|title)$/i,w=e=>(r,...s)=>({_$litType$:e,strings:r,values:s}),T=(w(1),w(2),Symbol.for("lit-noChange")),B=Symbol.for("lit-nothing"),F=new WeakMap,W=x.createTreeWalker(x,129,null,!1);function P(e,r){if(!Array.isArray(e)||!e.hasOwnProperty("raw"))throw Error("invalid template strings array");return void 0!==g?g.createHTML(r):r}const V=(e,r)=>{const s=e.length-1,a=[];let l,c=2===r?"<svg>":"",p=E;for(let r=0;r<s;r++){const s=e[r];let h,g,m=-1,x=0;for(;x<s.length&&(p.lastIndex=x,g=p.exec(s),null!==g);)x=p.lastIndex,p===E?"!--"===g[1]?p=_:void 0!==g[1]?p=A:void 0!==g[2]?(O.test(g[2])&&(l=RegExp("</"+g[2],"g")),p=I):void 0!==g[3]&&(p=I):p===I?">"===g[0]?(p=null!=l?l:E,m=-1):void 0===g[1]?m=-2:(m=p.lastIndex-g[2].length,h=g[1],p=void 0===g[3]?I:'"'===g[3]?D:j):p===D||p===j?p=I:p===_||p===A?p=E:(p=I,l=void 0);const $=p===I&&e[r+1].startsWith("/>")?" ":"";c+=p===E?s+y:m>=0?(a.push(h),s.slice(0,m)+b+s.slice(m)+f+$):s+f+(-2===m?(a.push(void 0),r):$)}return[P(e,c+(e[s]||"<?>")+(2===r?"</svg>":"")),a]};class N{constructor({strings:e,_$litType$:r},s){let a;this.parts=[];let l=0,c=0;const p=e.length-1,g=this.parts,[y,x]=V(e,r);if(this.el=N.createElement(y,s),W.currentNode=this.el.content,2===r){const e=this.el.content,r=e.firstChild;r.remove(),e.append(...r.childNodes)}for(;null!==(a=W.nextNode())&&g.length<p;){if(1===a.nodeType){if(a.hasAttributes()){const e=[];for(const r of a.getAttributeNames())if(r.endsWith(b)||r.startsWith(f)){const s=x[c++];if(e.push(r),void 0!==s){const e=a.getAttribute(s.toLowerCase()+b).split(f),r=/([.?@])?(.*)/.exec(s);g.push({type:1,index:l,name:r[2],strings:e,ctor:"."===r[1]?H:"?"===r[1]?L:"@"===r[1]?z:k})}else g.push({type:6,index:l})}for(const r of e)a.removeAttribute(r)}if(O.test(a.tagName)){const e=a.textContent.split(f),r=e.length-1;if(r>0){a.textContent=h?h.emptyScript:"";for(let s=0;s<r;s++)a.append(e[s],u()),W.nextNode(),g.push({type:2,index:++l});a.append(e[r],u())}}}else if(8===a.nodeType)if(a.data===m)g.push({type:2,index:l});else{let e=-1;for(;-1!==(e=a.data.indexOf(f,e+1));)g.push({type:7,index:l}),e+=f.length-1}l++}}static createElement(e,r){const s=x.createElement("template");return s.innerHTML=e,s}}function S(e,r,s=e,a){var l,c,p,h;if(r===T)return r;let g=void 0!==a?null===(l=s._$Co)||void 0===l?void 0:l[a]:s._$Cl;const b=d(r)?void 0:r._$litDirective$;return(null==g?void 0:g.constructor)!==b&&(null===(c=null==g?void 0:g._$AO)||void 0===c||c.call(g,!1),void 0===b?g=void 0:(g=new b(e),g._$AT(e,s,a)),void 0!==a?(null!==(p=(h=s)._$Co)&&void 0!==p?p:h._$Co=[])[a]=g:s._$Cl=g),void 0!==g&&(r=S(e,g._$AS(e,r.values),g,a)),r}class M{constructor(e,r){this._$AV=[],this._$AN=void 0,this._$AD=e,this._$AM=r}get parentNode(){return this._$AM.parentNode}get _$AU(){return this._$AM._$AU}u(e){var r;const{el:{content:s},parts:a}=this._$AD,l=(null!==(r=null==e?void 0:e.creationScope)&&void 0!==r?r:x).importNode(s,!0);W.currentNode=l;let c=W.nextNode(),p=0,h=0,g=a[0];for(;void 0!==g;){if(p===g.index){let r;2===g.type?r=new R(c,c.nextSibling,this,e):1===g.type?r=new g.ctor(c,g.name,g.strings,this,e):6===g.type&&(r=new Z(c,this,e)),this._$AV.push(r),g=a[++h]}p!==(null==g?void 0:g.index)&&(c=W.nextNode(),p++)}return W.currentNode=x,l}v(e){let r=0;for(const s of this._$AV)void 0!==s&&(void 0!==s.strings?(s._$AI(e,s,r),r+=s.strings.length-2):s._$AI(e[r])),r++}}class R{constructor(e,r,s,a){var l;this.type=2,this._$AH=B,this._$AN=void 0,this._$AA=e,this._$AB=r,this._$AM=s,this.options=a,this._$Cp=null===(l=null==a?void 0:a.isConnected)||void 0===l||l}get _$AU(){var e,r;return null!==(r=null===(e=this._$AM)||void 0===e?void 0:e._$AU)&&void 0!==r?r:this._$Cp}get parentNode(){let e=this._$AA.parentNode;const r=this._$AM;return void 0!==r&&11===(null==e?void 0:e.nodeType)&&(e=r.parentNode),e}get startNode(){return this._$AA}get endNode(){return this._$AB}_$AI(e,r=this){e=S(this,e,r),d(e)?e===B||null==e||""===e?(this._$AH!==B&&this._$AR(),this._$AH=B):e!==this._$AH&&e!==T&&this._(e):void 0!==e._$litType$?this.g(e):void 0!==e.nodeType?this.$(e):v(e)?this.T(e):this._(e)}k(e){return this._$AA.parentNode.insertBefore(e,this._$AB)}$(e){this._$AH!==e&&(this._$AR(),this._$AH=this.k(e))}_(e){this._$AH!==B&&d(this._$AH)?this._$AA.nextSibling.data=e:this.$(x.createTextNode(e)),this._$AH=e}g(e){var r;const{values:s,_$litType$:a}=e,l="number"==typeof a?this._$AC(e):(void 0===a.el&&(a.el=N.createElement(P(a.h,a.h[0]),this.options)),a);if((null===(r=this._$AH)||void 0===r?void 0:r._$AD)===l)this._$AH.v(s);else{const e=new M(l,this),r=e.u(this.options);e.v(s),this.$(r),this._$AH=e}}_$AC(e){let r=F.get(e.strings);return void 0===r&&F.set(e.strings,r=new N(e)),r}T(e){$(this._$AH)||(this._$AH=[],this._$AR());const r=this._$AH;let s,a=0;for(const l of e)a===r.length?r.push(s=new R(this.k(u()),this.k(u()),this,this.options)):s=r[a],s._$AI(l),a++;a<r.length&&(this._$AR(s&&s._$AB.nextSibling,a),r.length=a)}_$AR(e=this._$AA.nextSibling,r){var s;for(null===(s=this._$AP)||void 0===s||s.call(this,!1,!0,r);e&&e!==this._$AB;){const r=e.nextSibling;e.remove(),e=r}}setConnected(e){var r;void 0===this._$AM&&(this._$Cp=e,null===(r=this._$AP)||void 0===r||r.call(this,e))}}class k{constructor(e,r,s,a,l){this.type=1,this._$AH=B,this._$AN=void 0,this.element=e,this.name=r,this._$AM=a,this.options=l,s.length>2||""!==s[0]||""!==s[1]?(this._$AH=Array(s.length-1).fill(new String),this.strings=s):this._$AH=B}get tagName(){return this.element.tagName}get _$AU(){return this._$AM._$AU}_$AI(e,r=this,s,a){const l=this.strings;let c=!1;if(void 0===l)e=S(this,e,r,0),c=!d(e)||e!==this._$AH&&e!==T,c&&(this._$AH=e);else{const a=e;let p,h;for(e=l[0],p=0;p<l.length-1;p++)h=S(this,a[s+p],r,p),h===T&&(h=this._$AH[p]),c||(c=!d(h)||h!==this._$AH[p]),h===B?e=B:e!==B&&(e+=(null!=h?h:"")+l[p+1]),this._$AH[p]=h}c&&!a&&this.j(e)}j(e){e===B?this.element.removeAttribute(this.name):this.element.setAttribute(this.name,null!=e?e:"")}}class H extends k{constructor(){super(...arguments),this.type=3}j(e){this.element[this.name]=e===B?void 0:e}}const q=h?h.emptyScript:"";class L extends k{constructor(){super(...arguments),this.type=4}j(e){e&&e!==B?this.element.setAttribute(this.name,q):this.element.removeAttribute(this.name)}}class z extends k{constructor(e,r,s,a,l){super(e,r,s,a,l),this.type=5}_$AI(e,r=this){var s;if((e=null!==(s=S(this,e,r,0))&&void 0!==s?s:B)===T)return;const a=this._$AH,l=e===B&&a!==B||e.capture!==a.capture||e.once!==a.once||e.passive!==a.passive,c=e!==B&&(a===B||l);l&&this.element.removeEventListener(this.name,this,a),c&&this.element.addEventListener(this.name,this,e),this._$AH=e}handleEvent(e){var r,s;"function"==typeof this._$AH?this._$AH.call(null!==(s=null===(r=this.options)||void 0===r?void 0:r.host)&&void 0!==s?s:this.element,e):this._$AH.handleEvent(e)}}class Z{constructor(e,r,s){this.element=e,this.type=6,this._$AN=void 0,this._$AM=r,this.options=s}get _$AU(){return this._$AM._$AU}_$AI(e){S(this,e)}}const U=p.litHtmlPolyfillSupport;null==U||U(N,R),(null!==(c=p.litHtmlVersions)&&void 0!==c?c:p.litHtmlVersions=[]).push("2.8.0");const if_defined_l=e=>null!=e?e:B;var kor_input_decorate=function(e,r,s,a){var l,c=arguments.length,p=c<3?r:null===a?a=Object.getOwnPropertyDescriptor(r,s):a;if("object"==typeof Reflect&&"function"==typeof Reflect.decorate)p=Reflect.decorate(e,r,s,a);else for(var h=e.length-1;h>=0;h--)(l=e[h])&&(p=(c<3?l(p):c>3?l(r,s,p):l(r,s))||p);return c>3&&p&&Object.defineProperty(r,s,p),p};let G=class korInput extends e{static get styles(){return[l,r`
         :host {
           display: flex;
           align-items: center;
@@ -1375,10 +1385,10 @@ import{LitElement as t,css as e,html as n}from"lit";const i=(t,e)=>"method"===e.
             border-color: rgba(var(--neutral-1), 0.4);
           }
         }
-      `]}render(){var t;return n`
-      ${this.icon?n` <kor-icon class="icon" icon="${this.icon}"></kor-icon> `:""}
+      `]}render(){var e;return s`
+      ${this.icon?s` <kor-icon class="icon" icon="${this.icon}"></kor-icon> `:""}
       <div class="center">
-        ${this.label?n` <label class="label">${this.label}</label> `:""}
+        ${this.label?s` <label class="label">${this.label}</label> `:""}
         <input id="main_input"
           .type="${"date"===this.type||"datetime"===this.type?"text":this.type}"
           .value="${this.value?this.value:""}"
@@ -1389,23 +1399,23 @@ import{LitElement as t,css as e,html as n}from"lit";const i=(t,e)=>"method"===e.
           max="${if_defined_l(this.max)}"
           pattern="${if_defined_l(this.pattern)}"
           name="${if_defined_l(this.name)}"
-          @input="${t=>{const e=t.target;e.value!=this.value&&this.handleChange_(t),this.isFilterableSelect_()&&(this.filter_=e.value,this.active=!0,this.filterItems_())}}"
-          @keydown="${t=>{this.handleFilterKeys_(t)}}"
-          @focus="${t=>{this.handleFocus_(t)}}"
-          @blur="${t=>{this.handleBlur_(t)}}"
+          @input="${e=>{const r=e.target;r.value!=this.value&&this.handleChange_(e),this.isFilterableSelect_()&&(this.filter_=r.value,this.active=!0,this.filterItems_())}}"
+          @keydown="${e=>{this.handleFilterKeys_(e)}}"
+          @focus="${e=>{this.handleFocus_(e)}}"
+          @blur="${e=>{this.handleBlur_(e)}}"
         />
       </div>
       <!-- select -->
-      ${"select"===this.type?n`
+      ${"select"===this.type?s`
             <kor-icon
               button
               class="select-icon"
               icon="arrow_drop_down"
             ></kor-icon>
-            ${this.active?n`
+            ${this.active?s`
                   <kor-card
-                    @click="${t=>{this.active=!1,t.stopPropagation()}}"
-                    @wheel="${t=>t.stopPropagation()}"
+                    @click="${e=>{this.active=!1,e.stopPropagation()}}"
+                    @wheel="${e=>e.stopPropagation()}"
                     class="select-menu"
                     .style="
                   top: ${this.getMenuStyles().top};
@@ -1418,9 +1428,9 @@ import{LitElement as t,css as e,html as n}from"lit";const i=(t,e)=>"method"===e.
                 `:""}
           `:""}
       <!-- date and datetime -->
-      ${"date"===this.type||"datetime"===this.type?n`${this.active?this.getCalendarGrid_(null!==(t=this.value)&&void 0!==t?t:""):""}`:""}
+      ${"date"===this.type||"datetime"===this.type?s`${this.active?this.getCalendarGrid_(null!==(e=this.value)&&void 0!==e?e:""):""}`:""}
       <!-- clear -->
-      ${this.disabled||this.readonly||!this.value||this.noClear||"select"===this.type?"":n`
+      ${this.disabled||this.readonly||!this.value||this.noClear||"select"===this.type?"":s`
             <kor-icon
               button
               class="clear-icon"
@@ -1429,30 +1439,30 @@ import{LitElement as t,css as e,html as n}from"lit";const i=(t,e)=>"method"===e.
             ></kor-icon>
           `}
       <!-- status -->
-      ${this.status?n`
+      ${this.status?s`
             <kor-icon
               class="status-icon"
               .icon="${this.getStatusIcon()}"
             ></kor-icon>
           `:""}
       <!-- number increment or month increment -->
-      ${("number"===this.type&&parseFloat(String(this.step))||"date"===this.type||"datetime"===this.type)&&!this.readonly?n`
+      ${("number"===this.type&&parseFloat(String(this.step))||"date"===this.type||"datetime"===this.type)&&!this.readonly?s`
             <kor-icon
               button
               class="increment-icon"
               icon="keyboard_arrow_left"
-              @click="${t=>this.handleIncrement_(t,"left")}"
+              @click="${e=>this.handleIncrement_(e,"left")}"
             ></kor-icon>
             <kor-icon
               button
               class="increment-icon"
               icon="keyboard_arrow_right"
-              @click="${t=>this.handleIncrement_(t,"right")}"
+              @click="${e=>this.handleIncrement_(e,"right")}"
             ></kor-icon>
           `:""}
       <!-- functions slot -->
       <slot name="functions"></slot>
-    `}constructor(){if(super(),this.type="text",this.autofocus=!1,this.step=0,this.is12Hour_=!1,this.isMenuHandlerSet_=!1,this.filter_="",this.addEventListener("click",t=>{var e;if(this.active)if("select"===this.type){if(this.isFilterableSelect_()&&t.composedPath().includes(this.main_input))return;this.closeSelectMenu(t)}else this.active=!1;else this.active||(this.filter_="",this.active=!0,"select"===this.type&&!this.filterable||this.disabled||this.readonly||null===(e=this.main_input)||void 0===e||e.focus())}),"datetime"===this.type){const t=new Intl.DateTimeFormat(this.locale,{hour:"numeric"}).resolvedOptions().hourCycle;"h11"!==t&&"h12"!==t||(this.is12Hour_=!0)}}firstUpdated(){var t,e,n,s;"select"===this.type||this.disabled||this.readonly||null===(t=this.main_input)||void 0===t||t.focus(),null===(e=this.main_input)||void 0===e||e.addEventListener("keydown",t=>{this.step||"number"!==this.type||"ArrowUp"!==t.key&&"ArrowDown"!==t.key||t.preventDefault()}),null===(n=this.main_input)||void 0===n||n.addEventListener("wheel",t=>{this.step||"number"!==this.type||t.preventDefault()},{passive:!1}),"date"!==this.type&&"datetime"!==this.type||(this.value=this.validateAndFormatDate_(null!==(s=this.value)&&void 0!==s?s:""))}handleChange_(t){var e;t instanceof Date?this.value=this.validateAndFormatDate_(t):t instanceof Event&&"string"==typeof(null===(e=t.target)||void 0===e?void 0:e.value)&&(this.value=t.target.value),this.dispatchEvent(new CustomEvent("change",{bubbles:!0,composed:!0}))}setDay_(t){var e,n;let s=new Date(Date.parse(null!==(e=this.value)&&void 0!==e?e:""));isNaN(s.getTime())&&(s=new Date),s.setDate(null!==(n=parseInt(t))&&void 0!==n?n:0),this.handleChange_(s),this.active=!1,this.requestUpdate()}getHour_(){var t;let e=new Date(Date.parse(null!==(t=this.value)&&void 0!==t?t:""));isNaN(e.getTime())&&(e=new Date);let n=e.getHours();return this.is12Hour_&&n>12&&(n-=12),String(n)}setHour_(t){var e,n;let s=new Date(Date.parse(null!==(e=this.value)&&void 0!==e?e:""));isNaN(s.getTime())&&(s=new Date);let l=null!==(n=parseInt(t))&&void 0!==n?n:0;this.is12Hour_&&l>0&&l<12&&"PM"===this.getAMPM_()&&(l+=12),s.setHours(l),this.handleChange_(s)}getMinute_(){var t;let e=new Date(Date.parse(null!==(t=this.value)&&void 0!==t?t:""));return isNaN(e.getTime())&&(e=new Date),String(e.getMinutes())}setMinute_(t){var e,n;let s=new Date(Date.parse(null!==(e=this.value)&&void 0!==e?e:""));isNaN(s.getTime())&&(s=new Date),s.setMinutes(null!==(n=parseInt(t))&&void 0!==n?n:0),this.handleChange_(s)}getAMPM_(){var t,e;return(null===(t=this.value)||void 0===t?void 0:t.includes("AM"))?"AM":(null===(e=this.value)||void 0===e?void 0:e.includes("PM"))?"PM":""}setAMPM_(t){var e;let n=new Date(Date.parse(null!==(e=this.main_input.value)&&void 0!==e?e:""));if(isNaN(n.getTime())&&(n=new Date),n.getHours()>=12&&"AM"===t)n.setHours(n.getHours()-12);else{if(!(n.getHours()<12&&"PM"===t))return;n.setHours(n.getHours()+12)}this.handleChange_(n)}handleClear(t){t.stopImmediatePropagation(),this.value=void 0,this.removeAttribute("value"),this.dispatchEvent(new CustomEvent("change",{bubbles:!0,composed:!0}))}handleFocus_(t){this.active||"select"===this.type||"date"===this.type||"datetime"===this.type||(this.active=!0)}handleBlur_(t){"number"===this.type&&this.validateMinMax(parseFloat(t.target.value)),"select"!==this.type&&"date"!==this.type&&"datetime"!==this.type&&(this.active=!1)}handleIncrement_(t,e){var n,s,l,p,h,g,u;if("date"===this.type||"datetime"===this.type){t.stopImmediatePropagation();let s=new Date(Date.parse(null!==(n=this.value)&&void 0!==n?n:""));return isNaN(s.getTime())&&(s=new Date),"left"===e?s.setMonth(s.getMonth()-1):s.setMonth(s.getMonth()+1),void this.handleChange_(s)}const v=parseFloat(String(this.step));!isNaN(v)&&v&&("left"===e?this.validateMinMax((null!==(p=parseFloat(null!==(l=null!==(s=this.value)&&void 0!==s?s:this.max)&&void 0!==l?l:"0"))&&void 0!==p?p:0)-v):"right"===e&&this.validateMinMax((null!==(u=parseFloat(null!==(g=null!==(h=this.value)&&void 0!==h?h:this.min)&&void 0!==g?g:"0"))&&void 0!==u?u:0)+v))}handleItems(t){const e=t.target.assignedNodes();e.forEach(t=>{"KOR-MENU-ITEM"===t.tagName&&t.addEventListener("active-changed",n=>{n.target.active&&(e.forEach(t=>{t.active=!1}),n.target.active=!0,this.value=t.label,this.active=!1,this.isFilterableSelect_()&&(this.filter_="",this.filterItems_(),this.handleChange_(void 0)))})}),this.filterItems_()}isFilterableSelect_(){return"select"===this.type&&!!this.filterable&&!this.disabled&&!this.readonly}filterItems_(){const t=this.filter_.trim().toLowerCase();Array.from(this.children).forEach(e=>{var n;if("KOR-MENU-ITEM"!==e.tagName)return;const s=String(null!==(n=e.label)&&void 0!==n?n:"").toLowerCase();e.style.display=!t||s.includes(t)?"":"none"})}handleFilterKeys_(t){if(this.isFilterableSelect_()&&this.active)if("Enter"===t.key){t.preventDefault();const e=Array.from(this.children).find(t=>"KOR-MENU-ITEM"===t.tagName&&"none"!==t.style.display);if(!e)return;e.active?(this.value=e.label,this.active=!1,this.filter_="",this.filterItems_(),this.handleChange_(void 0)):e.active=!0}else"Escape"===t.key&&(t.preventDefault(),this.active=!1)}attributeChangedCallback(t,e,n){var s;if(super.attributeChangedCallback(t,e,n),this.dispatchEvent(new Event(t+"-changed")),"active"!==t||"select"!==this.type&&"date"!==this.type&&"datetime"!==this.type){if("locale"==t&&("date"===this.type||"datetime"===this.type)){const t=new Intl.DateTimeFormat(n,{hour:"numeric"}).resolvedOptions().hourCycle;this.is12Hour_="h11"===t||"h12"===t;const e=this.validateAndFormatDate_(null!==(s=this.value)&&void 0!==s?s:"");e!==this.value&&(this.value=e)}}else this.active&&!this.isMenuHandlerSet_&&(this.handleMenu(),this.isMenuHandlerSet_=!0)}handleMenu(){const t=this.parentElement,closePopover=()=>{this.active=!1,null==t||t.removeEventListener("wheel",closePopover),this.isMenuHandlerSet_=!1};null==t||t.addEventListener("wheel",closePopover)}closeSelectMenu(t){"select"===this.type&&this.active&&(t.stopImmediatePropagation(),this.active=!1)}validateMinMax(t){isNaN(t)||t===parseFloat(this.value)||(this.min&&t<parseFloat(this.min)?this.value=this.min:this.max&&t>parseFloat(this.max)?this.value=this.max:this.value=t.toString(),this.handleChange_(void 0))}getStatusIcon(){let t;switch(this.status){case"error":t="cancel";break;case"warning":t="error";break;case"success":t="check_circle"}return t}getMenuStyles(){return{top:this.getBoundingClientRect().top+this.clientHeight+1+"px",left:this.getBoundingClientRect().left+"px",width:this.clientWidth+"px"}}validateAndFormatDate_(t){let e=t instanceof Date?t:new Date(Date.parse(null!=t?t:""));isNaN(e.getTime())&&(e=new Date);const n={dateStyle:"short"};"datetime"===this.type&&(n.timeStyle="short");return new Intl.DateTimeFormat(this.locale,n).format(e)}getLocaleDayNames_(){const t=new Intl.DateTimeFormat(this.locale,{weekday:"narrow"});return[1,2,3,4,5,6,7].map(e=>{const n=new Date(2024,0,e);return t.format(n)+"."})}getCalendarGrid_(t){var e,s;let l=new Date(Date.parse(null!=t?t:""));isNaN(l.getTime())&&(l=new Date);const p=new Intl.DateTimeFormat(this.locale,{month:"long"}).formatToParts(l).reduce((t,e)=>("literal"!==e.type&&(t[e.type]=e.value),t),{}),h=new Intl.DateTimeFormat(this.locale,{day:"numeric",month:"numeric",year:"numeric"}).formatToParts(l).reduce((t,e)=>("literal"!==e.type&&(t[e.type]=e.value),t),{}),g=null!==(e=parseInt(h.month))&&void 0!==e?e:0,u=null!==(s=parseInt(h.year))&&void 0!==s?s:0,v=p.month+" "+h.year;let y=new Date(u,g-1,1).getDay();y=0===y?6:y-1;const f=new Date(u,g,0).getDate(),m=new Date(u,g-1,0).getDate(),w=[];let x=1,$=1;w.push(...this.getLocaleDayNames_());for(let t=0;t<6;t++)for(let e=0;e<7;e++){const n=7*t+e;n<y?w.push(m-y+n+1+"."):x<=f?(w.push(String(x)),x++):(w.push($+"."),$++)}return n`
+    `}constructor(){if(super(),this.type="text",this.autofocus=!1,this.step=0,this.is12Hour_=!1,this.isMenuHandlerSet_=!1,this.filter_="",this.addEventListener("click",e=>{var r;if(this.active)if("select"===this.type){if(this.isFilterableSelect_()&&e.composedPath().includes(this.main_input))return;this.closeSelectMenu(e)}else this.active=!1;else this.active||(this.filter_="",this.active=!0,"select"===this.type&&!this.filterable||this.disabled||this.readonly||null===(r=this.main_input)||void 0===r||r.focus())}),"datetime"===this.type){const e=new Intl.DateTimeFormat(this.locale,{hour:"numeric"}).resolvedOptions().hourCycle;"h11"!==e&&"h12"!==e||(this.is12Hour_=!0)}}firstUpdated(){var e,r,s,a;"select"===this.type||this.disabled||this.readonly||null===(e=this.main_input)||void 0===e||e.focus(),null===(r=this.main_input)||void 0===r||r.addEventListener("keydown",e=>{this.step||"number"!==this.type||"ArrowUp"!==e.key&&"ArrowDown"!==e.key||e.preventDefault()}),null===(s=this.main_input)||void 0===s||s.addEventListener("wheel",e=>{this.step||"number"!==this.type||e.preventDefault()},{passive:!1}),"date"!==this.type&&"datetime"!==this.type||(this.value=this.validateAndFormatDate_(null!==(a=this.value)&&void 0!==a?a:""))}handleChange_(e){var r;e instanceof Date?this.value=this.validateAndFormatDate_(e):e instanceof Event&&"string"==typeof(null===(r=e.target)||void 0===r?void 0:r.value)&&(this.value=e.target.value),this.dispatchEvent(new CustomEvent("change",{bubbles:!0,composed:!0}))}setDay_(e){var r,s;let a=new Date(Date.parse(null!==(r=this.value)&&void 0!==r?r:""));isNaN(a.getTime())&&(a=new Date),a.setDate(null!==(s=parseInt(e))&&void 0!==s?s:0),this.handleChange_(a),this.active=!1,this.requestUpdate()}getHour_(){var e;let r=new Date(Date.parse(null!==(e=this.value)&&void 0!==e?e:""));isNaN(r.getTime())&&(r=new Date);let s=r.getHours();return this.is12Hour_&&s>12&&(s-=12),String(s)}setHour_(e){var r,s;let a=new Date(Date.parse(null!==(r=this.value)&&void 0!==r?r:""));isNaN(a.getTime())&&(a=new Date);let l=null!==(s=parseInt(e))&&void 0!==s?s:0;this.is12Hour_&&l>0&&l<12&&"PM"===this.getAMPM_()&&(l+=12),a.setHours(l),this.handleChange_(a)}getMinute_(){var e;let r=new Date(Date.parse(null!==(e=this.value)&&void 0!==e?e:""));return isNaN(r.getTime())&&(r=new Date),String(r.getMinutes())}setMinute_(e){var r,s;let a=new Date(Date.parse(null!==(r=this.value)&&void 0!==r?r:""));isNaN(a.getTime())&&(a=new Date),a.setMinutes(null!==(s=parseInt(e))&&void 0!==s?s:0),this.handleChange_(a)}getAMPM_(){var e,r;return(null===(e=this.value)||void 0===e?void 0:e.includes("AM"))?"AM":(null===(r=this.value)||void 0===r?void 0:r.includes("PM"))?"PM":""}setAMPM_(e){var r;let s=new Date(Date.parse(null!==(r=this.main_input.value)&&void 0!==r?r:""));if(isNaN(s.getTime())&&(s=new Date),s.getHours()>=12&&"AM"===e)s.setHours(s.getHours()-12);else{if(!(s.getHours()<12&&"PM"===e))return;s.setHours(s.getHours()+12)}this.handleChange_(s)}handleClear(e){e.stopImmediatePropagation(),this.value=void 0,this.removeAttribute("value"),this.dispatchEvent(new CustomEvent("change",{bubbles:!0,composed:!0}))}handleFocus_(e){this.active||"select"===this.type||"date"===this.type||"datetime"===this.type||(this.active=!0)}handleBlur_(e){"number"===this.type&&this.validateMinMax(parseFloat(e.target.value)),"select"!==this.type&&"date"!==this.type&&"datetime"!==this.type&&(this.active=!1)}handleIncrement_(e,r){var s,a,l,c,p,h,g;if("date"===this.type||"datetime"===this.type){e.stopImmediatePropagation();let a=new Date(Date.parse(null!==(s=this.value)&&void 0!==s?s:""));return isNaN(a.getTime())&&(a=new Date),"left"===r?a.setMonth(a.getMonth()-1):a.setMonth(a.getMonth()+1),void this.handleChange_(a)}const b=parseFloat(String(this.step));!isNaN(b)&&b&&("left"===r?this.validateMinMax((null!==(c=parseFloat(null!==(l=null!==(a=this.value)&&void 0!==a?a:this.max)&&void 0!==l?l:"0"))&&void 0!==c?c:0)-b):"right"===r&&this.validateMinMax((null!==(g=parseFloat(null!==(h=null!==(p=this.value)&&void 0!==p?p:this.min)&&void 0!==h?h:"0"))&&void 0!==g?g:0)+b))}handleItems(e){const r=e.target.assignedNodes();r.forEach(e=>{"KOR-MENU-ITEM"===e.tagName&&e.addEventListener("active-changed",s=>{s.target.active&&(r.forEach(e=>{e.active=!1}),s.target.active=!0,this.value=e.label,this.active=!1,this.isFilterableSelect_()&&(this.filter_="",this.filterItems_(),this.handleChange_(void 0)))})}),this.filterItems_()}isFilterableSelect_(){return"select"===this.type&&!!this.filterable&&!this.disabled&&!this.readonly}filterItems_(){const e=this.filter_.trim().toLowerCase();Array.from(this.children).forEach(r=>{var s;if("KOR-MENU-ITEM"!==r.tagName)return;const a=String(null!==(s=r.label)&&void 0!==s?s:"").toLowerCase();r.style.display=!e||a.includes(e)?"":"none"})}handleFilterKeys_(e){if(this.isFilterableSelect_()&&this.active)if("Enter"===e.key){e.preventDefault();const r=Array.from(this.children).find(e=>"KOR-MENU-ITEM"===e.tagName&&"none"!==e.style.display);if(!r)return;r.active?(this.value=r.label,this.active=!1,this.filter_="",this.filterItems_(),this.handleChange_(void 0)):r.active=!0}else"Escape"===e.key&&(e.preventDefault(),this.active=!1)}attributeChangedCallback(e,r,s){var a;if(super.attributeChangedCallback(e,r,s),this.dispatchEvent(new Event(`${e}-changed`)),"active"!==e||"select"!==this.type&&"date"!==this.type&&"datetime"!==this.type){if("locale"==e&&("date"===this.type||"datetime"===this.type)){const e=new Intl.DateTimeFormat(s,{hour:"numeric"}).resolvedOptions().hourCycle;this.is12Hour_="h11"===e||"h12"===e;const r=this.validateAndFormatDate_(null!==(a=this.value)&&void 0!==a?a:"");r!==this.value&&(this.value=r)}}else this.active&&!this.isMenuHandlerSet_&&(this.handleMenu(),this.isMenuHandlerSet_=!0)}handleMenu(){const e=this.parentElement,closePopover=()=>{this.active=!1,null==e||e.removeEventListener("wheel",closePopover),this.isMenuHandlerSet_=!1};null==e||e.addEventListener("wheel",closePopover)}closeSelectMenu(e){"select"===this.type&&this.active&&(e.stopImmediatePropagation(),this.active=!1)}validateMinMax(e){isNaN(e)||e===parseFloat(this.value)||(this.min&&e<parseFloat(this.min)?this.value=this.min:this.max&&e>parseFloat(this.max)?this.value=this.max:this.value=e.toString(),this.handleChange_(void 0))}getStatusIcon(){let e;switch(this.status){case"error":e="cancel";break;case"warning":e="error";break;case"success":e="check_circle"}return e}getMenuStyles(){return{top:`${this.getBoundingClientRect().top+this.clientHeight+1}px`,left:`${this.getBoundingClientRect().left}px`,width:`${this.clientWidth}px`}}validateAndFormatDate_(e){let r=e instanceof Date?e:new Date(Date.parse(null!=e?e:""));isNaN(r.getTime())&&(r=new Date);const s={dateStyle:"short"};"datetime"===this.type&&(s.timeStyle="short");return new Intl.DateTimeFormat(this.locale,s).format(r)}getLocaleDayNames_(){const e=new Intl.DateTimeFormat(this.locale,{weekday:"narrow"});return[1,2,3,4,5,6,7].map(r=>{const s=new Date(2024,0,r);return e.format(s)+"."})}getCalendarGrid_(e){var r,a;let l=new Date(Date.parse(null!=e?e:""));isNaN(l.getTime())&&(l=new Date);const c=new Intl.DateTimeFormat(this.locale,{month:"long"}).formatToParts(l).reduce((e,r)=>("literal"!==r.type&&(e[r.type]=r.value),e),{}),p=new Intl.DateTimeFormat(this.locale,{day:"numeric",month:"numeric",year:"numeric"}).formatToParts(l).reduce((e,r)=>("literal"!==r.type&&(e[r.type]=r.value),e),{}),h=null!==(r=parseInt(p.month))&&void 0!==r?r:0,g=null!==(a=parseInt(p.year))&&void 0!==a?a:0,b=c.month+" "+p.year;let f=new Date(g,h-1,1).getDay();f=0===f?6:f-1;const m=new Date(g,h,0).getDate(),y=new Date(g,h-1,0).getDate(),x=[];let $=1,C=1;x.push(...this.getLocaleDayNames_());for(let e=0;e<6;e++)for(let r=0;r<7;r++){const s=7*e+r;s<f?x.push(`${y-f+s+1}.`):$<=m?(x.push(String($)),$++):(x.push(`${C}.`),C++)}return s`
       <kor-card id="calendar_popup" class="select-menu"
         style="top: ${this.getMenuStyles().top};
                left: ${this.getMenuStyles().left};
@@ -1469,24 +1479,24 @@ import{LitElement as t,css as e,html as n}from"lit";const i=(t,e)=>"method"===e.
                display: flex;"
       >
         <kor-text size="body-1">
-          ${v}
+          ${b}
         <kor-text>
         <kor-switch>
           <kor-grid columns="7" spacing
             style="grid-template-columns: repeat(7, 3rem);"
           >
-            ${w.map(t=>n`
+            ${x.map(e=>s`
                 <kor-switch-item
-                  label="${t.includes(".")?t.slice(0,-1):t}"
+                  label="${e.includes(".")?e.slice(0,-1):e}"
                   grid-cols="1"
-                  ?active="${t===h.day}"
-                  ?disabled="${t.includes(".")}"
-                  @click="${t=>{var e;t.stopImmediatePropagation();const n=t.target;this.setDay_(null!==(e=n.label)&&void 0!==e?e:"")}}"
+                  ?active="${e===p.day}"
+                  ?disabled="${e.includes(".")}"
+                  @click="${e=>{var r;e.stopImmediatePropagation();const s=e.target;this.setDay_(null!==(r=s.label)&&void 0!==r?r:"")}}"
                 ></kor-switch-item>
               `)}
           </kor-grid>
         </kor-switch>
-        ${"datetime"===this.type?n`
+        ${"datetime"===this.type?s`
             <kor-grid columns="${this.is12Hour_?"3":"2"}" spacing="s"
               style="display: flex;"
             >
@@ -1496,19 +1506,19 @@ import{LitElement as t,css as e,html as n}from"lit";const i=(t,e)=>"method"===e.
                   <input class="hours" type="number" step="1"
                     min="0" max="${this.is12Hour_?12:24}"
                     value="${this.getHour_()}"
-                    @input="${t=>{var e;const n=t.target;n.value!==this.getHour_()&&this.setHour_(null!==(e=n.value)&&void 0!==e?e:"")}}"
-                    @click="${t=>{t.stopImmediatePropagation()}}"
+                    @input="${e=>{var r;const s=e.target;s.value!==this.getHour_()&&this.setHour_(null!==(r=s.value)&&void 0!==r?r:"")}}"
+                    @click="${e=>{e.stopImmediatePropagation()}}"
                   />
                 </div>
                 <kor-icon class="hours" button size="m"
                   class="increment-icon"
                   icon="keyboard_arrow_left"
-                  @click="${t=>{var e,n,s,l,p;t.stopImmediatePropagation();const h=t.target.parentNode.querySelector("div > input");if(!h)return;const g=(null!==(n=parseInt(null!==(e=h.value)&&void 0!==e?e:h.max))&&void 0!==n?n:0)-(null!==(s=parseInt(h.step))&&void 0!==s?s:0);g>=(null!==(l=parseInt(h.min))&&void 0!==l?l:0)&&(h.value=String(g),this.setHour_(null!==(p=h.value)&&void 0!==p?p:""))}}"
+                  @click="${e=>{var r,s,a,l,c;e.stopImmediatePropagation();const p=e.target.parentNode.querySelector("div > input");if(!p)return;const h=(null!==(s=parseInt(null!==(r=p.value)&&void 0!==r?r:p.max))&&void 0!==s?s:0)-(null!==(a=parseInt(p.step))&&void 0!==a?a:0);h>=(null!==(l=parseInt(p.min))&&void 0!==l?l:0)&&(p.value=String(h),this.setHour_(null!==(c=p.value)&&void 0!==c?c:""))}}"
                 ></kor-icon>
                 <kor-icon class="hours" button size="m"
                   class="increment-icon"
                   icon="keyboard_arrow_right"
-                  @click="${t=>{var e,n,s,l,p;t.stopImmediatePropagation();const h=t.target.parentNode.querySelector("div > input");if(!h)return;const g=(null!==(n=parseInt(null!==(e=h.value)&&void 0!==e?e:h.min))&&void 0!==n?n:0)+(null!==(s=parseInt(h.step))&&void 0!==s?s:0);g<=(null!==(l=parseInt(h.max))&&void 0!==l?l:0)&&(h.value=String(g),this.setHour_(null!==(p=h.value)&&void 0!==p?p:""))}}"
+                  @click="${e=>{var r,s,a,l,c;e.stopImmediatePropagation();const p=e.target.parentNode.querySelector("div > input");if(!p)return;const h=(null!==(s=parseInt(null!==(r=p.value)&&void 0!==r?r:p.min))&&void 0!==s?s:0)+(null!==(a=parseInt(p.step))&&void 0!==a?a:0);h<=(null!==(l=parseInt(p.max))&&void 0!==l?l:0)&&(p.value=String(h),this.setHour_(null!==(c=p.value)&&void 0!==c?c:""))}}"
                 ></kor-icon>
               </div>
               <!-- The minutes input with its &lt; and &gt; buttons -->
@@ -1517,34 +1527,34 @@ import{LitElement as t,css as e,html as n}from"lit";const i=(t,e)=>"method"===e.
                   <input class="minutes" type="number" step="1"
                     min="0" max="60"
                     value="${this.getMinute_()}"
-                    @input="${t=>{var e;const n=t.target;n.value!==this.getMinute_()&&this.setMinute_(null!==(e=n.value)&&void 0!==e?e:"")}}"
-                    @click="${t=>{t.stopImmediatePropagation()}}"
+                    @input="${e=>{var r;const s=e.target;s.value!==this.getMinute_()&&this.setMinute_(null!==(r=s.value)&&void 0!==r?r:"")}}"
+                    @click="${e=>{e.stopImmediatePropagation()}}"
                   />
                 </div>
                 <kor-icon class="minutes" button size="m"
                   class="increment-icon"
                   icon="keyboard_arrow_left"
-                  @click="${t=>{var e,n,s,l,p;t.stopImmediatePropagation();const h=t.target.parentNode.querySelector("div > input");if(!h)return;const g=(null!==(n=parseInt(null!==(e=h.value)&&void 0!==e?e:h.max))&&void 0!==n?n:0)-(null!==(s=parseInt(h.step))&&void 0!==s?s:0);g>=(null!==(l=parseInt(h.min))&&void 0!==l?l:0)&&(h.value=String(g),this.setMinute_(null!==(p=h.value)&&void 0!==p?p:""))}}"
+                  @click="${e=>{var r,s,a,l,c;e.stopImmediatePropagation();const p=e.target.parentNode.querySelector("div > input");if(!p)return;const h=(null!==(s=parseInt(null!==(r=p.value)&&void 0!==r?r:p.max))&&void 0!==s?s:0)-(null!==(a=parseInt(p.step))&&void 0!==a?a:0);h>=(null!==(l=parseInt(p.min))&&void 0!==l?l:0)&&(p.value=String(h),this.setMinute_(null!==(c=p.value)&&void 0!==c?c:""))}}"
                 ></kor-icon>
                 <kor-icon class="minutes" button size="m"
                   class="increment-icon"
                   icon="keyboard_arrow_right"
-                  @click="${t=>{var e,n,s,l,p;t.stopImmediatePropagation();const h=t.target.parentNode.querySelector("div > input");if(!h)return;const g=(null!==(n=parseInt(null!==(e=h.value)&&void 0!==e?e:h.min))&&void 0!==n?n:0)+(null!==(s=parseInt(h.step))&&void 0!==s?s:0);g<=(null!==(l=parseInt(h.max))&&void 0!==l?l:0)&&(h.value=String(g),this.setMinute_(null!==(p=h.value)&&void 0!==p?p:""))}}"
+                  @click="${e=>{var r,s,a,l,c;e.stopImmediatePropagation();const p=e.target.parentNode.querySelector("div > input");if(!p)return;const h=(null!==(s=parseInt(null!==(r=p.value)&&void 0!==r?r:p.min))&&void 0!==s?s:0)+(null!==(a=parseInt(p.step))&&void 0!==a?a:0);h<=(null!==(l=parseInt(p.max))&&void 0!==l?l:0)&&(p.value=String(h),this.setMinute_(null!==(c=p.value)&&void 0!==c?c:""))}}"
                 ></kor-icon>
               </div>
               <!-- The optional AM/PM switch for 12 hour time format -->
-              ${this.is12Hour_?n`
+              ${this.is12Hour_?s`
                   <kor-switch grid-cols="1"
                     style="display: flex; margin: 4px 8px 0 0; max-width: 8rem;"
                   >
                     <kor-grid columns="2" spacing>
                       <kor-switch-item label="AM"
                         ?active="${"AM"===this.getAMPM_()}"
-                        @click="${t=>{var e;t.stopImmediatePropagation();const n=t.target;this.setAMPM_(null!==(e=n.label)&&void 0!==e?e:"")}}"
+                        @click="${e=>{var r;e.stopImmediatePropagation();const s=e.target;this.setAMPM_(null!==(r=s.label)&&void 0!==r?r:"")}}"
                       ></kor-switch-item>
                       <kor-switch-item label="PM"
                         ?active="${"PM"===this.getAMPM_()}"
-                        @click="${t=>{var e;t.stopImmediatePropagation();const n=t.target;this.setAMPM_(null!==(e=n.label)&&void 0!==e?e:"")}}"
+                        @click="${e=>{var r;e.stopImmediatePropagation();const s=e.target;this.setAMPM_(null!==(r=s.label)&&void 0!==r?r:"")}}"
                       ></kor-switch-item>
                     </kor-grid>
                   </kor-switch>
@@ -1552,7 +1562,7 @@ import{LitElement as t,css as e,html as n}from"lit";const i=(t,e)=>"method"===e.
             </kor-grid>
           `:""}
       </kor-card>
-    `}};kor_input_decorate([property_e({type:String,reflect:!0})],q.prototype,"label",void 0),kor_input_decorate([property_e({type:String,reflect:!0})],q.prototype,"icon",void 0),kor_input_decorate([property_e({type:String,reflect:!0})],q.prototype,"value",void 0),kor_input_decorate([property_e({type:String,reflect:!0})],q.prototype,"name",void 0),kor_input_decorate([property_e({type:String,reflect:!0})],q.prototype,"type",void 0),kor_input_decorate([property_e({type:String,reflect:!0})],q.prototype,"locale",void 0),kor_input_decorate([property_e({type:String,reflect:!0})],q.prototype,"status",void 0),kor_input_decorate([property_e({type:Boolean,reflect:!0})],q.prototype,"condensed",void 0),kor_input_decorate([property_e({type:Boolean,reflect:!0})],q.prototype,"active",void 0),kor_input_decorate([property_e({type:Boolean,reflect:!0})],q.prototype,"disabled",void 0),kor_input_decorate([property_e({type:Boolean,reflect:!0})],q.prototype,"readonly",void 0),kor_input_decorate([property_e({type:Boolean,reflect:!0,attribute:"no-clear"})],q.prototype,"noClear",void 0),kor_input_decorate([property_e({type:Boolean,reflect:!0})],q.prototype,"autofocus",void 0),kor_input_decorate([property_e({type:Boolean,reflect:!0})],q.prototype,"filterable",void 0),kor_input_decorate([property_e({type:String,reflect:!0})],q.prototype,"pattern",void 0),kor_input_decorate([property_e({type:String,reflect:!0})],q.prototype,"min",void 0),kor_input_decorate([property_e({type:String,reflect:!0})],q.prototype,"max",void 0),kor_input_decorate([property_e({type:Number,reflect:!0})],q.prototype,"step",void 0),kor_input_decorate([function o(t,e){return base_o({descriptor:n=>{const s={get(){var e;return null===(e=this.renderRoot)||void 0===e?void 0:e.querySelector(t)},enumerable:!0,configurable:!0};if(e){const e="symbol"==typeof n?Symbol():"__"+n;s.get=function(){var n;return void 0===this[e]&&(this[e]=null===(n=this.renderRoot)||void 0===n?void 0:n.querySelector(t)),this[e]}}return s}})}("#main_input",!1)],q.prototype,"main_input",void 0),q=kor_input_decorate([(t=>e=>"function"==typeof e?((t,e)=>(window.customElements.define(t,e),e))(t,e):((t,e)=>{const{kind:n,elements:s}=e;return{kind:n,elements:s,finisher(e){window.customElements.define(t,e)}}})(t,e))("kor-input")],q);var kor_menu_item_decorate=function(t,e,n,s){var l,p=arguments.length,h=p<3?e:null===s?s=Object.getOwnPropertyDescriptor(e,n):s;if("object"==typeof Reflect&&"function"==typeof Reflect.decorate)h=Reflect.decorate(t,e,n,s);else for(var g=t.length-1;g>=0;g--)(l=t[g])&&(h=(p<3?l(h):p>3?l(e,n,h):l(e,n))||h);return p>3&&h&&Object.defineProperty(e,n,h),h};class korMenuItem extends t{constructor(){super(...arguments),this.label="Label",this.toggle=!0}static get styles(){return[l,e`
+    `}};kor_input_decorate([n({type:String,reflect:!0})],G.prototype,"label",void 0),kor_input_decorate([n({type:String,reflect:!0})],G.prototype,"icon",void 0),kor_input_decorate([n({type:String,reflect:!0})],G.prototype,"value",void 0),kor_input_decorate([n({type:String,reflect:!0})],G.prototype,"name",void 0),kor_input_decorate([n({type:String,reflect:!0})],G.prototype,"type",void 0),kor_input_decorate([n({type:String,reflect:!0})],G.prototype,"locale",void 0),kor_input_decorate([n({type:String,reflect:!0})],G.prototype,"status",void 0),kor_input_decorate([n({type:Boolean,reflect:!0})],G.prototype,"condensed",void 0),kor_input_decorate([n({type:Boolean,reflect:!0})],G.prototype,"active",void 0),kor_input_decorate([n({type:Boolean,reflect:!0})],G.prototype,"disabled",void 0),kor_input_decorate([n({type:Boolean,reflect:!0})],G.prototype,"readonly",void 0),kor_input_decorate([n({type:Boolean,reflect:!0,attribute:"no-clear"})],G.prototype,"noClear",void 0),kor_input_decorate([n({type:Boolean,reflect:!0})],G.prototype,"autofocus",void 0),kor_input_decorate([n({type:Boolean,reflect:!0})],G.prototype,"filterable",void 0),kor_input_decorate([n({type:String,reflect:!0})],G.prototype,"pattern",void 0),kor_input_decorate([n({type:String,reflect:!0})],G.prototype,"min",void 0),kor_input_decorate([n({type:String,reflect:!0})],G.prototype,"max",void 0),kor_input_decorate([n({type:Number,reflect:!0})],G.prototype,"step",void 0),kor_input_decorate([function query_i(e,r){return o({descriptor:s=>{const a={get(){var r,s;return null!==(s=null===(r=this.renderRoot)||void 0===r?void 0:r.querySelector(e))&&void 0!==s?s:null},enumerable:!0,configurable:!0};if(r){const r="symbol"==typeof s?Symbol():"__"+s;a.get=function(){var s,a;return void 0===this[r]&&(this[r]=null!==(a=null===(s=this.renderRoot)||void 0===s?void 0:s.querySelector(e))&&void 0!==a?a:null),this[r]}}return a}})}("#main_input",!1)],G.prototype,"main_input",void 0),G=kor_input_decorate([(e=>r=>"function"==typeof r?((e,r)=>(customElements.define(e,r),r))(e,r):((e,r)=>{const{kind:s,elements:a}=r;return{kind:s,elements:a,finisher(r){customElements.define(e,r)}}})(e,r))("kor-input")],G);var kor_menu_item_decorate=function(e,r,s,a){var l,c=arguments.length,p=c<3?r:null===a?a=Object.getOwnPropertyDescriptor(r,s):a;if("object"==typeof Reflect&&"function"==typeof Reflect.decorate)p=Reflect.decorate(e,r,s,a);else for(var h=e.length-1;h>=0;h--)(l=e[h])&&(p=(c<3?l(p):c>3?l(r,s,p):l(r,s))||p);return c>3&&p&&Object.defineProperty(r,s,p),p};class korMenuItem extends e{constructor(){super(...arguments),this.label="Label",this.toggle=!0}static get styles(){return[l,r`
         :host {
           padding: var(--spacing-s) 0;
           border-radius: var(--border-radius);
@@ -1598,12 +1608,12 @@ import{LitElement as t,css as e,html as n}from"lit";const i=(t,e)=>"method"===e.
             background: rgba(var(--neutral-1), 0.05);
           }
         }
-      `]}render(){return n`
-      ${this.icon?n` <kor-icon icon="${this.icon}"></kor-icon> `:""}
-      ${this.label?n` <kor-text>${this.label}</kor-text> `:""}
+      `]}render(){return s`
+      ${this.icon?s` <kor-icon icon="${this.icon}"></kor-icon> `:""}
+      ${this.label?s` <kor-text>${this.label}</kor-text> `:""}
       <!-- functions slot -->
       <slot name="functions"></slot>
-    `}attributeChangedCallback(t,e,n){super.attributeChangedCallback(t,e,n),this.dispatchEvent(new Event(t+"-changed")),"toggle"==t&&this.toggle&&this.addEventListener("click",()=>{this.active=!this.active})}}kor_menu_item_decorate([property_e({type:String,reflect:!0})],korMenuItem.prototype,"label",void 0),kor_menu_item_decorate([property_e({type:String,reflect:!0})],korMenuItem.prototype,"icon",void 0),kor_menu_item_decorate([property_e({type:Boolean,reflect:!0})],korMenuItem.prototype,"active",void 0),kor_menu_item_decorate([property_e({type:Boolean,reflect:!0})],korMenuItem.prototype,"toggle",void 0),kor_menu_item_decorate([property_e({type:Boolean,reflect:!0})],korMenuItem.prototype,"disabled",void 0),window.customElements.get("kor-menu-item")||window.customElements.define("kor-menu-item",korMenuItem);var kor_modal_decorate=function(t,e,n,s){var l,p=arguments.length,h=p<3?e:null===s?s=Object.getOwnPropertyDescriptor(e,n):s;if("object"==typeof Reflect&&"function"==typeof Reflect.decorate)h=Reflect.decorate(t,e,n,s);else for(var g=t.length-1;g>=0;g--)(l=t[g])&&(h=(p<3?l(h):p>3?l(e,n,h):l(e,n))||h);return p>3&&h&&Object.defineProperty(e,n,h),h};class korModal extends t{constructor(){super(...arguments),this.height="400px",this.width="600px",this.flexDirection="column",this.emptyHeader=!0,this.emptyFunctions=!0,this.emptyFooter=!0}static get styles(){return[l,e`
+    `}attributeChangedCallback(e,r,s){super.attributeChangedCallback(e,r,s),this.dispatchEvent(new Event(`${e}-changed`)),"toggle"==e&&this.toggle&&this.addEventListener("click",()=>{this.active=!this.active})}}kor_menu_item_decorate([n({type:String,reflect:!0})],korMenuItem.prototype,"label",void 0),kor_menu_item_decorate([n({type:String,reflect:!0})],korMenuItem.prototype,"icon",void 0),kor_menu_item_decorate([n({type:Boolean,reflect:!0})],korMenuItem.prototype,"active",void 0),kor_menu_item_decorate([n({type:Boolean,reflect:!0})],korMenuItem.prototype,"toggle",void 0),kor_menu_item_decorate([n({type:Boolean,reflect:!0})],korMenuItem.prototype,"disabled",void 0),window.customElements.get("kor-menu-item")||window.customElements.define("kor-menu-item",korMenuItem);var kor_modal_decorate=function(e,r,s,a){var l,c=arguments.length,p=c<3?r:null===a?a=Object.getOwnPropertyDescriptor(r,s):a;if("object"==typeof Reflect&&"function"==typeof Reflect.decorate)p=Reflect.decorate(e,r,s,a);else for(var h=e.length-1;h>=0;h--)(l=e[h])&&(p=(c<3?l(p):c>3?l(r,s,p):l(r,s))||p);return c>3&&p&&Object.defineProperty(r,s,p),p};class korModal extends e{constructor(){super(...arguments),this.height="400px",this.width="600px",this.flexDirection="column",this.emptyHeader=!0,this.emptyFunctions=!0,this.emptyFooter=!0}static get styles(){return[l,r`
         :host {
           transition: var(--transition-1), 0s top, 0s left;
           position: fixed;
@@ -1639,9 +1649,9 @@ import{LitElement as t,css as e,html as n}from"lit";const i=(t,e)=>"method"===e.
           --functions-gap: inherit;
           --footer-gap: inherit;
         }
-      `]}render(){return n`
+      `]}render(){return s`
       <kor-card
-        @click="${t=>t.stopPropagation()}"
+        @click="${e=>e.stopPropagation()}"
         style="height: ${this.height}; width: ${this.width}; max-height: ${this.height}; max-width: ${this.width}"
         .label="${this.label}"
         .icon="${this.icon}"
@@ -1650,10 +1660,10 @@ import{LitElement as t,css as e,html as n}from"lit";const i=(t,e)=>"method"===e.
         <slot
           name="header"
           slot="${this.emptyHeader?"hidden":"header"}"
-          @slotchange="${t=>this.emptyHeader=0===t.target.assignedNodes().length}"
+          @slotchange="${e=>this.emptyHeader=0===e.target.assignedNodes().length}"
         ></slot>
         <slot name="functions" slot="functions">
-          ${this.sticky?"":n`
+          ${this.sticky?"":s`
                 <kor-icon
                   button
                   icon="close"
@@ -1665,22 +1675,22 @@ import{LitElement as t,css as e,html as n}from"lit";const i=(t,e)=>"method"===e.
         <slot
           name="footer"
           slot="${this.emptyFooter?"hidden":"footer"}"
-          @slotchange="${t=>this.emptyFooter=0===t.target.assignedNodes().length}"
+          @slotchange="${e=>this.emptyFooter=0===e.target.assignedNodes().length}"
         ></slot>
       </kor-card>
-    `}attributeChangedCallback(t,e,n){super.attributeChangedCallback(t,e,n),this.dispatchEvent(new Event(t+"-changed")),"visible"===t&&this.visible&&this.addEventListener("click",()=>this.sticky?"":this.visible=!1)}}kor_modal_decorate([property_e({type:String,reflect:!0})],korModal.prototype,"label",void 0),kor_modal_decorate([property_e({type:String,reflect:!0})],korModal.prototype,"icon",void 0),kor_modal_decorate([property_e({type:String,reflect:!0})],korModal.prototype,"height",void 0),kor_modal_decorate([property_e({type:String,reflect:!0})],korModal.prototype,"width",void 0),kor_modal_decorate([property_e({type:String,reflect:!0,attribute:"flex-direction"})],korModal.prototype,"flexDirection",void 0),kor_modal_decorate([property_e({type:Boolean,reflect:!0})],korModal.prototype,"visible",void 0),kor_modal_decorate([property_e({type:Boolean,reflect:!0})],korModal.prototype,"sticky",void 0),kor_modal_decorate([r()],korModal.prototype,"emptyHeader",void 0),kor_modal_decorate([r()],korModal.prototype,"emptyFunctions",void 0),kor_modal_decorate([r()],korModal.prototype,"emptyFooter",void 0),window.customElements.get("kor-modal")||window.customElements.define("kor-modal",korModal);class korNavbar extends t{static get styles(){return[l,e`
+    `}attributeChangedCallback(e,r,s){super.attributeChangedCallback(e,r,s),this.dispatchEvent(new Event(`${e}-changed`)),"visible"===e&&this.visible&&this.addEventListener("click",()=>this.sticky?"":this.visible=!1)}}kor_modal_decorate([n({type:String,reflect:!0})],korModal.prototype,"label",void 0),kor_modal_decorate([n({type:String,reflect:!0})],korModal.prototype,"icon",void 0),kor_modal_decorate([n({type:String,reflect:!0})],korModal.prototype,"height",void 0),kor_modal_decorate([n({type:String,reflect:!0})],korModal.prototype,"width",void 0),kor_modal_decorate([n({type:String,reflect:!0,attribute:"flex-direction"})],korModal.prototype,"flexDirection",void 0),kor_modal_decorate([n({type:Boolean,reflect:!0})],korModal.prototype,"visible",void 0),kor_modal_decorate([n({type:Boolean,reflect:!0})],korModal.prototype,"sticky",void 0),kor_modal_decorate([t()],korModal.prototype,"emptyHeader",void 0),kor_modal_decorate([t()],korModal.prototype,"emptyFunctions",void 0),kor_modal_decorate([t()],korModal.prototype,"emptyFooter",void 0),window.customElements.get("kor-modal")||window.customElements.define("kor-modal",korModal);class korNavbar extends e{static get styles(){return[l,r`
         :host {
           z-index: 2;
         }
         kor-app-bar {
           background-color: rgb(var(--base-2));
         }
-      `]}render(){return n`
+      `]}render(){return s`
       <kor-app-bar>
         <slot></slot>
         <slot name="functions" slot="functions"></slot>
       </kor-app-bar>
-    `}}window.customElements.get("kor-nav-bar")||window.customElements.define("kor-nav-bar",korNavbar);var kor_notifications_decorate=function(t,e,n,s){var l,p=arguments.length,h=p<3?e:null===s?s=Object.getOwnPropertyDescriptor(e,n):s;if("object"==typeof Reflect&&"function"==typeof Reflect.decorate)h=Reflect.decorate(t,e,n,s);else for(var g=t.length-1;g>=0;g--)(l=t[g])&&(h=(p<3?l(h):p>3?l(e,n,h):l(e,n))||h);return p>3&&h&&Object.defineProperty(e,n,h),h};class korNotifications extends t{constructor(){super(...arguments),this.position="top-right"}static get styles(){return[l,e`
+    `}}window.customElements.get("kor-nav-bar")||window.customElements.define("kor-nav-bar",korNavbar);var kor_notifications_decorate=function(e,r,s,a){var l,c=arguments.length,p=c<3?r:null===a?a=Object.getOwnPropertyDescriptor(r,s):a;if("object"==typeof Reflect&&"function"==typeof Reflect.decorate)p=Reflect.decorate(e,r,s,a);else for(var h=e.length-1;h>=0;h--)(l=e[h])&&(p=(c<3?l(p):c>3?l(r,s,p):l(r,s))||p);return c>3&&p&&Object.defineProperty(r,s,p),p};class korNotifications extends e{constructor(){super(...arguments),this.position="top-right"}static get styles(){return[l,r`
         :host {
           position: fixed;
           display: flex;
@@ -1716,7 +1726,7 @@ import{LitElement as t,css as e,html as n}from"lit";const i=(t,e)=>"method"===e.
         :host([position$='right']) {
           right: 0px;
         }
-      `]}render(){return n`<slot></slot>`}attributeChangedCallback(t,e,n){super.attributeChangedCallback(t,e,n),this.dispatchEvent(new Event(t+"-changed"))}}kor_notifications_decorate([property_e({type:String,reflect:!0})],korNotifications.prototype,"position",void 0),window.customElements.get("kor-notifications")||window.customElements.define("kor-notifications",korNotifications);var kor_notification_item_decorate=function(t,e,n,s){var l,p=arguments.length,h=p<3?e:null===s?s=Object.getOwnPropertyDescriptor(e,n):s;if("object"==typeof Reflect&&"function"==typeof Reflect.decorate)h=Reflect.decorate(t,e,n,s);else for(var g=t.length-1;g>=0;g--)(l=t[g])&&(h=(p<3?l(h):p>3?l(e,n,h):l(e,n))||h);return p>3&&h&&Object.defineProperty(e,n,h),h};class korNotificationItem extends t{constructor(){super(...arguments),this.flexDirection="column",this.emptyHeader=!0,this.emptyFunctions=!0,this.emptyFooter=!0}static get styles(){return[l,e`
+      `]}render(){return s`<slot></slot>`}attributeChangedCallback(e,r,s){super.attributeChangedCallback(e,r,s),this.dispatchEvent(new Event(`${e}-changed`))}}kor_notifications_decorate([n({type:String,reflect:!0})],korNotifications.prototype,"position",void 0),window.customElements.get("kor-notifications")||window.customElements.define("kor-notifications",korNotifications);var kor_notification_item_decorate=function(e,r,s,a){var l,c=arguments.length,p=c<3?r:null===a?a=Object.getOwnPropertyDescriptor(r,s):a;if("object"==typeof Reflect&&"function"==typeof Reflect.decorate)p=Reflect.decorate(e,r,s,a);else for(var h=e.length-1;h>=0;h--)(l=e[h])&&(p=(c<3?l(p):c>3?l(r,s,p):l(r,s))||p);return c>3&&p&&Object.defineProperty(r,s,p),p};class korNotificationItem extends e{constructor(){super(...arguments),this.flexDirection="column",this.emptyHeader=!0,this.emptyFunctions=!0,this.emptyFooter=!0}static get styles(){return[l,r`
         :host {
           transition: var(--transition-1);
           opacity: 1;
@@ -1749,9 +1759,9 @@ import{LitElement as t,css as e,html as n}from"lit";const i=(t,e)=>"method"===e.
           margin-left: -8px;
           margin-right: 8px;
         }
-      `]}render(){return n`
+      `]}render(){return s`
       <kor-card
-        @click="${t=>t.stopPropagation()}"
+        @click="${e=>e.stopPropagation()}"
         .label="${this.label}"
         .icon="${this.icon}"
         flex-direction="${this.flexDirection}"
@@ -1759,10 +1769,10 @@ import{LitElement as t,css as e,html as n}from"lit";const i=(t,e)=>"method"===e.
         <slot
           name="header"
           slot="${this.emptyHeader?"hidden":"header"}"
-          @slotchange="${t=>this.emptyHeader=0===t.target.assignedNodes().length}"
+          @slotchange="${e=>this.emptyHeader=0===e.target.assignedNodes().length}"
         ></slot>
         <slot name="functions" slot="functions">
-          ${this.sticky?"":n`
+          ${this.sticky?"":s`
                 <kor-icon
                   button
                   icon="close"
@@ -1774,10 +1784,10 @@ import{LitElement as t,css as e,html as n}from"lit";const i=(t,e)=>"method"===e.
         <slot
           name="footer"
           slot="${this.emptyFooter?"hidden":"footer"}"
-          @slotchange="${t=>this.emptyFooter=0===t.target.assignedNodes().length}"
+          @slotchange="${e=>this.emptyFooter=0===e.target.assignedNodes().length}"
         ></slot>
       </kor-card>
-    `}attributeChangedCallback(t,e,n){super.attributeChangedCallback(t,e,n),this.dispatchEvent(new Event(t+"-changed"))}}kor_notification_item_decorate([property_e({type:String,reflect:!0})],korNotificationItem.prototype,"label",void 0),kor_notification_item_decorate([property_e({type:String,reflect:!0})],korNotificationItem.prototype,"icon",void 0),kor_notification_item_decorate([property_e({type:String,reflect:!0,attribute:"flex-direction"})],korNotificationItem.prototype,"flexDirection",void 0),kor_notification_item_decorate([property_e({type:Boolean,reflect:!0})],korNotificationItem.prototype,"visible",void 0),kor_notification_item_decorate([property_e({type:Boolean,reflect:!0})],korNotificationItem.prototype,"sticky",void 0),kor_notification_item_decorate([r()],korNotificationItem.prototype,"emptyHeader",void 0),kor_notification_item_decorate([r()],korNotificationItem.prototype,"emptyFunctions",void 0),kor_notification_item_decorate([r()],korNotificationItem.prototype,"emptyFooter",void 0),window.customElements.get("kor-notification-item")||window.customElements.define("kor-notification-item",korNotificationItem);var kor_page_decorate=function(t,e,n,s){var l,p=arguments.length,h=p<3?e:null===s?s=Object.getOwnPropertyDescriptor(e,n):s;if("object"==typeof Reflect&&"function"==typeof Reflect.decorate)h=Reflect.decorate(t,e,n,s);else for(var g=t.length-1;g>=0;g--)(l=t[g])&&(h=(p<3?l(h):p>3?l(e,n,h):l(e,n))||h);return p>3&&h&&Object.defineProperty(e,n,h),h};class korPage extends t{constructor(){super(...arguments),this.padding="var(--spacing-l)",this.flexDirection="row"}static get styles(){return[l,e`
+    `}attributeChangedCallback(e,r,s){super.attributeChangedCallback(e,r,s),this.dispatchEvent(new Event(`${e}-changed`))}}kor_notification_item_decorate([n({type:String,reflect:!0})],korNotificationItem.prototype,"label",void 0),kor_notification_item_decorate([n({type:String,reflect:!0})],korNotificationItem.prototype,"icon",void 0),kor_notification_item_decorate([n({type:String,reflect:!0,attribute:"flex-direction"})],korNotificationItem.prototype,"flexDirection",void 0),kor_notification_item_decorate([n({type:Boolean,reflect:!0})],korNotificationItem.prototype,"visible",void 0),kor_notification_item_decorate([n({type:Boolean,reflect:!0})],korNotificationItem.prototype,"sticky",void 0),kor_notification_item_decorate([t()],korNotificationItem.prototype,"emptyHeader",void 0),kor_notification_item_decorate([t()],korNotificationItem.prototype,"emptyFunctions",void 0),kor_notification_item_decorate([t()],korNotificationItem.prototype,"emptyFooter",void 0),window.customElements.get("kor-notification-item")||window.customElements.define("kor-notification-item",korNotificationItem);var kor_page_decorate=function(e,r,s,a){var l,c=arguments.length,p=c<3?r:null===a?a=Object.getOwnPropertyDescriptor(r,s):a;if("object"==typeof Reflect&&"function"==typeof Reflect.decorate)p=Reflect.decorate(e,r,s,a);else for(var h=e.length-1;h>=0;h--)(l=e[h])&&(p=(c<3?l(p):c>3?l(r,s,p):l(r,s))||p);return c>3&&p&&Object.defineProperty(r,s,p),p};class korPage extends e{constructor(){super(...arguments),this.padding="var(--spacing-l)",this.flexDirection="row"}static get styles(){return[l,r`
         :host {
           height: 100%;
           width: 100%;
@@ -1806,7 +1816,7 @@ import{LitElement as t,css as e,html as n}from"lit";const i=(t,e)=>"method"===e.
         :host([flex-direction='column']) slot:not([name]) {
           flex-direction: column;
         }
-      `]}render(){return n`
+      `]}render(){return s`
       <slot name="top"></slot>
       <div class="center-wrapper">
         <slot name="left"></slot>
@@ -1814,7 +1824,7 @@ import{LitElement as t,css as e,html as n}from"lit";const i=(t,e)=>"method"===e.
         <slot name="right"></slot>
       </div>
       <slot name="bottom"></slot>
-    `}attributeChangedCallback(t,e,n){super.attributeChangedCallback(t,e,n),this.dispatchEvent(new Event(t+"-changed"))}}kor_page_decorate([property_e({type:String,reflect:!0})],korPage.prototype,"theme",void 0),kor_page_decorate([property_e({type:String,reflect:!0})],korPage.prototype,"padding",void 0),kor_page_decorate([property_e({type:String,reflect:!0,attribute:"flex-direction"})],korPage.prototype,"flexDirection",void 0),kor_page_decorate([property_e({type:Boolean,reflect:!0})],korPage.prototype,"flat",void 0),kor_page_decorate([property_e({type:Boolean,reflect:!0})],korPage.prototype,"scrollable",void 0),window.customElements.get("kor-page")||window.customElements.define("kor-page",korPage);var kor_pane_decorate=function(t,e,n,s){var l,p=arguments.length,h=p<3?e:null===s?s=Object.getOwnPropertyDescriptor(e,n):s;if("object"==typeof Reflect&&"function"==typeof Reflect.decorate)h=Reflect.decorate(t,e,n,s);else for(var g=t.length-1;g>=0;g--)(l=t[g])&&(h=(p<3?l(h):p>3?l(e,n,h):l(e,n))||h);return p>3&&h&&Object.defineProperty(e,n,h),h};class korPane extends t{constructor(){super(...arguments),this.flexDirection="column",this.size="l",this.emptyHeader=!0,this.emptyFunctions=!0,this.emptyFooter=!0}static get styles(){return[l,e`
+    `}attributeChangedCallback(e,r,s){super.attributeChangedCallback(e,r,s),this.dispatchEvent(new Event(`${e}-changed`))}}kor_page_decorate([n({type:String,reflect:!0})],korPage.prototype,"theme",void 0),kor_page_decorate([n({type:String,reflect:!0})],korPage.prototype,"padding",void 0),kor_page_decorate([n({type:String,reflect:!0,attribute:"flex-direction"})],korPage.prototype,"flexDirection",void 0),kor_page_decorate([n({type:Boolean,reflect:!0})],korPage.prototype,"flat",void 0),kor_page_decorate([n({type:Boolean,reflect:!0})],korPage.prototype,"scrollable",void 0),window.customElements.get("kor-page")||window.customElements.define("kor-page",korPage);var kor_pane_decorate=function(e,r,s,a){var l,c=arguments.length,p=c<3?r:null===a?a=Object.getOwnPropertyDescriptor(r,s):a;if("object"==typeof Reflect&&"function"==typeof Reflect.decorate)p=Reflect.decorate(e,r,s,a);else for(var h=e.length-1;h>=0;h--)(l=e[h])&&(p=(c<3?l(p):c>3?l(r,s,p):l(r,s))||p);return c>3&&p&&Object.defineProperty(r,s,p),p};class korPane extends e{constructor(){super(...arguments),this.flexDirection="column",this.size="l",this.emptyHeader=!0,this.emptyFunctions=!0,this.emptyFooter=!0}static get styles(){return[l,r`
         :host {
           background-color: rgb(var(--base-2));
           display: flex;
@@ -1843,7 +1853,7 @@ import{LitElement as t,css as e,html as n}from"lit";const i=(t,e)=>"method"===e.
           --functions-gap: inherit;
           --footer-gap: inherit;
         }
-      `]}render(){return n`
+      `]}render(){return s`
       <kor-card
         label="${this.label?this.label:""}"
         icon="${this.icon?this.icon:""}"
@@ -1853,20 +1863,20 @@ import{LitElement as t,css as e,html as n}from"lit";const i=(t,e)=>"method"===e.
         <slot
           name="header"
           slot="${this.emptyHeader?"":"header"}"
-          @slotchange="${t=>this.emptyHeader=0===t.target.assignedNodes().length}"
+          @slotchange="${e=>this.emptyHeader=0===e.target.assignedNodes().length}"
         ></slot>
         <slot
           name="functions"
           slot="${this.emptyFunctions?"":"functions"}"
-          @slotchange="${t=>this.emptyFunctions=0===t.target.assignedNodes().length}"
+          @slotchange="${e=>this.emptyFunctions=0===e.target.assignedNodes().length}"
         ></slot>
         <slot
           name="footer"
           slot="${this.emptyFooter?"":"footer"}"
-          @slotchange="${t=>this.emptyFooter=0===t.target.assignedNodes().length}"
+          @slotchange="${e=>this.emptyFooter=0===e.target.assignedNodes().length}"
         ></slot>
       </kor-card>
-    `}attributeChangedCallback(t,e,n){super.attributeChangedCallback(t,e,n),this.dispatchEvent(new Event(t+"-changed"))}}kor_pane_decorate([property_e({type:String,reflect:!0})],korPane.prototype,"label",void 0),kor_pane_decorate([property_e({type:String,reflect:!0})],korPane.prototype,"icon",void 0),kor_pane_decorate([property_e({type:String,reflect:!0,attribute:"flex-direction"})],korPane.prototype,"flexDirection",void 0),kor_pane_decorate([property_e({type:String,reflect:!0})],korPane.prototype,"size",void 0),kor_pane_decorate([r()],korPane.prototype,"emptyHeader",void 0),kor_pane_decorate([r()],korPane.prototype,"emptyFunctions",void 0),kor_pane_decorate([r()],korPane.prototype,"emptyFooter",void 0),window.customElements.get("kor-pane")||window.customElements.define("kor-pane",korPane);var kor_popover_decorate=function(t,e,n,s){var l,p=arguments.length,h=p<3?e:null===s?s=Object.getOwnPropertyDescriptor(e,n):s;if("object"==typeof Reflect&&"function"==typeof Reflect.decorate)h=Reflect.decorate(t,e,n,s);else for(var g=t.length-1;g>=0;g--)(l=t[g])&&(h=(p<3?l(h):p>3?l(e,n,h):l(e,n))||h);return p>3&&h&&Object.defineProperty(e,n,h),h};class korPopover extends t{constructor(){super(...arguments),this.flexDirection="column",this.position="bottom",this.emptyHeader=!0,this.emptyFunctions=!0,this.emptyFooter=!0}static get styles(){return[l,e`
+    `}attributeChangedCallback(e,r,s){super.attributeChangedCallback(e,r,s),this.dispatchEvent(new Event(`${e}-changed`))}}kor_pane_decorate([n({type:String,reflect:!0})],korPane.prototype,"label",void 0),kor_pane_decorate([n({type:String,reflect:!0})],korPane.prototype,"icon",void 0),kor_pane_decorate([n({type:String,reflect:!0,attribute:"flex-direction"})],korPane.prototype,"flexDirection",void 0),kor_pane_decorate([n({type:String,reflect:!0})],korPane.prototype,"size",void 0),kor_pane_decorate([t()],korPane.prototype,"emptyHeader",void 0),kor_pane_decorate([t()],korPane.prototype,"emptyFunctions",void 0),kor_pane_decorate([t()],korPane.prototype,"emptyFooter",void 0),window.customElements.get("kor-pane")||window.customElements.define("kor-pane",korPane);var kor_popover_decorate=function(e,r,s,a){var l,c=arguments.length,p=c<3?r:null===a?a=Object.getOwnPropertyDescriptor(r,s):a;if("object"==typeof Reflect&&"function"==typeof Reflect.decorate)p=Reflect.decorate(e,r,s,a);else for(var h=e.length-1;h>=0;h--)(l=e[h])&&(p=(c<3?l(p):c>3?l(r,s,p):l(r,s))||p);return c>3&&p&&Object.defineProperty(r,s,p),p};class korPopover extends e{constructor(){super(...arguments),this.flexDirection="column",this.position="bottom",this.emptyHeader=!0,this.emptyFunctions=!0,this.emptyFooter=!0}static get styles(){return[l,r`
         :host {
           background-color: rgb(var(--base-4));
           border-radius: var(--border-radius);
@@ -1907,10 +1917,10 @@ import{LitElement as t,css as e,html as n}from"lit";const i=(t,e)=>"method"===e.
           --functions-gap: inherit;
           --footer-gap: inherit;
         }
-      `]}render(){return n`
+      `]}render(){return s`
       <kor-card
-        @click="${t=>t.stopPropagation()}"
-        @wheel="${t=>t.stopPropagation()}"
+        @click="${e=>e.stopPropagation()}"
+        @wheel="${e=>e.stopPropagation()}"
         .label="${this.label}"
         .icon="${this.icon}"
         flex-direction="${this.flexDirection}"
@@ -1918,21 +1928,21 @@ import{LitElement as t,css as e,html as n}from"lit";const i=(t,e)=>"method"===e.
         <slot
           name="header"
           slot="${this.emptyHeader?"hidden":"header"}"
-          @slotchange="${t=>this.emptyHeader=0===t.target.assignedNodes().length}"
+          @slotchange="${e=>this.emptyHeader=0===e.target.assignedNodes().length}"
         ></slot>
         <slot
           name="functions"
           slot="${this.emptyFunctions?"hidden":"functions"}"
-          @slotchange="${t=>this.emptyFunctions=0===t.target.assignedNodes().length}"
+          @slotchange="${e=>this.emptyFunctions=0===e.target.assignedNodes().length}"
         ></slot>
         <slot></slot>
         <slot
           name="footer"
           slot="${this.emptyFooter?"hidden":"footer"}"
-          @slotchange="${t=>this.emptyFooter=0===t.target.assignedNodes().length}"
+          @slotchange="${e=>this.emptyFooter=0===e.target.assignedNodes().length}"
         ></slot>
       </kor-card>
-    `}attributeChangedCallback(t,e,n){super.attributeChangedCallback(t,e,n),this.dispatchEvent(new Event(t+"-changed")),"target"===t&&this.target?this.targetObserver():"visible"===t&&this.visible&&this.visibleObserver()}targetObserver(){const t="string"==typeof this.target?document.querySelector(this.target):this.target;t&&t.addEventListener("click",()=>this.handlePosition(t))}visibleObserver(){const t="string"==typeof this.target?document.querySelector(this.target):this.target;t&&(this.handlePosition(t),!this.sticky&&this.target&&this.addDocListener(t))}handlePosition(t){if(!t)return;let e=this,n=t.getBoundingClientRect();if(e.visible=!0,e.position.startsWith("bottom"))e.style.top=n.top+n.height+8+"px";else if(e.position.startsWith("top"))e.style.top=n.top-e.clientHeight-8+"px";else{e.style.top=n.top+n.height/2-e.clientHeight/2+"px",parseInt(e.style.top)<0&&(e.style.top="8px");const t=Math.max(document.documentElement.clientHeight||0,window.innerHeight||0);parseInt(e.style.top)+e.clientHeight>t&&(e.style.top=t-e.clientHeight-8+"px")}e.position.startsWith("right")?e.style.left=n.left+n.width+8+"px":e.position.startsWith("left")?e.style.left=n.left-e.clientWidth-8+"px":e.style.left=n.left+n.width/2-e.clientWidth/2+"px"}addDocListener(t){let closePopover=e=>{(e.composedPath()[0]!==t&&e.target!==t&&"click"===e.type||"wheel"===e.type)&&(this.visible=!1,document.removeEventListener("click",closePopover),document.removeEventListener("wheel",closePopover))};document.addEventListener("click",closePopover),document.addEventListener("wheel",closePopover)}}kor_popover_decorate([property_e({type:String,reflect:!0})],korPopover.prototype,"label",void 0),kor_popover_decorate([property_e({type:String,reflect:!0})],korPopover.prototype,"icon",void 0),kor_popover_decorate([property_e({type:String,reflect:!0,attribute:"flex-direction"})],korPopover.prototype,"flexDirection",void 0),kor_popover_decorate([property_e({type:String,reflect:!0})],korPopover.prototype,"position",void 0),kor_popover_decorate([property_e({type:String,reflect:!0})],korPopover.prototype,"target",void 0),kor_popover_decorate([property_e({type:Boolean,reflect:!0})],korPopover.prototype,"visible",void 0),kor_popover_decorate([property_e({type:Boolean,reflect:!0})],korPopover.prototype,"sticky",void 0),kor_popover_decorate([r()],korPopover.prototype,"emptyHeader",void 0),kor_popover_decorate([r()],korPopover.prototype,"emptyFunctions",void 0),kor_popover_decorate([r()],korPopover.prototype,"emptyFooter",void 0),window.customElements.get("kor-popover")||window.customElements.define("kor-popover",korPopover);var kor_progress_bar_decorate=function(t,e,n,s){var l,p=arguments.length,h=p<3?e:null===s?s=Object.getOwnPropertyDescriptor(e,n):s;if("object"==typeof Reflect&&"function"==typeof Reflect.decorate)h=Reflect.decorate(t,e,n,s);else for(var g=t.length-1;g>=0;g--)(l=t[g])&&(h=(p<3?l(h):p>3?l(e,n,h):l(e,n))||h);return p>3&&h&&Object.defineProperty(e,n,h),h};class korProgressBar extends t{constructor(){super(...arguments),this.size="m"}static get styles(){return[l,e`
+    `}attributeChangedCallback(e,r,s){super.attributeChangedCallback(e,r,s),this.dispatchEvent(new Event(`${e}-changed`)),"target"===e&&this.target?this.targetObserver():"visible"===e&&this.visible&&this.visibleObserver()}targetObserver(){const e="string"==typeof this.target?document.querySelector(this.target):this.target;e&&e.addEventListener("click",()=>this.handlePosition(e))}visibleObserver(){const e="string"==typeof this.target?document.querySelector(this.target):this.target;e&&(this.handlePosition(e),!this.sticky&&this.target&&this.addDocListener(e))}handlePosition(e){if(!e)return;let r=this,s=e.getBoundingClientRect();if(r.visible=!0,r.position.startsWith("bottom"))r.style.top=`${s.top+s.height+8}px`;else if(r.position.startsWith("top"))r.style.top=s.top-r.clientHeight-8+"px";else{r.style.top=s.top+s.height/2-r.clientHeight/2+"px",parseInt(r.style.top)<0&&(r.style.top="8px");const e=Math.max(document.documentElement.clientHeight||0,window.innerHeight||0);parseInt(r.style.top)+r.clientHeight>e&&(r.style.top=e-r.clientHeight-8+"px")}r.position.startsWith("right")?r.style.left=`${s.left+s.width+8}px`:r.position.startsWith("left")?r.style.left=s.left-r.clientWidth-8+"px":r.style.left=s.left+s.width/2-r.clientWidth/2+"px"}addDocListener(e){let closePopover=r=>{(r.composedPath()[0]!==e&&r.target!==e&&"click"===r.type||"wheel"===r.type)&&(this.visible=!1,document.removeEventListener("click",closePopover),document.removeEventListener("wheel",closePopover))};document.addEventListener("click",closePopover),document.addEventListener("wheel",closePopover)}}kor_popover_decorate([n({type:String,reflect:!0})],korPopover.prototype,"label",void 0),kor_popover_decorate([n({type:String,reflect:!0})],korPopover.prototype,"icon",void 0),kor_popover_decorate([n({type:String,reflect:!0,attribute:"flex-direction"})],korPopover.prototype,"flexDirection",void 0),kor_popover_decorate([n({type:String,reflect:!0})],korPopover.prototype,"position",void 0),kor_popover_decorate([n({type:String,reflect:!0})],korPopover.prototype,"target",void 0),kor_popover_decorate([n({type:Boolean,reflect:!0})],korPopover.prototype,"visible",void 0),kor_popover_decorate([n({type:Boolean,reflect:!0})],korPopover.prototype,"sticky",void 0),kor_popover_decorate([t()],korPopover.prototype,"emptyHeader",void 0),kor_popover_decorate([t()],korPopover.prototype,"emptyFunctions",void 0),kor_popover_decorate([t()],korPopover.prototype,"emptyFooter",void 0),window.customElements.get("kor-popover")||window.customElements.define("kor-popover",korPopover);var kor_progress_bar_decorate=function(e,r,s,a){var l,c=arguments.length,p=c<3?r:null===a?a=Object.getOwnPropertyDescriptor(r,s):a;if("object"==typeof Reflect&&"function"==typeof Reflect.decorate)p=Reflect.decorate(e,r,s,a);else for(var h=e.length-1;h>=0;h--)(l=e[h])&&(p=(c<3?l(p):c>3?l(r,s,p):l(r,s))||p);return c>3&&p&&Object.defineProperty(r,s,p),p};class korProgressBar extends e{constructor(){super(...arguments),this.size="m"}static get styles(){return[l,r`
         :host {
           width: 100%;
           display: flex;
@@ -1992,15 +2002,15 @@ import{LitElement as t,css as e,html as n}from"lit";const i=(t,e)=>"method"===e.
         .status-icon[icon='check_circle'] {
           color: rgb(var(--functional-green));
         }
-      `]}render(){return n`
+      `]}render(){return s`
       <!-- header -->
-      ${this.label||this.showProgress?n`
+      ${this.label||this.showProgress?s`
             <div class="header">
               <kor-text size="header-2" class="label">${this.label}</kor-text>
-              ${this.showProgress&&!this.radial?n` <kor-text size="header-2">${this.value}%</kor-text> `:""}
+              ${this.showProgress&&!this.radial?s` <kor-text size="header-2">${this.value}%</kor-text> `:""}
             </div>
           `:""}
-      ${this.radial?n`
+      ${this.radial?s`
             <!-- radial -->
             <div class="radial-wrapper">
               <svg
@@ -2024,9 +2034,9 @@ import{LitElement as t,css as e,html as n}from"lit";const i=(t,e)=>"method"===e.
                   cy="${this.getSize()/2}"
                 />
               </svg>
-              ${this.showProgress?n` <kor-text size="header-2">${this.value}%</kor-text> `:""}
+              ${this.showProgress?s` <kor-text size="header-2">${this.value}%</kor-text> `:""}
             </div>
-          `:n`
+          `:s`
             <!-- linear -->
             <svg width="100%" height="8">
               <defs>
@@ -2048,24 +2058,24 @@ import{LitElement as t,css as e,html as n}from"lit";const i=(t,e)=>"method"===e.
               />
             </svg>
           `}
-      ${this.info||this.status?n`
+      ${this.info||this.status?s`
             <div class="footer">
               <!-- status -->
-              ${this.status?n`
+              ${this.status?s`
                     <kor-icon
                       class="status-icon"
                       .icon="${this.getStatusIcon()}"
                     ></kor-icon>
                   `:""}
               <!-- info -->
-              ${this.info?n`
+              ${this.info?s`
                     <kor-text color="var(--text-2)" class="info"
                       >${this.info}</kor-text
                     >
                   `:""}
             </div>
           `:""}
-    `}attributeChangedCallback(t,e,n){super.attributeChangedCallback(t,e,n),this.dispatchEvent(new Event(t+"-changed"))}getStatusIcon(){let t;switch(this.status){case"error":t="cancel";break;case"warning":t="error";break;case"success":t="check_circle"}return t}getSize(){let t;switch(this.size){case"s":t=48;break;case"m":t=64;break;case"l":t=80;break;default:t=0}return t}}kor_progress_bar_decorate([property_e({type:String,reflect:!0})],korProgressBar.prototype,"label",void 0),kor_progress_bar_decorate([property_e({type:String,reflect:!0})],korProgressBar.prototype,"info",void 0),kor_progress_bar_decorate([property_e({type:String,reflect:!0})],korProgressBar.prototype,"status",void 0),kor_progress_bar_decorate([property_e({type:String,reflect:!0})],korProgressBar.prototype,"color",void 0),kor_progress_bar_decorate([property_e({type:String,reflect:!0})],korProgressBar.prototype,"size",void 0),kor_progress_bar_decorate([property_e({type:Number,reflect:!0})],korProgressBar.prototype,"value",void 0),kor_progress_bar_decorate([property_e({type:Boolean,reflect:!0})],korProgressBar.prototype,"radial",void 0),kor_progress_bar_decorate([property_e({type:Boolean,reflect:!0,attribute:"show-progress"})],korProgressBar.prototype,"showProgress",void 0),window.customElements.get("kor-progress-bar")||window.customElements.define("kor-progress-bar",korProgressBar);var kor_radio_button_decorate=function(t,e,n,s){var l,p=arguments.length,h=p<3?e:null===s?s=Object.getOwnPropertyDescriptor(e,n):s;if("object"==typeof Reflect&&"function"==typeof Reflect.decorate)h=Reflect.decorate(t,e,n,s);else for(var g=t.length-1;g>=0;g--)(l=t[g])&&(h=(p<3?l(h):p>3?l(e,n,h):l(e,n))||h);return p>3&&h&&Object.defineProperty(e,n,h),h};class korRadioButton extends t{static get styles(){return[l,e`
+    `}attributeChangedCallback(e,r,s){super.attributeChangedCallback(e,r,s),this.dispatchEvent(new Event(`${e}-changed`))}getStatusIcon(){let e;switch(this.status){case"error":e="cancel";break;case"warning":e="error";break;case"success":e="check_circle"}return e}getSize(){let e;switch(this.size){case"s":e=48;break;case"m":e=64;break;case"l":e=80;break;default:e=0}return e}}kor_progress_bar_decorate([n({type:String,reflect:!0})],korProgressBar.prototype,"label",void 0),kor_progress_bar_decorate([n({type:String,reflect:!0})],korProgressBar.prototype,"info",void 0),kor_progress_bar_decorate([n({type:String,reflect:!0})],korProgressBar.prototype,"status",void 0),kor_progress_bar_decorate([n({type:String,reflect:!0})],korProgressBar.prototype,"color",void 0),kor_progress_bar_decorate([n({type:String,reflect:!0})],korProgressBar.prototype,"size",void 0),kor_progress_bar_decorate([n({type:Number,reflect:!0})],korProgressBar.prototype,"value",void 0),kor_progress_bar_decorate([n({type:Boolean,reflect:!0})],korProgressBar.prototype,"radial",void 0),kor_progress_bar_decorate([n({type:Boolean,reflect:!0,attribute:"show-progress"})],korProgressBar.prototype,"showProgress",void 0),window.customElements.get("kor-progress-bar")||window.customElements.define("kor-progress-bar",korProgressBar);var kor_radio_button_decorate=function(e,r,s,a){var l,c=arguments.length,p=c<3?r:null===a?a=Object.getOwnPropertyDescriptor(r,s):a;if("object"==typeof Reflect&&"function"==typeof Reflect.decorate)p=Reflect.decorate(e,r,s,a);else for(var h=e.length-1;h>=0;h--)(l=e[h])&&(p=(c<3?l(p):c>3?l(r,s,p):l(r,s))||p);return c>3&&p&&Object.defineProperty(r,s,p),p};class korRadioButton extends e{static get styles(){return[l,r`
         :host {
           display: flex;
           cursor: pointer;
@@ -2110,7 +2120,7 @@ import{LitElement as t,css as e,html as n}from"lit";const i=(t,e)=>"method"===e.
             border-color: rgba(var(--neutral-1), 0.3);
           }
         }
-      `]}render(){return n`
+      `]}render(){return s`
       <input
         type="radio"
         ?checked="${this.active}"
@@ -2119,8 +2129,8 @@ import{LitElement as t,css as e,html as n}from"lit";const i=(t,e)=>"method"===e.
         @change="${this.handleChange}"
       />
       <div class="circle"></div>
-      ${this.label?n` <kor-text>${this.label}</kor-text> `:""}
-    `}attributeChangedCallback(t,e,n){super.attributeChangedCallback(t,e,n),this.dispatchEvent(new Event(t+"-changed"))}connectedCallback(){super.connectedCallback(),this.addEventListener("click",()=>this.handleActive())}handleChange(){this.dispatchEvent(new CustomEvent("change",{bubbles:!0,composed:!0}))}handleActive(){var t;let e=null===(t=this.parentElement)||void 0===t?void 0:t.childNodes;null==e||e.forEach(t=>{t.active=!1}),this.active=!0}}kor_radio_button_decorate([property_e({type:String,reflect:!0})],korRadioButton.prototype,"label",void 0),kor_radio_button_decorate([property_e({type:Boolean,reflect:!0})],korRadioButton.prototype,"active",void 0),kor_radio_button_decorate([property_e({type:Boolean,reflect:!0})],korRadioButton.prototype,"disabled",void 0),window.customElements.get("kor-radio-button")||window.customElements.define("kor-radio-button",korRadioButton);var kor_slider_decorate=function(t,e,n,s){var l,p=arguments.length,h=p<3?e:null===s?s=Object.getOwnPropertyDescriptor(e,n):s;if("object"==typeof Reflect&&"function"==typeof Reflect.decorate)h=Reflect.decorate(t,e,n,s);else for(var g=t.length-1;g>=0;g--)(l=t[g])&&(h=(p<3?l(h):p>3?l(e,n,h):l(e,n))||h);return p>3&&h&&Object.defineProperty(e,n,h),h};class korSlider extends t{constructor(){super(...arguments),this.value=50,this.min=0,this.max=100,this.step=1}static get styles(){return[l,e`
+      ${this.label?s` <kor-text>${this.label}</kor-text> `:""}
+    `}attributeChangedCallback(e,r,s){super.attributeChangedCallback(e,r,s),this.dispatchEvent(new Event(`${e}-changed`))}connectedCallback(){super.connectedCallback(),this.addEventListener("click",()=>this.handleActive())}handleChange(){this.dispatchEvent(new CustomEvent("change",{bubbles:!0,composed:!0}))}handleActive(){var e;let r=null===(e=this.parentElement)||void 0===e?void 0:e.childNodes;null==r||r.forEach(e=>{e.active=!1}),this.active=!0}}kor_radio_button_decorate([n({type:String,reflect:!0})],korRadioButton.prototype,"label",void 0),kor_radio_button_decorate([n({type:Boolean,reflect:!0})],korRadioButton.prototype,"active",void 0),kor_radio_button_decorate([n({type:Boolean,reflect:!0})],korRadioButton.prototype,"disabled",void 0),window.customElements.get("kor-radio-button")||window.customElements.define("kor-radio-button",korRadioButton);var kor_slider_decorate=function(e,r,s,a){var l,c=arguments.length,p=c<3?r:null===a?a=Object.getOwnPropertyDescriptor(r,s):a;if("object"==typeof Reflect&&"function"==typeof Reflect.decorate)p=Reflect.decorate(e,r,s,a);else for(var h=e.length-1;h>=0;h--)(l=e[h])&&(p=(c<3?l(p):c>3?l(r,s,p):l(r,s))||p);return c>3&&p&&Object.defineProperty(r,s,p),p};class korSlider extends e{constructor(){super(...arguments),this.value=50,this.min=0,this.max=100,this.step=1}static get styles(){return[l,r`
         .track {
           width: 100%;
           height: 2px;
@@ -2176,16 +2186,16 @@ import{LitElement as t,css as e,html as n}from"lit";const i=(t,e)=>"method"===e.
         .label > * + * {
           margin-left: var(--spacing-s);
         }
-      `]}render(){return n`
-      ${this.label?n`
+      `]}render(){return s`
+      ${this.label?s`
             <div class="label">
               <kor-text>${this.label}</kor-text>
-              ${this.input?n`
+              ${this.input?s`
                     <input
                       type="number"
                       .value="${this.value}"
-                      @blur="${t=>this.handleInput(parseFloat(t.target.value))}"
-                      @keypress="${t=>"Enter"===t.key?this.handleInput(parseFloat(t.target.value)):""}"
+                      @blur="${e=>this.handleInput(parseFloat(e.target.value))}"
+                      @keypress="${e=>"Enter"===e.key?this.handleInput(parseFloat(e.target.value)):""}"
                     />
                   `:""}
             </div>
@@ -2193,13 +2203,13 @@ import{LitElement as t,css as e,html as n}from"lit";const i=(t,e)=>"method"===e.
       <div class="track">
         <div
           class="thumb"
-          @mousedown="${t=>this.handleThumbDrag(t)}"
-          @touchstart="${t=>this.handleThumbDrag(t)}"
+          @mousedown="${e=>this.handleThumbDrag(e)}"
+          @touchstart="${e=>this.handleThumbDrag(e)}"
         >
           <div></div>
         </div>
       </div>
-    `}attributeChangedCallback(t,e,n){super.attributeChangedCallback(t,e,n),this.dispatchEvent(new Event(t+"-changed")),"value"!==t&&"min"!==t&&"max"!==t||this.handleThumbPosition()}firstUpdated(){this.handleThumbPosition()}handleInput(t){t>=this.min&&t<=this.max?this.value=t:t<this.min?this.value=this.min:t>this.max&&(this.value=this.max)}handleThumbPosition(){var t;const e=null===(t=this.shadowRoot)||void 0===t?void 0:t.querySelector(".thumb"),n=(this.value-this.min)/(this.max-this.min)*100;e&&n>=0&&n<=100&&(e.style.left=n+"%")}handleThumbDrag(t){const e=this.shadowRoot.querySelector(".track").clientWidth/(this.max-this.min)*this.step;let n="mousedown"===t.type?t.clientX:t.touches[0].clientX;const getDeltaX=t=>{t.preventDefault();const s="mousemove"===t.type?t.clientX:t.touches[0].clientX,l=s-n;if(l>e||-1*l>e){const t=Math.floor(l<0?-1*l:l),p=Math.round(t/e),h=l>0?this.value+this.step*p:this.value-this.step*p;h<=this.max&&h>=this.min&&(this.value=h,n=s)}},removeListeners=()=>{window.removeEventListener("mousemove",getDeltaX),window.removeEventListener("touchmove",getDeltaX),window.removeEventListener("mouseup",removeListeners),window.removeEventListener("touchend",removeListeners)};window.addEventListener("mousemove",getDeltaX),window.addEventListener("touchmove",getDeltaX),window.addEventListener("mouseup",removeListeners),window.addEventListener("touchend",removeListeners)}}kor_slider_decorate([property_e({type:String,reflect:!0})],korSlider.prototype,"label",void 0),kor_slider_decorate([property_e({type:Number,reflect:!0})],korSlider.prototype,"value",void 0),kor_slider_decorate([property_e({type:Number,reflect:!0})],korSlider.prototype,"min",void 0),kor_slider_decorate([property_e({type:Number,reflect:!0})],korSlider.prototype,"max",void 0),kor_slider_decorate([property_e({type:Number,reflect:!0})],korSlider.prototype,"step",void 0),kor_slider_decorate([property_e({type:Boolean,reflect:!0})],korSlider.prototype,"input",void 0),window.customElements.get("kor-slider")||window.customElements.define("kor-slider",korSlider);var kor_spinner_decorate=function(t,e,n,s){var l,p=arguments.length,h=p<3?e:null===s?s=Object.getOwnPropertyDescriptor(e,n):s;if("object"==typeof Reflect&&"function"==typeof Reflect.decorate)h=Reflect.decorate(t,e,n,s);else for(var g=t.length-1;g>=0;g--)(l=t[g])&&(h=(p<3?l(h):p>3?l(e,n,h):l(e,n))||h);return p>3&&h&&Object.defineProperty(e,n,h),h};class korSpinner extends t{constructor(){super(...arguments),this.size="m"}static get styles(){return[l,e`
+    `}attributeChangedCallback(e,r,s){super.attributeChangedCallback(e,r,s),this.dispatchEvent(new Event(`${e}-changed`)),"value"!==e&&"min"!==e&&"max"!==e||this.handleThumbPosition()}firstUpdated(){this.handleThumbPosition()}handleInput(e){e>=this.min&&e<=this.max?this.value=e:e<this.min?this.value=this.min:e>this.max&&(this.value=this.max)}handleThumbPosition(){var e;const r=null===(e=this.shadowRoot)||void 0===e?void 0:e.querySelector(".thumb"),s=(this.value-this.min)/(this.max-this.min)*100;r&&s>=0&&s<=100&&(r.style.left=`${s}%`)}handleThumbDrag(e){const r=this.shadowRoot.querySelector(".track").clientWidth/(this.max-this.min)*this.step;let s="mousedown"===e.type?e.clientX:e.touches[0].clientX;const getDeltaX=e=>{e.preventDefault();const a="mousemove"===e.type?e.clientX:e.touches[0].clientX,l=a-s;if(l>r||-1*l>r){const e=Math.floor(l<0?-1*l:l),c=Math.round(e/r),p=l>0?this.value+this.step*c:this.value-this.step*c;p<=this.max&&p>=this.min&&(this.value=p,s=a)}},removeListeners=()=>{window.removeEventListener("mousemove",getDeltaX),window.removeEventListener("touchmove",getDeltaX),window.removeEventListener("mouseup",removeListeners),window.removeEventListener("touchend",removeListeners)};window.addEventListener("mousemove",getDeltaX),window.addEventListener("touchmove",getDeltaX),window.addEventListener("mouseup",removeListeners),window.addEventListener("touchend",removeListeners)}}kor_slider_decorate([n({type:String,reflect:!0})],korSlider.prototype,"label",void 0),kor_slider_decorate([n({type:Number,reflect:!0})],korSlider.prototype,"value",void 0),kor_slider_decorate([n({type:Number,reflect:!0})],korSlider.prototype,"min",void 0),kor_slider_decorate([n({type:Number,reflect:!0})],korSlider.prototype,"max",void 0),kor_slider_decorate([n({type:Number,reflect:!0})],korSlider.prototype,"step",void 0),kor_slider_decorate([n({type:Boolean,reflect:!0})],korSlider.prototype,"input",void 0),window.customElements.get("kor-slider")||window.customElements.define("kor-slider",korSlider);var kor_spinner_decorate=function(e,r,s,a){var l,c=arguments.length,p=c<3?r:null===a?a=Object.getOwnPropertyDescriptor(r,s):a;if("object"==typeof Reflect&&"function"==typeof Reflect.decorate)p=Reflect.decorate(e,r,s,a);else for(var h=e.length-1;h>=0;h--)(l=e[h])&&(p=(c<3?l(p):c>3?l(r,s,p):l(r,s))||p);return c>3&&p&&Object.defineProperty(r,s,p),p};class korSpinner extends e{constructor(){super(...arguments),this.size="m"}static get styles(){return[l,r`
         :host {
           width: 100%;
           height: 100%;
@@ -2232,7 +2242,7 @@ import{LitElement as t,css as e,html as n}from"lit";const i=(t,e)=>"method"===e.
           text-align: center;
           max-width: 240px;
         }
-      `]}render(){return n`
+      `]}render(){return s`
       <svg
         xmlns="http://www.w3.org/2000/svg"
         width="${this.getSize()}"
@@ -2245,8 +2255,8 @@ import{LitElement as t,css as e,html as n}from"lit";const i=(t,e)=>"method"===e.
           cy="${this.getSize()/2}"
         />
       </svg>
-      ${this.label?n` <kor-text>${this.label}</kor-text> `:""}
-    `}attributeChangedCallback(t,e,n){super.attributeChangedCallback(t,e,n),this.dispatchEvent(new Event(t+"-changed"))}getSize(){let t;switch(this.size){case"s":t=24;break;case"m":t=32;break;case"l":t=40}return t}}kor_spinner_decorate([property_e({type:String,reflect:!0})],korSpinner.prototype,"size",void 0),kor_spinner_decorate([property_e({type:String,reflect:!0})],korSpinner.prototype,"label",void 0),window.customElements.get("kor-spinner")||window.customElements.define("kor-spinner",korSpinner);var kor_stepper_decorate=function(t,e,n,s){var l,p=arguments.length,h=p<3?e:null===s?s=Object.getOwnPropertyDescriptor(e,n):s;if("object"==typeof Reflect&&"function"==typeof Reflect.decorate)h=Reflect.decorate(t,e,n,s);else for(var g=t.length-1;g>=0;g--)(l=t[g])&&(h=(p<3?l(h):p>3?l(e,n,h):l(e,n))||h);return p>3&&h&&Object.defineProperty(e,n,h),h};class korStepper extends t{constructor(){super(...arguments),this.orientation="horizontal"}static get styles(){return[l,e`
+      ${this.label?s` <kor-text>${this.label}</kor-text> `:""}
+    `}attributeChangedCallback(e,r,s){super.attributeChangedCallback(e,r,s),this.dispatchEvent(new Event(`${e}-changed`))}getSize(){let e;switch(this.size){case"s":e=24;break;case"m":e=32;break;case"l":e=40}return e}}kor_spinner_decorate([n({type:String,reflect:!0})],korSpinner.prototype,"size",void 0),kor_spinner_decorate([n({type:String,reflect:!0})],korSpinner.prototype,"label",void 0),window.customElements.get("kor-spinner")||window.customElements.define("kor-spinner",korSpinner);var kor_stepper_decorate=function(e,r,s,a){var l,c=arguments.length,p=c<3?r:null===a?a=Object.getOwnPropertyDescriptor(r,s):a;if("object"==typeof Reflect&&"function"==typeof Reflect.decorate)p=Reflect.decorate(e,r,s,a);else for(var h=e.length-1;h>=0;h--)(l=e[h])&&(p=(c<3?l(p):c>3?l(r,s,p):l(r,s))||p);return c>3&&p&&Object.defineProperty(r,s,p),p};class korStepper extends e{constructor(){super(...arguments),this.orientation="horizontal"}static get styles(){return[l,r`
         :host {
           display: flex;
           width: 100%;
@@ -2257,11 +2267,11 @@ import{LitElement as t,css as e,html as n}from"lit";const i=(t,e)=>"method"===e.
         :host([orientation='vertical']) {
           flex-direction: column;
         }
-      `]}render(){return n`
+      `]}render(){return s`
       <slot
         @slotchange="${()=>{this.handleOrientation(),this.handleItems()}}"
       ></slot>
-    `}attributeChangedCallback(t,e,n){super.attributeChangedCallback(t,e,n),this.dispatchEvent(new Event(t+"-changed"))}handleOrientation(){this.childNodes.forEach(t=>{t.orientation=this.orientation})}handleItems(){let t,e;t=Array.prototype.slice.call(this.children),e=this.children.length,t.forEach(t=>{t.first=1==t.index,t.last=t.index==e})}}kor_stepper_decorate([property_e({type:String,reflect:!0})],korStepper.prototype,"orientation",void 0),window.customElements.get("kor-stepper")||window.customElements.define("kor-stepper",korStepper);var kor_stepper_item_decorate=function(t,e,n,s){var l,p=arguments.length,h=p<3?e:null===s?s=Object.getOwnPropertyDescriptor(e,n):s;if("object"==typeof Reflect&&"function"==typeof Reflect.decorate)h=Reflect.decorate(t,e,n,s);else for(var g=t.length-1;g>=0;g--)(l=t[g])&&(h=(p<3?l(h):p>3?l(e,n,h):l(e,n))||h);return p>3&&h&&Object.defineProperty(e,n,h),h};class korStepperItem extends t{constructor(){super(...arguments),this.orientation="horizontal"}static get styles(){return[l,e`
+    `}attributeChangedCallback(e,r,s){super.attributeChangedCallback(e,r,s),this.dispatchEvent(new Event(`${e}-changed`))}handleOrientation(){this.childNodes.forEach(e=>{e.orientation=this.orientation})}handleItems(){let e,r;e=Array.prototype.slice.call(this.children),r=this.children.length,e.forEach(e=>{e.first=1==e.index,e.last=e.index==r})}}kor_stepper_decorate([n({type:String,reflect:!0})],korStepper.prototype,"orientation",void 0),window.customElements.get("kor-stepper")||window.customElements.define("kor-stepper",korStepper);var kor_stepper_item_decorate=function(e,r,s,a){var l,c=arguments.length,p=c<3?r:null===a?a=Object.getOwnPropertyDescriptor(r,s):a;if("object"==typeof Reflect&&"function"==typeof Reflect.decorate)p=Reflect.decorate(e,r,s,a);else for(var h=e.length-1;h>=0;h--)(l=e[h])&&(p=(c<3?l(p):c>3?l(r,s,p):l(r,s))||p);return c>3&&p&&Object.defineProperty(r,s,p),p};class korStepperItem extends e{constructor(){super(...arguments),this.orientation="horizontal"}static get styles(){return[l,r`
         :host {
           position: relative;
           flex: 1;
@@ -2393,22 +2403,22 @@ import{LitElement as t,css as e,html as n}from"lit";const i=(t,e)=>"method"===e.
             background-color: rgb(var(--accent-1b));
           }
         }
-      `]}render(){return n`
+      `]}render(){return s`
       <!-- circle -->
       <div class="circle">
-        ${this.icon?n` <kor-icon icon="${this.icon}"></kor-icon> `:n`
+        ${this.icon?s` <kor-icon icon="${this.icon}"></kor-icon> `:s`
               <kor-text size="header-1" class="number">${this.index}</kor-text>
             `}
       </div>
       <!-- text -->
       <div class="text">
-        ${this.label?n` <kor-text class="label">${this.label}</kor-text> `:""}
-        ${this.info?n` <kor-text size="body-2" class="info">${this.info}</kor-text> `:""}
+        ${this.label?s` <kor-text class="label">${this.label}</kor-text> `:""}
+        ${this.info?s` <kor-text size="body-2" class="info">${this.info}</kor-text> `:""}
       </div>
       <!-- lines -->
-      ${this.first?"":n` <div class="line before"></div> `}
-      ${this.last?"":n` <div class="line after"></div> `}
-    `}attributeChangedCallback(t,e,n){super.attributeChangedCallback(t,e,n),this.dispatchEvent(new Event(t+"-changed"))}connectedCallback(){super.connectedCallback(),this.getIndex(),this.addEventListener("click",()=>{var t;(null===(t=this.parentElement)||void 0===t?void 0:t.childNodes).forEach(t=>{t.active=!1}),this.active=!0})}getIndex(){var t;let e;e=Array.prototype.slice.call(null===(t=this.parentElement)||void 0===t?void 0:t.children),this.index=e.indexOf(this)+1}}kor_stepper_item_decorate([property_e({type:String,reflect:!0})],korStepperItem.prototype,"label",void 0),kor_stepper_item_decorate([property_e({type:String,reflect:!0})],korStepperItem.prototype,"info",void 0),kor_stepper_item_decorate([property_e({type:String,reflect:!0})],korStepperItem.prototype,"icon",void 0),kor_stepper_item_decorate([property_e({type:Number,reflect:!0})],korStepperItem.prototype,"index",void 0),kor_stepper_item_decorate([property_e({type:Boolean,reflect:!0})],korStepperItem.prototype,"active",void 0),kor_stepper_item_decorate([property_e({type:Boolean,reflect:!0})],korStepperItem.prototype,"disabled",void 0),kor_stepper_item_decorate([property_e({type:Boolean,reflect:!0})],korStepperItem.prototype,"first",void 0),kor_stepper_item_decorate([property_e({type:Boolean,reflect:!0})],korStepperItem.prototype,"last",void 0),kor_stepper_item_decorate([property_e({type:String,reflect:!0})],korStepperItem.prototype,"orientation",void 0),window.customElements.get("kor-stepper-item")||window.customElements.define("kor-stepper-item",korStepperItem);class korSwipeActions extends t{static get styles(){return[l,e`
+      ${this.first?"":s` <div class="line before"></div> `}
+      ${this.last?"":s` <div class="line after"></div> `}
+    `}attributeChangedCallback(e,r,s){super.attributeChangedCallback(e,r,s),this.dispatchEvent(new Event(`${e}-changed`))}connectedCallback(){super.connectedCallback(),this.getIndex(),this.addEventListener("click",()=>{var e;(null===(e=this.parentElement)||void 0===e?void 0:e.childNodes).forEach(e=>{e.active=!1}),this.active=!0})}getIndex(){var e;let r;r=Array.prototype.slice.call(null===(e=this.parentElement)||void 0===e?void 0:e.children),this.index=r.indexOf(this)+1}}kor_stepper_item_decorate([n({type:String,reflect:!0})],korStepperItem.prototype,"label",void 0),kor_stepper_item_decorate([n({type:String,reflect:!0})],korStepperItem.prototype,"info",void 0),kor_stepper_item_decorate([n({type:String,reflect:!0})],korStepperItem.prototype,"icon",void 0),kor_stepper_item_decorate([n({type:Number,reflect:!0})],korStepperItem.prototype,"index",void 0),kor_stepper_item_decorate([n({type:Boolean,reflect:!0})],korStepperItem.prototype,"active",void 0),kor_stepper_item_decorate([n({type:Boolean,reflect:!0})],korStepperItem.prototype,"disabled",void 0),kor_stepper_item_decorate([n({type:Boolean,reflect:!0})],korStepperItem.prototype,"first",void 0),kor_stepper_item_decorate([n({type:Boolean,reflect:!0})],korStepperItem.prototype,"last",void 0),kor_stepper_item_decorate([n({type:String,reflect:!0})],korStepperItem.prototype,"orientation",void 0),window.customElements.get("kor-stepper-item")||window.customElements.define("kor-stepper-item",korStepperItem);class korSwipeActions extends e{static get styles(){return[l,r`
         :host {
           display: flex;
           overflow: auto;
@@ -2424,17 +2434,17 @@ import{LitElement as t,css as e,html as n}from"lit";const i=(t,e)=>"method"===e.
           display: block;
           scroll-snap-align: start;
         }
-      `]}render(){return n`
+      `]}render(){return s`
       <slot
         name="left"
-        @slotchange="${t=>this.setSlotWidth(t.target)}"
+        @slotchange="${e=>this.setSlotWidth(e.target)}"
       ></slot>
       <slot></slot>
       <slot
         name="right"
-        @slotchange="${t=>this.setSlotWidth(t.target)}"
+        @slotchange="${e=>this.setSlotWidth(e.target)}"
       ></slot>
-    `}connectedCallback(){super.connectedCallback(),this.addEventListener("touchend",this.handleTouchEnd),this.addEventListener("scroll",this.setSlotOpacity)}setSlotWidth(t){t.assignedNodes().length>0?t.style.minWidth="100%":t.style.minWidth="unset"}handleTouchEnd(){const t=this.scrollLeft-this.clientWidth;t<this.clientWidth/3*-1?this.dispatchEvent(new Event("swipe-left")):t>this.clientWidth/3&&this.dispatchEvent(new Event("swipe-right"))}setSlotOpacity(){var t,e;const n=null===(t=this.shadowRoot)||void 0===t?void 0:t.querySelector('slot[name="left"]'),s=null===(e=this.shadowRoot)||void 0===e?void 0:e.querySelector('slot[name="right"]'),l=this.scrollLeft-this.clientWidth;n&&(n.style.opacity=-1*l/this.clientWidth*3>1?1:.5),s&&(s.style.opacity=1*l/this.clientWidth*3>1?1:.5)}getSlotOpacity(t){const e="left"===t?-1:1,n=(this.scrollLeft-this.clientWidth)*e/this.clientWidth*3;return n>1?1:n<0?0:n}}window.customElements.get("kor-swipe-actions")||window.customElements.define("kor-swipe-actions",korSwipeActions);var kor_swipe_action_decorate=function(t,e,n,s){var l,p=arguments.length,h=p<3?e:null===s?s=Object.getOwnPropertyDescriptor(e,n):s;if("object"==typeof Reflect&&"function"==typeof Reflect.decorate)h=Reflect.decorate(t,e,n,s);else for(var g=t.length-1;g>=0;g--)(l=t[g])&&(h=(p<3?l(h):p>3?l(e,n,h):l(e,n))||h);return p>3&&h&&Object.defineProperty(e,n,h),h};class korSwipeAction extends t{static get styles(){return[l,e`
+    `}connectedCallback(){super.connectedCallback(),this.addEventListener("touchend",this.handleTouchEnd),this.addEventListener("scroll",this.setSlotOpacity)}setSlotWidth(e){e.assignedNodes().length>0?e.style.minWidth="100%":e.style.minWidth="unset"}handleTouchEnd(){const e=this.scrollLeft-this.clientWidth;e<this.clientWidth/3*-1?this.dispatchEvent(new Event("swipe-left")):e>this.clientWidth/3&&this.dispatchEvent(new Event("swipe-right"))}setSlotOpacity(){var e,r;const s=null===(e=this.shadowRoot)||void 0===e?void 0:e.querySelector('slot[name="left"]'),a=null===(r=this.shadowRoot)||void 0===r?void 0:r.querySelector('slot[name="right"]'),l=this.scrollLeft-this.clientWidth;s&&(s.style.opacity=-1*l/this.clientWidth*3>1?1:.5),a&&(a.style.opacity=1*l/this.clientWidth*3>1?1:.5)}getSlotOpacity(e){const r="left"===e?-1:1,s=(this.scrollLeft-this.clientWidth)*r/this.clientWidth*3;return s>1?1:s<0?0:s}}window.customElements.get("kor-swipe-actions")||window.customElements.define("kor-swipe-actions",korSwipeActions);var kor_swipe_action_decorate=function(e,r,s,a){var l,c=arguments.length,p=c<3?r:null===a?a=Object.getOwnPropertyDescriptor(r,s):a;if("object"==typeof Reflect&&"function"==typeof Reflect.decorate)p=Reflect.decorate(e,r,s,a);else for(var h=e.length-1;h>=0;h--)(l=e[h])&&(p=(c<3?l(p):c>3?l(r,s,p):l(r,s))||p);return c>3&&p&&Object.defineProperty(r,s,p),p};class korSwipeAction extends e{static get styles(){return[l,r`
         :host {
           height: 100%;
           width: 100%;
@@ -2458,7 +2468,7 @@ import{LitElement as t,css as e,html as n}from"lit";const i=(t,e)=>"method"===e.
         :host([slot='right']) kor-icon {
           right: var(--spacing-l);
         }
-      `]}render(){return n` <kor-icon .icon="${this.icon}"></kor-icon> `}attributeChangedCallback(t,e,n){super.attributeChangedCallback(t,e,n),this.dispatchEvent(new Event(t+"-changed")),"bg-color"===t&&n!==e&&(this.style.backgroundColor=n)}connectedCallback(){super.connectedCallback()}}kor_swipe_action_decorate([property_e({reflect:!0})],korSwipeAction.prototype,"icon",void 0),kor_swipe_action_decorate([property_e({reflect:!0,attribute:"bg-color"})],korSwipeAction.prototype,"bgColor",void 0),window.customElements.get("kor-swipe-action")||window.customElements.define("kor-swipe-action",korSwipeAction);class korSwitch extends t{static get styles(){return[l,e`
+      `]}render(){return s` <kor-icon .icon="${this.icon}"></kor-icon> `}attributeChangedCallback(e,r,s){super.attributeChangedCallback(e,r,s),this.dispatchEvent(new Event(`${e}-changed`)),"bg-color"===e&&s!==r&&(this.style.backgroundColor=s)}connectedCallback(){super.connectedCallback()}}kor_swipe_action_decorate([n({reflect:!0})],korSwipeAction.prototype,"icon",void 0),kor_swipe_action_decorate([n({reflect:!0,attribute:"bg-color"})],korSwipeAction.prototype,"bgColor",void 0),window.customElements.get("kor-swipe-action")||window.customElements.define("kor-swipe-action",korSwipeAction);class korSwitch extends e{static get styles(){return[l,r`
         :host {
           background-color: rgba(var(--neutral-1), 0.1);
           display: flex;
@@ -2466,7 +2476,7 @@ import{LitElement as t,css as e,html as n}from"lit";const i=(t,e)=>"method"===e.
           height: max-content;
           border-radius: var(--border-radius);
         }
-      `]}render(){return n` <slot></slot> `}attributeChangedCallback(t,e,n){super.attributeChangedCallback(t,e,n),this.dispatchEvent(new Event(t+"-changed"))}}window.customElements.get("kor-switch")||window.customElements.define("kor-switch",korSwitch);var kor_switch_item_decorate=function(t,e,n,s){var l,p=arguments.length,h=p<3?e:null===s?s=Object.getOwnPropertyDescriptor(e,n):s;if("object"==typeof Reflect&&"function"==typeof Reflect.decorate)h=Reflect.decorate(t,e,n,s);else for(var g=t.length-1;g>=0;g--)(l=t[g])&&(h=(p<3?l(h):p>3?l(e,n,h):l(e,n))||h);return p>3&&h&&Object.defineProperty(e,n,h),h};class korSwitchItem extends t{static get styles(){return[l,e`
+      `]}render(){return s` <slot></slot> `}attributeChangedCallback(e,r,s){super.attributeChangedCallback(e,r,s),this.dispatchEvent(new Event(`${e}-changed`))}}window.customElements.get("kor-switch")||window.customElements.define("kor-switch",korSwitch);var kor_switch_item_decorate=function(e,r,s,a){var l,c=arguments.length,p=c<3?r:null===a?a=Object.getOwnPropertyDescriptor(r,s):a;if("object"==typeof Reflect&&"function"==typeof Reflect.decorate)p=Reflect.decorate(e,r,s,a);else for(var h=e.length-1;h>=0;h--)(l=e[h])&&(p=(c<3?l(p):c>3?l(r,s,p):l(r,s))||p);return c>3&&p&&Object.defineProperty(r,s,p),p};class korSwitchItem extends e{static get styles(){return[l,r`
         :host {
           display: flex;
           width: max-content;
@@ -2511,10 +2521,10 @@ import{LitElement as t,css as e,html as n}from"lit";const i=(t,e)=>"method"===e.
             background: rgba(var(--neutral-1), 0.15);
           }
         }
-      `]}render(){return n`
-      ${this.icon?n` <kor-icon icon="${this.icon}"></kor-icon> `:""}
-      ${this.label&&!this.icon?n` <kor-text class="label">${this.label}</kor-text> `:""}
-    `}attributeChangedCallback(t,e,n){super.attributeChangedCallback(t,e,n),this.dispatchEvent(new Event(t+"-changed"))}connectedCallback(){super.connectedCallback(),this.addEventListener("click",()=>this.handleActive())}handleActive(){var t;(null===(t=this.parentElement)||void 0===t?void 0:t.childNodes).forEach(t=>{t.active=!1}),this.active=!0}}kor_switch_item_decorate([property_e({type:String,reflect:!0})],korSwitchItem.prototype,"label",void 0),kor_switch_item_decorate([property_e({type:String,reflect:!0})],korSwitchItem.prototype,"icon",void 0),kor_switch_item_decorate([property_e({type:Boolean,reflect:!0})],korSwitchItem.prototype,"active",void 0),kor_switch_item_decorate([property_e({type:Boolean,reflect:!0})],korSwitchItem.prototype,"disabled",void 0),window.customElements.get("kor-switch-item")||window.customElements.define("kor-switch-item",korSwitchItem);var kor_tab_item_decorate=function(t,e,n,s){var l,p=arguments.length,h=p<3?e:null===s?s=Object.getOwnPropertyDescriptor(e,n):s;if("object"==typeof Reflect&&"function"==typeof Reflect.decorate)h=Reflect.decorate(t,e,n,s);else for(var g=t.length-1;g>=0;g--)(l=t[g])&&(h=(p<3?l(h):p>3?l(e,n,h):l(e,n))||h);return p>3&&h&&Object.defineProperty(e,n,h),h};class korTabItem extends t{constructor(){super(...arguments),this.orientation="horizontal"}static get styles(){return[l,e`
+      `]}render(){return s`
+      ${this.icon?s` <kor-icon icon="${this.icon}"></kor-icon> `:""}
+      ${this.label&&!this.icon?s` <kor-text class="label">${this.label}</kor-text> `:""}
+    `}attributeChangedCallback(e,r,s){super.attributeChangedCallback(e,r,s),this.dispatchEvent(new Event(`${e}-changed`))}connectedCallback(){super.connectedCallback(),this.addEventListener("click",()=>this.handleActive())}handleActive(){var e;(null===(e=this.parentElement)||void 0===e?void 0:e.childNodes).forEach(e=>{e.active=!1}),this.active=!0}}kor_switch_item_decorate([n({type:String,reflect:!0})],korSwitchItem.prototype,"label",void 0),kor_switch_item_decorate([n({type:String,reflect:!0})],korSwitchItem.prototype,"icon",void 0),kor_switch_item_decorate([n({type:Boolean,reflect:!0})],korSwitchItem.prototype,"active",void 0),kor_switch_item_decorate([n({type:Boolean,reflect:!0})],korSwitchItem.prototype,"disabled",void 0),window.customElements.get("kor-switch-item")||window.customElements.define("kor-switch-item",korSwitchItem);var kor_tab_item_decorate=function(e,r,s,a){var l,c=arguments.length,p=c<3?r:null===a?a=Object.getOwnPropertyDescriptor(r,s):a;if("object"==typeof Reflect&&"function"==typeof Reflect.decorate)p=Reflect.decorate(e,r,s,a);else for(var h=e.length-1;h>=0;h--)(l=e[h])&&(p=(c<3?l(p):c>3?l(r,s,p):l(r,s))||p);return c>3&&p&&Object.defineProperty(r,s,p),p};class korTabItem extends e{constructor(){super(...arguments),this.orientation="horizontal"}static get styles(){return[l,r`
         :host {
           display: flex;
           align-items: center;
@@ -2586,12 +2596,12 @@ import{LitElement as t,css as e,html as n}from"lit";const i=(t,e)=>"method"===e.
             color: var(--text-1);
           }
         }
-      `]}render(){return n`
+      `]}render(){return s`
       <slot>
-        ${this.icon?n` <kor-icon icon="${this.icon}"></kor-icon> `:""}
-        ${this.label?n` <kor-text class="label">${this.label}</kor-text> `:""}
+        ${this.icon?s` <kor-icon icon="${this.icon}"></kor-icon> `:""}
+        ${this.label?s` <kor-text class="label">${this.label}</kor-text> `:""}
       </slot>
-    `}attributeChangedCallback(t,e,n){super.attributeChangedCallback(t,e,n),this.dispatchEvent(new Event(t+"-changed"))}connectedCallback(){super.connectedCallback(),this.addEventListener("click",()=>this.handleActive())}handleActive(){var t;(null===(t=this.closest("kor-tabs"))||void 0===t?void 0:t.querySelectorAll("kor-tab-item")).forEach(t=>{t.active=!1}),this.active=!0}}kor_tab_item_decorate([property_e({type:String,reflect:!0})],korTabItem.prototype,"label",void 0),kor_tab_item_decorate([property_e({type:String,reflect:!0})],korTabItem.prototype,"icon",void 0),kor_tab_item_decorate([property_e({type:Boolean,reflect:!0})],korTabItem.prototype,"active",void 0),kor_tab_item_decorate([property_e({type:Boolean,reflect:!0})],korTabItem.prototype,"disabled",void 0),kor_tab_item_decorate([property_e({type:String,reflect:!0})],korTabItem.prototype,"orientation",void 0),window.customElements.get("kor-tab-item")||window.customElements.define("kor-tab-item",korTabItem);var kor_table_decorate=function(t,e,n,s){var l,p=arguments.length,h=p<3?e:null===s?s=Object.getOwnPropertyDescriptor(e,n):s;if("object"==typeof Reflect&&"function"==typeof Reflect.decorate)h=Reflect.decorate(t,e,n,s);else for(var g=t.length-1;g>=0;g--)(l=t[g])&&(h=(p<3?l(h):p>3?l(e,n,h):l(e,n))||h);return p>3&&h&&Object.defineProperty(e,n,h),h};class korTable extends t{constructor(){super(...arguments),this.columns="repeat(24, 1fr)"}static get styles(){return[l,e`
+    `}attributeChangedCallback(e,r,s){super.attributeChangedCallback(e,r,s),this.dispatchEvent(new Event(`${e}-changed`))}connectedCallback(){super.connectedCallback(),this.addEventListener("click",()=>this.handleActive())}handleActive(){var e;(null===(e=this.closest("kor-tabs"))||void 0===e?void 0:e.querySelectorAll("kor-tab-item")).forEach(e=>{e.active=!1}),this.active=!0}}kor_tab_item_decorate([n({type:String,reflect:!0})],korTabItem.prototype,"label",void 0),kor_tab_item_decorate([n({type:String,reflect:!0})],korTabItem.prototype,"icon",void 0),kor_tab_item_decorate([n({type:Boolean,reflect:!0})],korTabItem.prototype,"active",void 0),kor_tab_item_decorate([n({type:Boolean,reflect:!0})],korTabItem.prototype,"disabled",void 0),kor_tab_item_decorate([n({type:String,reflect:!0})],korTabItem.prototype,"orientation",void 0),window.customElements.get("kor-tab-item")||window.customElements.define("kor-tab-item",korTabItem);var kor_table_decorate=function(e,r,s,a){var l,c=arguments.length,p=c<3?r:null===a?a=Object.getOwnPropertyDescriptor(r,s):a;if("object"==typeof Reflect&&"function"==typeof Reflect.decorate)p=Reflect.decorate(e,r,s,a);else for(var h=e.length-1;h>=0;h--)(l=e[h])&&(p=(c<3?l(p):c>3?l(r,s,p):l(r,s))||p);return c>3&&p&&Object.defineProperty(r,s,p),p};class korTable extends e{constructor(){super(...arguments),this.columns="repeat(24, 1fr)"}static get styles(){return[l,r`
         :host {
           display: flex;
           flex-direction: column;
@@ -2609,10 +2619,10 @@ import{LitElement as t,css as e,html as n}from"lit";const i=(t,e)=>"method"===e.
           z-index: 4;
           background-color: rgb(var(--base-3));
         }
-      `]}render(){return n`
+      `]}render(){return s`
       <slot name="header"></slot>
       <slot></slot>
-    `}attributeChangedCallback(t,e,n){super.attributeChangedCallback(t,e,n),this.dispatchEvent(new Event(t+"-changed"))}}kor_table_decorate([property_e({type:Boolean,reflect:!0})],korTable.prototype,"readonly",void 0),kor_table_decorate([property_e({type:Boolean,reflect:!0})],korTable.prototype,"condensed",void 0),kor_table_decorate([property_e({type:String,reflect:!0})],korTable.prototype,"columns",void 0),window.customElements.get("kor-table")||window.customElements.define("kor-table",korTable);var kor_table_row_decorate=function(t,e,n,s){var l,p=arguments.length,h=p<3?e:null===s?s=Object.getOwnPropertyDescriptor(e,n):s;if("object"==typeof Reflect&&"function"==typeof Reflect.decorate)h=Reflect.decorate(t,e,n,s);else for(var g=t.length-1;g>=0;g--)(l=t[g])&&(h=(p<3?l(h):p>3?l(e,n,h):l(e,n))||h);return p>3&&h&&Object.defineProperty(e,n,h),h};class korTableRow extends t{getAllSlottedContent(){return Array.from(this.slots).flatMap(t=>t.assignedElements({flatten:!0}))}static get styles(){return[l,e`
+    `}attributeChangedCallback(e,r,s){super.attributeChangedCallback(e,r,s),this.dispatchEvent(new Event(`${e}-changed`))}}kor_table_decorate([n({type:Boolean,reflect:!0})],korTable.prototype,"readonly",void 0),kor_table_decorate([n({type:Boolean,reflect:!0})],korTable.prototype,"condensed",void 0),kor_table_decorate([n({type:String,reflect:!0})],korTable.prototype,"columns",void 0),window.customElements.get("kor-table")||window.customElements.define("kor-table",korTable);var kor_table_row_decorate=function(e,r,s,a){var l,c=arguments.length,p=c<3?r:null===a?a=Object.getOwnPropertyDescriptor(r,s):a;if("object"==typeof Reflect&&"function"==typeof Reflect.decorate)p=Reflect.decorate(e,r,s,a);else for(var h=e.length-1;h>=0;h--)(l=e[h])&&(p=(c<3?l(p):c>3?l(r,s,p):l(r,s))||p);return c>3&&p&&Object.defineProperty(r,s,p),p};class korTableRow extends e{getAllSlottedContent(){return Array.from(this.slots).flatMap(e=>e.assignedElements({flatten:!0}))}static get styles(){return[l,r`
         :host {
           display: grid;
           border-bottom: 1px solid rgba(var(--neutral-1), 0.15);
@@ -2635,7 +2645,7 @@ import{LitElement as t,css as e,html as n}from"lit";const i=(t,e)=>"method"===e.
             background-color: transparent;
           }
         }
-      `]}render(){return n` <slot></slot> `}attributeChangedCallback(t,e,n){super.attributeChangedCallback(t,e,n),this.dispatchEvent(new Event(t+"-changed"))}connectedCallback(){super.connectedCallback(),this.addEventListener("click",()=>this.handleActive()),this.addEventListener("mouseenter",()=>{this.active||"header"==this.slot||this.getAllSlottedContent().forEach(t=>{t.sticky&&(t.style.backgroundColor="color-mix(in srgb, rgb(var(--neutral-1)) 5%, rgb(var(--base-3)))")})}),this.addEventListener("mouseleave",()=>{this.active||"header"==this.slot||this.getAllSlottedContent().forEach(t=>{t.sticky&&(t.style.backgroundColor="rgb(var(--base-3))")})}),this.handleColumns()}handleActive(){var t;let e,n;e=this.closest("kor-table"),(null==e?void 0:e.readonly)||"header"==this.slot||(n=null===(t=this.parentElement)||void 0===t?void 0:t.childNodes,null==n||n.forEach(t=>{t.active=!1,"header"!=t.slot&&t.getAllSlottedContent&&t.getAllSlottedContent().forEach(t=>{t.sticky&&(t.style.backgroundColor="rgb(var(--base-3))")})}),this.active=!0,this.getAllSlottedContent().forEach(t=>{t.sticky&&(t.style.backgroundColor="color-mix(in srgb, rgb(var(--neutral-1)) 10%, rgb(var(--base-3)))")}))}handleColumns(){const t=this.closest("kor-table");this.style.gridTemplateColumns=t.columns,null==t||t.addEventListener("columns-changed",()=>{this.style.gridTemplateColumns=t.columns})}}kor_table_row_decorate([property_e({type:Boolean,reflect:!0})],korTableRow.prototype,"active",void 0),kor_table_row_decorate([function query_all_e(t){return base_o({descriptor:e=>({get(){var e;return null===(e=this.renderRoot)||void 0===e?void 0:e.querySelectorAll(t)},enumerable:!0,configurable:!0})})}("slot")],korTableRow.prototype,"slots",void 0),window.customElements.get("kor-table-row")||window.customElements.define("kor-table-row",korTableRow);var kor_table_cell_decorate=function(t,e,n,s){var l,p=arguments.length,h=p<3?e:null===s?s=Object.getOwnPropertyDescriptor(e,n):s;if("object"==typeof Reflect&&"function"==typeof Reflect.decorate)h=Reflect.decorate(t,e,n,s);else for(var g=t.length-1;g>=0;g--)(l=t[g])&&(h=(p<3?l(h):p>3?l(e,n,h):l(e,n))||h);return p>3&&h&&Object.defineProperty(e,n,h),h};class korTableCell extends t{constructor(){super(...arguments),this.alignment="left"}static get styles(){return[l,e`
+      `]}render(){return s` <slot></slot> `}attributeChangedCallback(e,r,s){super.attributeChangedCallback(e,r,s),this.dispatchEvent(new Event(`${e}-changed`))}connectedCallback(){super.connectedCallback(),this.addEventListener("click",()=>this.handleActive()),this.addEventListener("mouseenter",()=>{this.active||"header"==this.slot||this.getAllSlottedContent().forEach(e=>{e.sticky&&(e.style.backgroundColor="color-mix(in srgb, rgb(var(--neutral-1)) 5%, rgb(var(--base-3)))")})}),this.addEventListener("mouseleave",()=>{this.active||"header"==this.slot||this.getAllSlottedContent().forEach(e=>{e.sticky&&(e.style.backgroundColor="rgb(var(--base-3))")})}),this.handleColumns()}handleActive(){var e;let r,s;r=this.closest("kor-table"),(null==r?void 0:r.readonly)||"header"==this.slot||(s=null===(e=this.parentElement)||void 0===e?void 0:e.childNodes,null==s||s.forEach(e=>{e.active=!1,"header"!=e.slot&&e.getAllSlottedContent&&e.getAllSlottedContent().forEach(e=>{e.sticky&&(e.style.backgroundColor="rgb(var(--base-3))")})}),this.active=!0,this.getAllSlottedContent().forEach(e=>{e.sticky&&(e.style.backgroundColor="color-mix(in srgb, rgb(var(--neutral-1)) 10%, rgb(var(--base-3)))")}))}handleColumns(){const e=this.closest("kor-table");this.style.gridTemplateColumns=e.columns,null==e||e.addEventListener("columns-changed",()=>{this.style.gridTemplateColumns=e.columns})}}kor_table_row_decorate([n({type:Boolean,reflect:!0})],korTableRow.prototype,"active",void 0),kor_table_row_decorate([function query_all_e(e){return o({descriptor:r=>({get(){var r,s;return null!==(s=null===(r=this.renderRoot)||void 0===r?void 0:r.querySelectorAll(e))&&void 0!==s?s:[]},enumerable:!0,configurable:!0})})}("slot")],korTableRow.prototype,"slots",void 0),window.customElements.get("kor-table-row")||window.customElements.define("kor-table-row",korTableRow);var kor_table_cell_decorate=function(e,r,s,a){var l,c=arguments.length,p=c<3?r:null===a?a=Object.getOwnPropertyDescriptor(r,s):a;if("object"==typeof Reflect&&"function"==typeof Reflect.decorate)p=Reflect.decorate(e,r,s,a);else for(var h=e.length-1;h>=0;h--)(l=e[h])&&(p=(c<3?l(p):c>3?l(r,s,p):l(r,s))||p);return c>3&&p&&Object.defineProperty(r,s,p),p};class korTableCell extends e{constructor(){super(...arguments),this.alignment="left"}static get styles(){return[l,r`
         :host {
           display: flex;
           align-items: center;
@@ -2675,14 +2685,14 @@ import{LitElement as t,css as e,html as n}from"lit";const i=(t,e)=>"method"===e.
           margin: var(--spacing-xs) 0px var(--spacing-xs) var(--spacing-xs);
           color: var(--text-2);
         }
-      `]}render(){return n`
+      `]}render(){return s`
       <kor-text>
         <slot></slot>
       </kor-text>
-      ${this.head&&this.sorted?n`
+      ${this.head&&this.sorted?s`
             <kor-icon size="s" icon="arrow_downward" class="sort"></kor-icon>
           `:""}
-    `}attributeChangedCallback(t,e,n){super.attributeChangedCallback(t,e,n),this.dispatchEvent(new Event(t+"-changed")),"grid-cols"==t?this.style.gridColumn="span "+this.gridCols:"sortable"==t&&this.sortable?(this.sortDirection||(this.sortDirection="asc"),this.addEventListener("click",()=>{this.handleSort()})):"sticky"==t?this.sticky?(this.style.position="sticky",this.style.backgroundColor="rgb(var(--base-3))",this.style.zIndex&&"0"!==this.style.zIndex||(this.style.zIndex="1")):(this.style.removeProperty("position"),this.style.removeProperty("background-color"),"1"===this.style.zIndex&&this.style.removeProperty("z-index")):"left"==t?this.style.left=n:"top"==t?this.style.top=n:"right"==t?this.style.right=n:"bottom"==t&&(this.style.bottom=n)}handleSort(){var t;if(this.sorted)this.sortDirection="asc"==this.sortDirection?"desc":"asc";else{let e=null===(t=this.parentElement)||void 0===t?void 0:t.childNodes;null==e||e.forEach(t=>{t.sorted=!1}),this.sorted=!0,this.sortDirection="asc"}}}kor_table_cell_decorate([property_e({type:Number,reflect:!0,attribute:"grid-cols"})],korTableCell.prototype,"gridCols",void 0),kor_table_cell_decorate([property_e({type:String,reflect:!0})],korTableCell.prototype,"alignment",void 0),kor_table_cell_decorate([property_e({type:Boolean,reflect:!0})],korTableCell.prototype,"head",void 0),kor_table_cell_decorate([property_e({type:Boolean,reflect:!0})],korTableCell.prototype,"sorted",void 0),kor_table_cell_decorate([property_e({type:Boolean,reflect:!0})],korTableCell.prototype,"sortable",void 0),kor_table_cell_decorate([property_e({type:String,reflect:!0,attribute:"sort-direction"})],korTableCell.prototype,"sortDirection",void 0),kor_table_cell_decorate([property_e({type:Boolean,reflect:!0})],korTableCell.prototype,"sticky",void 0),kor_table_cell_decorate([property_e({type:String,reflect:!0})],korTableCell.prototype,"left",void 0),kor_table_cell_decorate([property_e({type:String,reflect:!0})],korTableCell.prototype,"top",void 0),kor_table_cell_decorate([property_e({type:String,reflect:!0})],korTableCell.prototype,"right",void 0),kor_table_cell_decorate([property_e({type:String,reflect:!0})],korTableCell.prototype,"bottom",void 0),window.customElements.get("kor-table-cell")||window.customElements.define("kor-table-cell",korTableCell);var kor_tabs_decorate=function(t,e,n,s){var l,p=arguments.length,h=p<3?e:null===s?s=Object.getOwnPropertyDescriptor(e,n):s;if("object"==typeof Reflect&&"function"==typeof Reflect.decorate)h=Reflect.decorate(t,e,n,s);else for(var g=t.length-1;g>=0;g--)(l=t[g])&&(h=(p<3?l(h):p>3?l(e,n,h):l(e,n))||h);return p>3&&h&&Object.defineProperty(e,n,h),h};class korTabs extends t{constructor(){super(...arguments),this.orientation="horizontal"}static get styles(){return[l,e`
+    `}attributeChangedCallback(e,r,s){super.attributeChangedCallback(e,r,s),this.dispatchEvent(new Event(`${e}-changed`)),"grid-cols"==e?this.style.gridColumn=`span ${this.gridCols}`:"sortable"==e&&this.sortable?(this.sortDirection||(this.sortDirection="asc"),this.addEventListener("click",()=>{this.handleSort()})):"sticky"==e?this.sticky?(this.style.position="sticky",this.style.backgroundColor="rgb(var(--base-3))",this.style.zIndex&&"0"!==this.style.zIndex||(this.style.zIndex="1")):(this.style.removeProperty("position"),this.style.removeProperty("background-color"),"1"===this.style.zIndex&&this.style.removeProperty("z-index")):"left"==e?this.style.left=s:"top"==e?this.style.top=s:"right"==e?this.style.right=s:"bottom"==e&&(this.style.bottom=s)}handleSort(){var e;if(this.sorted)this.sortDirection="asc"==this.sortDirection?"desc":"asc";else{let r=null===(e=this.parentElement)||void 0===e?void 0:e.childNodes;null==r||r.forEach(e=>{e.sorted=!1}),this.sorted=!0,this.sortDirection="asc"}}}kor_table_cell_decorate([n({type:Number,reflect:!0,attribute:"grid-cols"})],korTableCell.prototype,"gridCols",void 0),kor_table_cell_decorate([n({type:String,reflect:!0})],korTableCell.prototype,"alignment",void 0),kor_table_cell_decorate([n({type:Boolean,reflect:!0})],korTableCell.prototype,"head",void 0),kor_table_cell_decorate([n({type:Boolean,reflect:!0})],korTableCell.prototype,"sorted",void 0),kor_table_cell_decorate([n({type:Boolean,reflect:!0})],korTableCell.prototype,"sortable",void 0),kor_table_cell_decorate([n({type:String,reflect:!0,attribute:"sort-direction"})],korTableCell.prototype,"sortDirection",void 0),kor_table_cell_decorate([n({type:Boolean,reflect:!0})],korTableCell.prototype,"sticky",void 0),kor_table_cell_decorate([n({type:String,reflect:!0})],korTableCell.prototype,"left",void 0),kor_table_cell_decorate([n({type:String,reflect:!0})],korTableCell.prototype,"top",void 0),kor_table_cell_decorate([n({type:String,reflect:!0})],korTableCell.prototype,"right",void 0),kor_table_cell_decorate([n({type:String,reflect:!0})],korTableCell.prototype,"bottom",void 0),window.customElements.get("kor-table-cell")||window.customElements.define("kor-table-cell",korTableCell);var kor_tabs_decorate=function(e,r,s,a){var l,c=arguments.length,p=c<3?r:null===a?a=Object.getOwnPropertyDescriptor(r,s):a;if("object"==typeof Reflect&&"function"==typeof Reflect.decorate)p=Reflect.decorate(e,r,s,a);else for(var h=e.length-1;h>=0;h--)(l=e[h])&&(p=(c<3?l(p):c>3?l(r,s,p):l(r,s))||p);return c>3&&p&&Object.defineProperty(r,s,p),p};class korTabs extends e{constructor(){super(...arguments),this.orientation="horizontal"}static get styles(){return[l,r`
         :host {
           display: flex;
           width: 100%;
@@ -2698,9 +2708,9 @@ import{LitElement as t,css as e,html as n}from"lit";const i=(t,e)=>"method"===e.
         :host([orientation='vertical']) {
           flex-direction: column;
         }
-      `]}render(){return n`
+      `]}render(){return s`
       <slot @slotchange="${()=>this.handleOrientation()}"></slot>
-    `}handleOrientation(){this.childNodes.forEach(t=>{t.orientation=this.orientation})}attributeChangedCallback(t,e,n){super.attributeChangedCallback(t,e,n),this.dispatchEvent(new Event(t+"-changed"))}}kor_tabs_decorate([property_e({type:String,reflect:!0})],korTabs.prototype,"orientation",void 0),window.customElements.get("kor-tabs")||window.customElements.define("kor-tabs",korTabs);var kor_tag_decorate=function(t,e,n,s){var l,p=arguments.length,h=p<3?e:null===s?s=Object.getOwnPropertyDescriptor(e,n):s;if("object"==typeof Reflect&&"function"==typeof Reflect.decorate)h=Reflect.decorate(t,e,n,s);else for(var g=t.length-1;g>=0;g--)(l=t[g])&&(h=(p<3?l(h):p>3?l(e,n,h):l(e,n))||h);return p>3&&h&&Object.defineProperty(e,n,h),h};class korTag extends t{constructor(){super(...arguments),this.label="Label"}static get styles(){return[l,e`
+    `}handleOrientation(){this.childNodes.forEach(e=>{e.orientation=this.orientation})}attributeChangedCallback(e,r,s){super.attributeChangedCallback(e,r,s),this.dispatchEvent(new Event(`${e}-changed`))}}kor_tabs_decorate([n({type:String,reflect:!0})],korTabs.prototype,"orientation",void 0),window.customElements.get("kor-tabs")||window.customElements.define("kor-tabs",korTabs);var kor_tag_decorate=function(e,r,s,a){var l,c=arguments.length,p=c<3?r:null===a?a=Object.getOwnPropertyDescriptor(r,s):a;if("object"==typeof Reflect&&"function"==typeof Reflect.decorate)p=Reflect.decorate(e,r,s,a);else for(var h=e.length-1;h>=0;h--)(l=e[h])&&(p=(c<3?l(p):c>3?l(r,s,p):l(r,s))||p);return c>3&&p&&Object.defineProperty(r,s,p),p};class korTag extends e{constructor(){super(...arguments),this.label="Label"}static get styles(){return[l,r`
         :host {
           padding: var(--spacing-xs);
           display: flex;
@@ -2725,20 +2735,20 @@ import{LitElement as t,css as e,html as n}from"lit";const i=(t,e)=>"method"===e.
             background-color: rgba(var(--neutral-1), 0.05);
           }
         }
-      `]}render(){return n`
+      `]}render(){return s`
       <!-- icon -->
-      ${this.icon?n` <kor-icon icon="${this.icon}"></kor-icon> `:""}
+      ${this.icon?s` <kor-icon icon="${this.icon}"></kor-icon> `:""}
       <!-- label -->
-      ${this.label?n` <kor-text class="label">${this.label}</kor-text> `:""}
+      ${this.label?s` <kor-text class="label">${this.label}</kor-text> `:""}
       <!-- removable -->
-      ${this.removable?n`
+      ${this.removable?s`
             <kor-icon
               icon="close"
               button
               @click="${()=>this.handleRemove()}"
             ></kor-icon>
           `:""}
-    `}attributeChangedCallback(t,e,n){super.attributeChangedCallback(t,e,n),this.dispatchEvent(new Event(t+"-changed"))}handleRemove(){this.dispatchEvent(new Event("remove"))}}kor_tag_decorate([property_e({type:String,reflect:!0})],korTag.prototype,"label",void 0),kor_tag_decorate([property_e({type:String,reflect:!0})],korTag.prototype,"icon",void 0),kor_tag_decorate([property_e({type:Boolean,reflect:!0})],korTag.prototype,"button",void 0),kor_tag_decorate([property_e({type:Boolean,reflect:!0})],korTag.prototype,"removable",void 0),window.customElements.get("kor-tag")||window.customElements.define("kor-tag",korTag);var kor_textarea_decorate=function(t,e,n,s){var l,p=arguments.length,h=p<3?e:null===s?s=Object.getOwnPropertyDescriptor(e,n):s;if("object"==typeof Reflect&&"function"==typeof Reflect.decorate)h=Reflect.decorate(t,e,n,s);else for(var g=t.length-1;g>=0;g--)(l=t[g])&&(h=(p<3?l(h):p>3?l(e,n,h):l(e,n))||h);return p>3&&h&&Object.defineProperty(e,n,h),h};class korTextarea extends t{static get styles(){return[l,e`
+    `}attributeChangedCallback(e,r,s){super.attributeChangedCallback(e,r,s),this.dispatchEvent(new Event(`${e}-changed`))}handleRemove(){this.dispatchEvent(new Event("remove"))}}kor_tag_decorate([n({type:String,reflect:!0})],korTag.prototype,"label",void 0),kor_tag_decorate([n({type:String,reflect:!0})],korTag.prototype,"icon",void 0),kor_tag_decorate([n({type:Boolean,reflect:!0})],korTag.prototype,"button",void 0),kor_tag_decorate([n({type:Boolean,reflect:!0})],korTag.prototype,"removable",void 0),window.customElements.get("kor-tag")||window.customElements.define("kor-tag",korTag);var kor_textarea_decorate=function(e,r,s,a){var l,c=arguments.length,p=c<3?r:null===a?a=Object.getOwnPropertyDescriptor(r,s):a;if("object"==typeof Reflect&&"function"==typeof Reflect.decorate)p=Reflect.decorate(e,r,s,a);else for(var h=e.length-1;h>=0;h--)(l=e[h])&&(p=(c<3?l(p):c>3?l(r,s,p):l(r,s))||p);return c>3&&p&&Object.defineProperty(r,s,p),p};class korTextarea extends e{static get styles(){return[l,r`
         :host {
           display: flex;
           align-items: center;
@@ -2834,9 +2844,9 @@ import{LitElement as t,css as e,html as n}from"lit";const i=(t,e)=>"method"===e.
             border-color: rgba(var(--neutral-1), 0.4);
           }
         }
-      `]}render(){return n`
+      `]}render(){return s`
       <div class="center">
-        ${this.label?n` <label class="label">${this.label}</label> `:""}
+        ${this.label?s` <label class="label">${this.label}</label> `:""}
         <textarea
           .value="${void 0!==this.value?this.value:""}"
           .rows="${this.rows}"
@@ -2849,7 +2859,7 @@ import{LitElement as t,css as e,html as n}from"lit";const i=(t,e)=>"method"===e.
           @input="${this.handleChange}"
         ></textarea>
       </div>
-    `}constructor(){super(),this.rows=1,this.autofocus=!1,this.addEventListener("click",()=>{var t,e;this.active=!0,null===(e=null===(t=this.shadowRoot)||void 0===t?void 0:t.querySelector("textarea"))||void 0===e||e.focus()})}handleChange(t){this.value=t.target.value,this.dispatchEvent(new CustomEvent("change",{bubbles:!0,composed:!0}))}handleClear(){this.value=void 0,this.removeAttribute("value")}attributeChangedCallback(t,e,n){super.attributeChangedCallback(t,e,n),this.dispatchEvent(new Event(t+"-changed"))}}kor_textarea_decorate([property_e({type:String,reflect:!0})],korTextarea.prototype,"label",void 0),kor_textarea_decorate([property_e({type:String,reflect:!0})],korTextarea.prototype,"value",void 0),kor_textarea_decorate([property_e({type:Number,reflect:!0})],korTextarea.prototype,"rows",void 0),kor_textarea_decorate([property_e({type:Boolean,reflect:!0})],korTextarea.prototype,"active",void 0),kor_textarea_decorate([property_e({type:Boolean,reflect:!0})],korTextarea.prototype,"disabled",void 0),kor_textarea_decorate([property_e({type:Boolean,reflect:!0})],korTextarea.prototype,"readonly",void 0),kor_textarea_decorate([property_e({type:Boolean,reflect:!0})],korTextarea.prototype,"autofocus",void 0),window.customElements.get("kor-textarea")||window.customElements.define("kor-textarea",korTextarea);var kor_toggle_decorate=function(t,e,n,s){var l,p=arguments.length,h=p<3?e:null===s?s=Object.getOwnPropertyDescriptor(e,n):s;if("object"==typeof Reflect&&"function"==typeof Reflect.decorate)h=Reflect.decorate(t,e,n,s);else for(var g=t.length-1;g>=0;g--)(l=t[g])&&(h=(p<3?l(h):p>3?l(e,n,h):l(e,n))||h);return p>3&&h&&Object.defineProperty(e,n,h),h};class korToggle extends t{static get styles(){return[l,e`
+    `}constructor(){super(),this.rows=1,this.autofocus=!1,this.addEventListener("click",()=>{var e,r;this.active=!0,null===(r=null===(e=this.shadowRoot)||void 0===e?void 0:e.querySelector("textarea"))||void 0===r||r.focus()})}handleChange(e){this.value=e.target.value,this.dispatchEvent(new CustomEvent("change",{bubbles:!0,composed:!0}))}handleClear(){this.value=void 0,this.removeAttribute("value")}attributeChangedCallback(e,r,s){super.attributeChangedCallback(e,r,s),this.dispatchEvent(new Event(`${e}-changed`))}}kor_textarea_decorate([n({type:String,reflect:!0})],korTextarea.prototype,"label",void 0),kor_textarea_decorate([n({type:String,reflect:!0})],korTextarea.prototype,"value",void 0),kor_textarea_decorate([n({type:Number,reflect:!0})],korTextarea.prototype,"rows",void 0),kor_textarea_decorate([n({type:Boolean,reflect:!0})],korTextarea.prototype,"active",void 0),kor_textarea_decorate([n({type:Boolean,reflect:!0})],korTextarea.prototype,"disabled",void 0),kor_textarea_decorate([n({type:Boolean,reflect:!0})],korTextarea.prototype,"readonly",void 0),kor_textarea_decorate([n({type:Boolean,reflect:!0})],korTextarea.prototype,"autofocus",void 0),window.customElements.get("kor-textarea")||window.customElements.define("kor-textarea",korTextarea);var kor_toggle_decorate=function(e,r,s,a){var l,c=arguments.length,p=c<3?r:null===a?a=Object.getOwnPropertyDescriptor(r,s):a;if("object"==typeof Reflect&&"function"==typeof Reflect.decorate)p=Reflect.decorate(e,r,s,a);else for(var h=e.length-1;h>=0;h--)(l=e[h])&&(p=(c<3?l(p):c>3?l(r,s,p):l(r,s))||p);return c>3&&p&&Object.defineProperty(r,s,p),p};class korToggle extends e{static get styles(){return[l,r`
         :host {
           display: flex;
           cursor: pointer;
@@ -2907,7 +2917,7 @@ import{LitElement as t,css as e,html as n}from"lit";const i=(t,e)=>"method"===e.
             background: rgba(var(--neutral-1), 0.9);
           }
         }
-      `]}render(){return n`
+      `]}render(){return s`
       <input
         type="checkbox"
         ?checked="${this.active}"
@@ -2919,8 +2929,8 @@ import{LitElement as t,css as e,html as n}from"lit";const i=(t,e)=>"method"===e.
       <div class="bg">
         <div class="dot"></div>
       </div>
-      ${this.label?n` <kor-text>${this.label}</kor-text> `:""}
-    `}attributeChangedCallback(t,e,n){super.attributeChangedCallback(t,e,n),this.dispatchEvent(new Event(t+"-changed"))}connectedCallback(){super.connectedCallback(),this.addEventListener("click",()=>{this.active=!this.active})}handleChange(){this.dispatchEvent(new CustomEvent("change",{bubbles:!0,composed:!0}))}}kor_toggle_decorate([property_e({type:String,reflect:!0})],korToggle.prototype,"label",void 0),kor_toggle_decorate([property_e({type:Boolean,reflect:!0})],korToggle.prototype,"active",void 0),kor_toggle_decorate([property_e({type:Boolean,reflect:!0})],korToggle.prototype,"disabled",void 0),window.customElements.get("kor-toggle")||window.customElements.define("kor-toggle",korToggle);var kor_tool_decorate=function(t,e,n,s){var l,p=arguments.length,h=p<3?e:null===s?s=Object.getOwnPropertyDescriptor(e,n):s;if("object"==typeof Reflect&&"function"==typeof Reflect.decorate)h=Reflect.decorate(t,e,n,s);else for(var g=t.length-1;g>=0;g--)(l=t[g])&&(h=(p<3?l(h):p>3?l(e,n,h):l(e,n))||h);return p>3&&h&&Object.defineProperty(e,n,h),h};class korTool extends t{constructor(){super(...arguments),this.size="m"}static get styles(){return[l,e`
+      ${this.label?s` <kor-text>${this.label}</kor-text> `:""}
+    `}attributeChangedCallback(e,r,s){super.attributeChangedCallback(e,r,s),this.dispatchEvent(new Event(`${e}-changed`))}connectedCallback(){super.connectedCallback(),this.addEventListener("click",()=>{this.active=!this.active})}handleChange(){this.dispatchEvent(new CustomEvent("change",{bubbles:!0,composed:!0}))}}kor_toggle_decorate([n({type:String,reflect:!0})],korToggle.prototype,"label",void 0),kor_toggle_decorate([n({type:Boolean,reflect:!0})],korToggle.prototype,"active",void 0),kor_toggle_decorate([n({type:Boolean,reflect:!0})],korToggle.prototype,"disabled",void 0),window.customElements.get("kor-toggle")||window.customElements.define("kor-toggle",korToggle);var kor_tool_decorate=function(e,r,s,a){var l,c=arguments.length,p=c<3?r:null===a?a=Object.getOwnPropertyDescriptor(r,s):a;if("object"==typeof Reflect&&"function"==typeof Reflect.decorate)p=Reflect.decorate(e,r,s,a);else for(var h=e.length-1;h>=0;h--)(l=e[h])&&(p=(c<3?l(p):c>3?l(r,s,p):l(r,s))||p);return c>3&&p&&Object.defineProperty(r,s,p),p};class korTool extends e{constructor(){super(...arguments),this.size="m"}static get styles(){return[l,r`
         :host {
           display: flex;
           flex-direction: column;
@@ -2967,10 +2977,10 @@ import{LitElement as t,css as e,html as n}from"lit";const i=(t,e)=>"method"===e.
             background-color: rgba(var(--neutral-1), 0.05);
           }
         }
-      `]}render(){return n`
-      ${this.icon?n` <kor-icon icon="${this.icon}"></kor-icon> `:""}
-      ${!this.label||this.icon&&"s"==this.size?"":n` <kor-text class="label" size="body-2">${this.label}</kor-text> `}
-    `}attributeChangedCallback(t,e,n){super.attributeChangedCallback(t,e,n),this.dispatchEvent(new Event(t+"-changed")),"toggle"==t&&this.toggle&&this.addEventListener("click",()=>{this.active=!this.active})}}kor_tool_decorate([property_e({type:String,reflect:!0})],korTool.prototype,"label",void 0),kor_tool_decorate([property_e({type:String,reflect:!0})],korTool.prototype,"icon",void 0),kor_tool_decorate([property_e({type:String,reflect:!0})],korTool.prototype,"size",void 0),kor_tool_decorate([property_e({type:Boolean,reflect:!0})],korTool.prototype,"toggle",void 0),kor_tool_decorate([property_e({type:Boolean,reflect:!0})],korTool.prototype,"active",void 0),kor_tool_decorate([property_e({type:Boolean,reflect:!0})],korTool.prototype,"disabled",void 0),window.customElements.get("kor-tool")||window.customElements.define("kor-tool",korTool);var kor_tooltip_decorate=function(t,e,n,s){var l,p=arguments.length,h=p<3?e:null===s?s=Object.getOwnPropertyDescriptor(e,n):s;if("object"==typeof Reflect&&"function"==typeof Reflect.decorate)h=Reflect.decorate(t,e,n,s);else for(var g=t.length-1;g>=0;g--)(l=t[g])&&(h=(p<3?l(h):p>3?l(e,n,h):l(e,n))||h);return p>3&&h&&Object.defineProperty(e,n,h),h};class korTooltip extends t{constructor(){super(...arguments),this.flexDirection="column",this.position="bottom",this.emptyHeader=!0,this.emptyFunctions=!0,this.emptyFooter=!0}static get styles(){return[l,e`
+      `]}render(){return s`
+      ${this.icon?s` <kor-icon icon="${this.icon}"></kor-icon> `:""}
+      ${!this.label||this.icon&&"s"==this.size?"":s` <kor-text class="label" size="body-2">${this.label}</kor-text> `}
+    `}attributeChangedCallback(e,r,s){super.attributeChangedCallback(e,r,s),this.dispatchEvent(new Event(`${e}-changed`)),"toggle"==e&&this.toggle&&this.addEventListener("click",()=>{this.active=!this.active})}}kor_tool_decorate([n({type:String,reflect:!0})],korTool.prototype,"label",void 0),kor_tool_decorate([n({type:String,reflect:!0})],korTool.prototype,"icon",void 0),kor_tool_decorate([n({type:String,reflect:!0})],korTool.prototype,"size",void 0),kor_tool_decorate([n({type:Boolean,reflect:!0})],korTool.prototype,"toggle",void 0),kor_tool_decorate([n({type:Boolean,reflect:!0})],korTool.prototype,"active",void 0),kor_tool_decorate([n({type:Boolean,reflect:!0})],korTool.prototype,"disabled",void 0),window.customElements.get("kor-tool")||window.customElements.define("kor-tool",korTool);var kor_tooltip_decorate=function(e,r,s,a){var l,c=arguments.length,p=c<3?r:null===a?a=Object.getOwnPropertyDescriptor(r,s):a;if("object"==typeof Reflect&&"function"==typeof Reflect.decorate)p=Reflect.decorate(e,r,s,a);else for(var h=e.length-1;h>=0;h--)(l=e[h])&&(p=(c<3?l(p):c>3?l(r,s,p):l(r,s))||p);return c>3&&p&&Object.defineProperty(r,s,p),p};class korTooltip extends e{constructor(){super(...arguments),this.flexDirection="column",this.position="bottom",this.emptyHeader=!0,this.emptyFunctions=!0,this.emptyFooter=!0}static get styles(){return[l,r`
         :host {
           position: fixed;
           z-index: 4;
@@ -2986,7 +2996,7 @@ import{LitElement as t,css as e,html as n}from"lit";const i=(t,e)=>"method"===e.
           --functions-gap: inherit;
           --footer-gap: inherit;
         }
-      `]}render(){return n`
+      `]}render(){return s`
       <kor-popover
         .label="${this.label}"
         .icon="${this.icon}"
@@ -2998,18 +3008,18 @@ import{LitElement as t,css as e,html as n}from"lit";const i=(t,e)=>"method"===e.
         <slot
           name="header"
           slot="${this.emptyHeader?"hidden":"header"}"
-          @slotchange="${t=>this.emptyHeader=0===t.target.assignedNodes().length}"
+          @slotchange="${e=>this.emptyHeader=0===e.target.assignedNodes().length}"
         ></slot>
         <slot
           name="functions"
           slot="${this.emptyFunctions?"hidden":"functions"}"
-          @slotchange="${t=>this.emptyFunctions=0===t.target.assignedNodes().length}"
+          @slotchange="${e=>this.emptyFunctions=0===e.target.assignedNodes().length}"
         ></slot>
         <slot></slot>
         <slot
           name="footer"
           slot="${this.emptyFooter?"hidden":"footer"}"
-          @slotchange="${t=>this.emptyFooter=0===t.target.assignedNodes().length}"
+          @slotchange="${e=>this.emptyFooter=0===e.target.assignedNodes().length}"
         ></slot>
       </kor-popover>
-    `}attributeChangedCallback(t,e,n){super.attributeChangedCallback(t,e,n),this.dispatchEvent(new Event(t+"-changed")),"target"===t&&this.target&&this.targetObserver()}targetObserver(){let t;const e="string"==typeof this.target?document.querySelector(this.target):this.target;e&&(e.addEventListener("mouseover",()=>{t=setTimeout(()=>this.visible=!0,500)}),e.addEventListener("mouseout",()=>{this.visible=!1,clearTimeout(t)}))}}kor_tooltip_decorate([property_e({type:String,reflect:!0})],korTooltip.prototype,"label",void 0),kor_tooltip_decorate([property_e({type:String,reflect:!0})],korTooltip.prototype,"icon",void 0),kor_tooltip_decorate([property_e({type:String,reflect:!0,attribute:"flex-direction"})],korTooltip.prototype,"flexDirection",void 0),kor_tooltip_decorate([property_e({type:String,reflect:!0})],korTooltip.prototype,"position",void 0),kor_tooltip_decorate([property_e({type:String,reflect:!0})],korTooltip.prototype,"target",void 0),kor_tooltip_decorate([property_e({type:Boolean,reflect:!0})],korTooltip.prototype,"visible",void 0),kor_tooltip_decorate([r()],korTooltip.prototype,"emptyHeader",void 0),kor_tooltip_decorate([r()],korTooltip.prototype,"emptyFunctions",void 0),kor_tooltip_decorate([r()],korTooltip.prototype,"emptyFooter",void 0),window.customElements.get("kor-tooltip")||window.customElements.define("kor-tooltip",korTooltip);export{korAccordion,korAppBar,korAvatar,korBadge,korBreadcrumbItem,korBreadcrumbs,korButton,korCard,korCheckbox,korDivider,korDrawer,korEmptyState,korGrid,korIcon,korImage,q as korInput,korMenuItem,korModal,korNavbar,korNotificationItem,korNotifications,korPage,korPane,korPopover,korProgressBar,korRadioButton,korSlider,korSpinner,korStepper,korStepperItem,korSwipeAction,korSwipeActions,korSwitch,korSwitchItem,korTabItem,korTable,korTableCell,korTableRow,korTabs,korTag,korText,korTextarea,korToggle,korTool,korTooltip};
+    `}attributeChangedCallback(e,r,s){super.attributeChangedCallback(e,r,s),this.dispatchEvent(new Event(`${e}-changed`)),"target"===e&&this.target&&this.targetObserver()}targetObserver(){let e;const r="string"==typeof this.target?document.querySelector(this.target):this.target;r&&(r.addEventListener("mouseover",()=>{e=setTimeout(()=>this.visible=!0,500)}),r.addEventListener("mouseout",()=>{this.visible=!1,clearTimeout(e)}))}}kor_tooltip_decorate([n({type:String,reflect:!0})],korTooltip.prototype,"label",void 0),kor_tooltip_decorate([n({type:String,reflect:!0})],korTooltip.prototype,"icon",void 0),kor_tooltip_decorate([n({type:String,reflect:!0,attribute:"flex-direction"})],korTooltip.prototype,"flexDirection",void 0),kor_tooltip_decorate([n({type:String,reflect:!0})],korTooltip.prototype,"position",void 0),kor_tooltip_decorate([n({type:String,reflect:!0})],korTooltip.prototype,"target",void 0),kor_tooltip_decorate([n({type:Boolean,reflect:!0})],korTooltip.prototype,"visible",void 0),kor_tooltip_decorate([t()],korTooltip.prototype,"emptyHeader",void 0),kor_tooltip_decorate([t()],korTooltip.prototype,"emptyFunctions",void 0),kor_tooltip_decorate([t()],korTooltip.prototype,"emptyFooter",void 0),window.customElements.get("kor-tooltip")||window.customElements.define("kor-tooltip",korTooltip);export{korAccordion,korAppBar,korAvatar,korBadge,korBreadcrumbItem,korBreadcrumbs,korButton,korCard,korCheckbox,korDivider,korDrawer,korEmptyState,korGrid,korIcon,korImage,G as korInput,korMenuItem,korModal,korNavbar,korNotificationItem,korNotifications,korPage,korPane,korPopover,korProgressBar,korRadioButton,korSlider,korSpinner,korStepper,korStepperItem,korSwipeAction,korSwipeActions,korSwitch,korSwitchItem,korTabItem,korTable,korTableCell,korTableRow,korTabs,korTag,korText,korTextarea,korToggle,korTool,korTooltip};

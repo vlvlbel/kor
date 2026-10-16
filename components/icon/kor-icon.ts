@@ -9,6 +9,7 @@ import { sharedStyles } from '../../shared-styles';
  * @prop {Boolean} button - If set to true, updates hover, click effects and cursors.
  * @prop {Boolean} disabled -	If set to true, disables mouse clicks and the style gets updated.
  * @prop {Boolean} framed - If set to true, the icon is shown within a rounded square frame.
+ * @prop {Boolean} tinted - If set to true, the icon set as url('') is used as a mask filled with the current text color, so it gets the same color as the text around it.
  */
 
 export class korIcon extends LitElement {
@@ -18,6 +19,7 @@ export class korIcon extends LitElement {
   @property({ type: Boolean, reflect: true }) button: boolean | undefined;
   @property({ type: Boolean, reflect: true }) disabled: boolean | undefined;
   @property({ type: Boolean, reflect: true }) framed: boolean | undefined;
+  @property({ type: Boolean, reflect: true }) tinted: boolean | undefined;
 
   static get styles() {
     return [
@@ -71,6 +73,16 @@ export class korIcon extends LitElement {
           width: 16px;
           font-size: 16px;
         }
+        /* tinted url('') icon */
+        :host([tinted]) {
+          background-color: currentColor;
+          -webkit-mask-repeat: no-repeat;
+          mask-repeat: no-repeat;
+          -webkit-mask-position: center;
+          mask-position: center;
+          -webkit-mask-size: contain;
+          mask-size: contain;
+        }
         /* frame */
         :host([framed]) {
           box-sizing: content-box;
@@ -103,13 +115,21 @@ export class korIcon extends LitElement {
     this.dispatchEvent(new Event(`${name}-changed`));
     if (name == 'color' && this.color) {
       this.style.color = this.color;
-    } else if (name == 'icon' && newval.indexOf('url') > -1) {
-      this.setBackgroundImage(newval);
+    } else if (name == 'icon' || name == 'tinted') {
+      this.setImage();
     }
   }
 
-  private setBackgroundImage(val: string): void {
-    this.style.backgroundImage = val;
+  /**
+   * Shows the icon set as url('') either as the background image
+   * or as the mask filled with the current text color, if it is tinted
+   */
+  private setImage(): void {
+    const url: string =
+      this.icon && this.icon.indexOf('url') > -1 ? this.icon : '';
+    this.style.backgroundImage = url && !this.tinted ? url : '';
+    this.style.webkitMaskImage = url && this.tinted ? url : '';
+    this.style.maskImage = url && this.tinted ? url : '';
   }
 }
 

@@ -11,6 +11,7 @@ import '../divider';
  * @prop {Boolean} disabled - If set to true, disables mouse clicks and the style gets updated.
  * @prop {Boolean} divided - If set to true together with both icon and label, a vertical divider is shown between them.
  * @prop {Boolean} glow - If set to true, the button glows with its color, which may be customized with the `--btn-glow` css property.
+ * @prop {Boolean} tinted - If set to true, the icon set as url('') gets the same color as the label, see the `tinted` property of kor-icon.
  */
 
 export class korButton extends LitElement {
@@ -23,6 +24,7 @@ export class korButton extends LitElement {
   @property({ type: Boolean, reflect: true }) disabled: boolean | undefined;
   @property({ type: Boolean, reflect: true }) divided: boolean | undefined;
   @property({ type: Boolean, reflect: true }) glow: boolean | undefined;
+  @property({ type: Boolean, reflect: true }) tinted: boolean | undefined;
 
   static get styles() {
     return [
@@ -120,7 +122,9 @@ export class korButton extends LitElement {
   render() {
     return html`
       <slot name="icon">
-        ${this.icon ? html` <kor-icon icon="${this.icon}"></kor-icon> ` : ''}
+        ${this.icon
+          ? html` <kor-icon icon="${this.icon}" ?tinted="${this.tinted}"></kor-icon> `
+          : ''}
       </slot>
       ${this.divided && this.icon && this.label
         ? html`<kor-divider orientation="vertical" spacing="s"></kor-divider>`
