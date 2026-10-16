@@ -36,6 +36,7 @@ declare global {
  *
  * @slot - Displayed inside the content area.
  * @slot functions - Displayed on the right side.
+ * @slot leading - Displayed on the left side, before the icon and the content area.
  */
 @customElement('kor-input')
 export class korInput extends LitElement {
@@ -219,6 +220,9 @@ export class korInput extends LitElement {
         slot[name='functions']::slotted(*) {
           margin-left: var(--spacing-s);
         }
+        slot[name='leading']::slotted(*) {
+          margin-right: var(--spacing-s);
+        }
         .status-icon[icon='cancel'] {
           color: rgb(var(--functional-red));
         }
@@ -272,6 +276,8 @@ export class korInput extends LitElement {
 
   render() {
     return html`
+      <!-- leading slot -->
+      <slot name="leading"></slot>
       ${this.icon
         ? html` <kor-icon class="icon" icon="${this.icon}"></kor-icon> `
         : ''}

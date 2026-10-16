@@ -1338,6 +1338,9 @@ import{LitElement as e,css as r,html as s}from"lit";const i=(e,r)=>"method"===r.
         slot[name='functions']::slotted(*) {
           margin-left: var(--spacing-s);
         }
+        slot[name='leading']::slotted(*) {
+          margin-right: var(--spacing-s);
+        }
         .status-icon[icon='cancel'] {
           color: rgb(var(--functional-red));
         }
@@ -1386,6 +1389,8 @@ import{LitElement as e,css as r,html as s}from"lit";const i=(e,r)=>"method"===r.
           }
         }
       `]}render(){var e;return s`
+      <!-- leading slot -->
+      <slot name="leading"></slot>
       ${this.icon?s` <kor-icon class="icon" icon="${this.icon}"></kor-icon> `:""}
       <div class="center">
         ${this.label?s` <label class="label">${this.label}</label> `:""}

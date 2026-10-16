@@ -30,6 +30,7 @@ declare global {
  *
  * @slot - Displayed inside the content area.
  * @slot functions - Displayed on the right side.
+ * @slot leading - Displayed on the left side, before the icon and the content area.
  */
 export declare class korInput extends LitElement {
     label: string | undefined;

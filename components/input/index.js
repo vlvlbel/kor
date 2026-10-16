@@ -360,6 +360,9 @@
         slot[name='functions']::slotted(*) {
           margin-left: var(--spacing-s);
         }
+        slot[name='leading']::slotted(*) {
+          margin-right: var(--spacing-s);
+        }
         .status-icon[icon='cancel'] {
           color: rgb(var(--functional-red));
         }
@@ -408,6 +411,8 @@
           }
         }
       `]}render(){var r;return h.qy`
+      <!-- leading slot -->
+      <slot name="leading"></slot>
       ${this.icon?h.qy` <kor-icon class="icon" icon="${this.icon}"></kor-icon> `:""}
       <div class="center">
         ${this.label?h.qy` <label class="label">${this.label}</label> `:""}
